@@ -7,6 +7,7 @@ public class FocusPlayer : MonoBehaviour
     public float playerMoveSpeed = 10f;
     private Rigidbody rb;
     public GameObject groundCheckObject;
+    public GameObject moveMenu;
 
     private void Start()
     {
@@ -48,6 +49,13 @@ public class FocusPlayer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && groundCheckObject.GetComponent<groundcheck>().groundTrigger)
         {
             rb.AddForce(Vector3.up * 300);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            //bring up menu
+
+            moveMenu.SetActive(!moveMenu.activeSelf);
         }
     }
 }

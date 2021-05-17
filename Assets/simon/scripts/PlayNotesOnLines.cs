@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayNotesOnLines : MonoBehaviour
 {
@@ -32,32 +33,33 @@ public class PlayNotesOnLines : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            playNote(Lines[0]);
+            playNote(Lines[0], Color.blue);
             return;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            playNote(Lines[1]);
+            playNote(Lines[1], Color.yellow);
             return;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            playNote(Lines[2]);
+            playNote(Lines[2], Color.red);
             return;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            playNote(Lines[3]);
+            playNote(Lines[3], Color.green);
             return;
         }
     }
 
-    void playNote(Transform startLine)
+    void playNote(Transform startLine, Color noteColor)
     {
-        Instantiate(notePrefab, startLine.position, new Quaternion(0, 0, 0, 0), startLine);
+        GameObject temp = Instantiate(notePrefab, startLine.position, new Quaternion(0, 0, 0, 0), startLine);
+        temp.GetComponent<Image>().color = noteColor;
         timer = 0.1f;
     }
 }

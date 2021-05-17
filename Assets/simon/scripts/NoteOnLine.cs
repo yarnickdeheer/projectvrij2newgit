@@ -13,7 +13,7 @@ public class NoteOnLine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(4, 0, 0);
+        transform.position += new Vector3(Time.deltaTime * 300, 0, 0);
 
         if(transform.position.x > Screen.width)
         {
