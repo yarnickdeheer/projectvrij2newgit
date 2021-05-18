@@ -8,15 +8,15 @@ public class AttackPlayer : MonoBehaviour
     private Rigidbody rb;
     public GameObject groundCheckObject;
 
-    public List<GameObject> playableLetters;
-    public Material green;
+    //public List<GameObject> playableLetters;
+    //public Material green;
 
-    private findEnemies findenemies;
+    //private findEnemies findenemies;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        findenemies = FindObjectOfType<findEnemies>();
+        //findenemies = FindObjectOfType<findEnemies>();
     }
     // Update is called once per frame
     void Update()
@@ -48,53 +48,53 @@ public class AttackPlayer : MonoBehaviour
             rb.AddForce(Vector3.up * 300);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            playNote(playableLetters[0], 0);
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    playNote(playableLetters[0], 0);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            playNote(playableLetters[1], 1);
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    playNote(playableLetters[1], 1);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            playNote(playableLetters[2], 2);
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha3))
+        //{
+        //    playNote(playableLetters[2], 2);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            playNote(playableLetters[3], 3);
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha4))
+        //{
+        //    playNote(playableLetters[3], 3);
+        //}
     }
 
-    void playNote(GameObject note, int whichNote)
-    {
-        Quaternion lookDirection = Quaternion.LookRotation(Camera.main.transform.position);
-        Instantiate(note, new Vector3(transform.position.x, transform.position.y + 2, transform.position.z), lookDirection, this.transform);
+    //void playNote(GameObject note, int whichNote)
+    //{
+    //    Quaternion lookDirection = Quaternion.LookRotation(Camera.main.transform.position);
+    //    Instantiate(note, new Vector3(transform.position.x, transform.position.y + 2, transform.position.z), lookDirection, this.transform);
 
-        foreach(GameObject enemy in findenemies.enemiesInRange)
-        {
-            if (enemy.GetComponent<AttackEnemy>().beaten == false)
-            {
-                if (whichNote == enemy.GetComponent<AttackEnemy>().melody[enemy.GetComponent<AttackEnemy>().notesChecked])
-                {
-                    if (enemy.GetComponent<AttackEnemy>().notesChecked == enemy.GetComponent<AttackEnemy>().melody.Count - 1)
-                    {
-                        enemy.GetComponent<AttackEnemy>().beaten = true;
-                        enemy.GetComponent<MeshRenderer>().material = green;
-                    }
+    //    foreach(GameObject enemy in findenemies.enemiesInRange)
+    //    {
+    //        if (enemy.GetComponent<AttackEnemy>().beaten == false)
+    //        {
+    //            if (whichNote == enemy.GetComponent<AttackEnemy>().melody[enemy.GetComponent<AttackEnemy>().notesChecked])
+    //            {
+    //                if (enemy.GetComponent<AttackEnemy>().notesChecked == enemy.GetComponent<AttackEnemy>().melody.Count - 1)
+    //                {
+    //                    enemy.GetComponent<AttackEnemy>().beaten = true;
+    //                    enemy.GetComponent<MeshRenderer>().material = green;
+    //                }
 
-                    else
-                        enemy.GetComponent<AttackEnemy>().notesChecked++;
-                }
+    //                else
+    //                    enemy.GetComponent<AttackEnemy>().notesChecked++;
+    //            }
 
-                else
-                {
-                    enemy.GetComponent<AttackEnemy>().notesChecked = 0;
-                }
-            }
-        }
-    }
+    //            else
+    //            {
+    //                enemy.GetComponent<AttackEnemy>().notesChecked = 0;
+    //            }
+    //        }
+    //    }
+    //}
 }

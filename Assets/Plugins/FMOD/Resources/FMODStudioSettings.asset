@@ -443,7 +443,7 @@ MonoBehaviour:
   EnableErrorCallback: 0
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
-  HideSetupWizard: 0
+  HideSetupWizard: 1
   Platforms:
   - {fileID: -5832910245829301034}
   - {fileID: -5617727551268773953}
