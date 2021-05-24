@@ -46,7 +46,7 @@ public class sprites : MonoBehaviour
         //   p.transform.eulerAngles.y + 360,
         //   p.transform.eulerAngles.z);
         //}
-        Debug.Log("rotation van enemy" + p.transform.eulerAngles.y + " angle: " + angle );
+        //Debug.Log("rotation van enemy" + p.transform.eulerAngles.y + " angle: " + angle );
         //angle = angle - p.transform.eulerAngles.y;
        // Debug.Log("angle na rotation" + angle);
         

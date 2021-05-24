@@ -8,7 +8,6 @@ public class simpleCam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.position = Vector3.Lerp(transform.position, new Vector3(0, 5, -12.5f), 0.3f);
         transform.position = Vector3.Lerp(transform.position, playerTransform.position + new Vector3(0,4,-10), 0.5f);
         transform.LookAt(playerTransform);
     }
