@@ -7,7 +7,7 @@ using System.Collections;
 public class Patrol : MonoBehaviour
 {
 
-    [HideInInspector]public Transform target;
+    public Transform target;
     private int destPoint = 0;
     private NavMeshAgent agent;
 

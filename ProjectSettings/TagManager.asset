@@ -6,6 +6,13 @@ TagManager:
   tags:
   - ground
   - waveable
+  - FxTemporaire
+  - destroybear
+  - target
+  - log
+  - bear
+  - moveable
+  - enviroment
   layers:
   - Default
   - TransparentFX

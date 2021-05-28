@@ -21,9 +21,7 @@ public class pcontroller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         Controller = GetComponent<CharacterController>();
-
     }
 
     // Update is called once per frame
@@ -35,17 +33,11 @@ public class pcontroller : MonoBehaviour
         {
             playerVelocity.y = 0f;
         }
-        
 
         if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
         {
             Move();
         }
-
-
-        // Controller.Move(Movement);
-
-
 
         if (Input.GetButtonDown("Jump") && ground == true)
         {
@@ -71,8 +63,6 @@ public class pcontroller : MonoBehaviour
         
     }
 
-
-
     void Move()
     {
         float Horizontal = Input.GetAxis("Horizontal") * Speed * Time.deltaTime;
@@ -94,12 +84,6 @@ public class pcontroller : MonoBehaviour
 
         }
 
-
-
-
-
-
-
         if (Input.GetAxisRaw("Horizontal") < 0)
         {
             this.GetComponent<SpriteRenderer>().sprite = sprites[2];
@@ -117,10 +101,6 @@ public class pcontroller : MonoBehaviour
             this.GetComponent<SpriteRenderer>().sprite = sprites[1];
         }
     }
-
-
-
-
 
     private void OnCollisionEnter(Collision collision)
     {

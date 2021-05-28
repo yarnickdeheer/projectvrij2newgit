@@ -40,7 +40,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -2495615052759445561}
+  - {fileID: 474199130185368545}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -61,14 +61,33 @@ MonoBehaviour:
   - {fileID: 7334257938667135104}
   EditorEvents:
   - {fileID: -1340714890237428997}
-  EditorParameters:
-  - {fileID: 5983852680971744877}
+  EditorParameters: []
   MasterBanks:
   - {fileID: 7334257938667135104}
   StringsBanks:
   - {fileID: 516492064049336398}
-  stringsBankWriteTime: 637564517950000000
+  stringsBankWriteTime: 637574642677798634
   cacheVersion: 6
+--- !u!114 &474199130185368545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Violin_Samples/Note
+  m_EditorClassIdentifier: 
+  Name: Note
+  Min: 0
+  Max: 7
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &516492064049336398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,12 +103,10 @@ MonoBehaviour:
   Path: FMODassets/Desktop/Build/Desktop/Master.strings.bank
   Name: Build/Desktop/Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637564517950000000
+  lastModified: 637574642677798634
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 852
-  - Name: Mobile
     Value: 852
   Exists: 1
 --- !u!114 &5983852680971744877
@@ -111,7 +128,7 @@ MonoBehaviour:
   ID:
     data1: 1556329123
     data2: 2711979062
-  Exists: 1
+  Exists: 0
 --- !u!114 &7334257938667135104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +144,7 @@ MonoBehaviour:
   Path: FMODassets/Desktop/Build/Desktop/Master.bank
   Name: Build/Desktop/Master
   StudioPath: bank:/Master
-  lastModified: 637564517950000000
+  lastModified: 637574642677788657
   LoadResult: 0
   FileSizes: []
   Exists: 1

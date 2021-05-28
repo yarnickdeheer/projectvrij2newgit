@@ -74,53 +74,26 @@ public class GoatRider : MonoBehaviour
 
         if (mounted == true)
         {
-            if (Input.GetKeyDown(KeyCode.H))
-            {
-                goat.transform.position = new Vector3(pos[i].position.x, pos[i].position.y + 0.2f, pos[i].position.z);
-            }
 
-                if (Input.GetKeyDown(KeyCode.Alpha1) && pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRU[0] != null)
+            if (Input.GetKeyDown(KeyCode.Alpha1) && pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRU[0] != null)
             {
                 // rechts boven
-                int f = pos[i].gameObject.GetComponent<GoatPlatform>().cost;
-                tijd -= f;
-                pos.Add(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRU[0].transform);
-                i++;
-                goat.transform.position = new Vector3(pos[i].position.x, pos[i].position.y + 0.2f, pos[i].position.z);
-                tijd = 5;
-
+                MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRU[0].transform);
             }
-            if (Input.GetKeyDown(KeyCode.Alpha2) && pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLU[0] != null)
+            else if (Input.GetKeyDown(KeyCode.Alpha2) && pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLU[0] != null)
             {
                 // links boven
-
-                int f = pos[i].gameObject.GetComponent<GoatPlatform>().cost;
-                tijd -= f;
-                pos.Add(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLU[0].transform);
-                i++;
-                goat.transform.position = new Vector3(pos[i].position.x, pos[i].position.y + 0.2f, pos[i].position.z);
-                tijd = 5;
+                MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLU[0].transform);
             }
-            if (Input.GetKeyDown(KeyCode.Alpha3) && pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRD[0] != null)
+            else if (Input.GetKeyDown(KeyCode.Alpha3) && pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRD[0] != null)
             {
                 // rechts onder
-
-                int f = pos[i].gameObject.GetComponent<GoatPlatform>().cost;
-                tijd -= f;
-                pos.Add(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRD[0].transform);
-                i++;
-                goat.transform.position = new Vector3(pos[i].position.x, pos[i].position.y + 0.2f, pos[i].position.z);
-                tijd = 5;
+                MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRD[0].transform);
             }
-            if (Input.GetKeyDown(KeyCode.Alpha4) && pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLD[0] != null)
+            else if (Input.GetKeyDown(KeyCode.Alpha4) && pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLD[0] != null)
             {
                 // links onder
-                int f = pos[i].gameObject.GetComponent<GoatPlatform>().cost;
-                tijd -= f;
-                pos.Add(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLD[0].transform);
-                i++;
-                goat.transform.position = new Vector3(pos[i].position.x, pos[i].position.y + 0.2f, pos[i].position.z);
-                tijd = 5;
+                MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLD[0].transform);
             }
 
         }
@@ -166,7 +139,19 @@ public class GoatRider : MonoBehaviour
           
         }
         
-    } 
+    }
+
+    private void MoveToRUPlatform(Transform platformTransform)
+    {
+        int f = pos[i].gameObject.GetComponent<GoatPlatform>().cost;
+        tijd -= f;
+        pos.Add(platformTransform);
+        i++;
+        goat.transform.position = new Vector3(pos[i].position.x, pos[i].position.y + 0.2f, pos[i].position.z);
+        tijd = 5;
+    }
+
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject == player)

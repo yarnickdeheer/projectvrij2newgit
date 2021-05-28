@@ -15,6 +15,9 @@ public class BearControl : MonoBehaviour
     private GameObject DB,DBtarget;
     int DBpotential;
     public bool inrange, destroy;
+
+
+
     void Start()
     {
         
@@ -23,6 +26,15 @@ public class BearControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+
+
+
+
+
+
+
         if (DBpotential ==4)
         {
             destroy = true;
@@ -30,7 +42,6 @@ public class BearControl : MonoBehaviour
         else
         {
             destroy = false;
-
         }
         if (Input.GetKeyDown(KeyCode.E) && inrange == true)
         {
@@ -90,6 +101,13 @@ public class BearControl : MonoBehaviour
         {
             DBpotential -= 1;
             DBtarget = null;
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "inviroment")
+        {
+            this.gameObject.transform.GetChild(0).GetComponent<BearPushPull>().envo = true;
         }
     }
 }
