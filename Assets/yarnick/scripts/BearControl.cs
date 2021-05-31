@@ -15,6 +15,9 @@ public class BearControl : MonoBehaviour
     private GameObject DB,DBtarget;
     int DBpotential;
     public bool inrange, destroy;
+
+
+
     void Start()
     {
         
@@ -23,6 +26,15 @@ public class BearControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+
+
+
+
+
+
+
         if (DBpotential ==4)
         {
             destroy = true;
@@ -30,7 +42,6 @@ public class BearControl : MonoBehaviour
         else
         {
             destroy = false;
-
         }
         if (Input.GetKeyDown(KeyCode.E) && inrange == true)
         {
@@ -92,4 +103,5 @@ public class BearControl : MonoBehaviour
             DBtarget = null;
         }
     }
+    
 }
