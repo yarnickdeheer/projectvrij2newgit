@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{432ce768-dcc2-492d-938a-cdee039c9620}">
+		<property name="name">
+			<value>Viool_Noot</value>
+		</property>
+		<relationship name="folder">
+			<destination>{229ddcac-0396-486c-a813-473d18e85132}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{ab3f13b3-b8c4-436d-91e5-a95c5350167c}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{ab3f13b3-b8c4-436d-91e5-a95c5350167c}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>4</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>A</value>
+			<value>C</value>
+			<value>E</value>
+			<value>G</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
