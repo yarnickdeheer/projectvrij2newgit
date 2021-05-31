@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{e3f11f10-a9e7-498c-a7e8-9f97b4750e57}">
+		<property name="name">
+			<value>Noot</value>
+		</property>
+		<relationship name="folder">
+			<destination>{229ddcac-0396-486c-a813-473d18e85132}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{dd4bc10b-80b2-4324-ab48-640dc9b5665f}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{dd4bc10b-80b2-4324-ab48-640dc9b5665f}">
+		<property name="maximum">
+			<value>4</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>70</value>
+		</property>
+	</object>
+</objects>
