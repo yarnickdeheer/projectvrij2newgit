@@ -122,7 +122,7 @@ public class pcontroller : MonoBehaviour
         float Vertical = Input.GetAxis("Vertical") * Speed * Time.deltaTime;
 
 
-        Vector3 Movement = Cam.transform.right * Horizontal + Cam.transform.forward * Vertical;
+        Vector3 Movement = Cam.transform.right * Horizontal + this.gameObject.transform.forward * Vertical *-1;
         Controller.Move(Movement);
         if (Movement.magnitude != 0f)
         {
