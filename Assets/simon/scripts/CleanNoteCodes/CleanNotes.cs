@@ -65,12 +65,13 @@ public class CleanNotes : MonoBehaviour
 
     void UpdateNoteOnScreen(int whatNote)
     {
-        Instantiate(NotePrefabs[whatNote], NoteStartLoc[whatNote], new Quaternion(0, 0, 0, 0), canvas.transform);
+        if (NotePrefabs.Length > 0)
+            Instantiate(NotePrefabs[whatNote], NoteStartLoc[whatNote], new Quaternion(0, 0, 0, 0), canvas.transform);
     }
 
     public void cleanLastPlayedNotes(List<int> played)
     {
-        while(played.Count > 5)
+        while(played.Count > 4)
         {
             played.RemoveAt(0);
         }
