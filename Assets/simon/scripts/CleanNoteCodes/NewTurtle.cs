@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class NewTurtle : MonoBehaviour
 {
+    //ok ik moet dus een path kunnen maken van transforms
+    //ik kan recht van punt naar punt doen en
+    //van punt naar punt maar met een bocht erin
+    //Dat doe ik door tussen de punten een transform te zetten en te zeggen dat dat de curvature is
+
     private CleanNotes notes;
 
     private List<int> privateNoteList;
