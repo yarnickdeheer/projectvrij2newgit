@@ -9,7 +9,7 @@ public class RouteFollow : MonoBehaviour
     private Transform[] routes;
 
     private int routeToGo;
-
+    
     private float tParam;
 
     private Vector3 objectPosition;
@@ -23,10 +23,21 @@ public class RouteFollow : MonoBehaviour
     [Range(-2.0f, 2.0f)]
     public float sideToSide;
 
+    private CleanNotes notes;
+
+    private List<int> privateNoteList;
+
+    //public int[] forwards;
+    //public int[] backwards;
+    public int[] right;
+    public int[] left;
+
     // Start is called before the first frame update
 
     void Start()
     {
+        privateNoteList = new List<int>();
+        notes = FindObjectOfType<CleanNotes>();
         routeToGo = 0;
         tParam = 0f;
         speedModifier = 0.5f;
@@ -49,6 +60,40 @@ public class RouteFollow : MonoBehaviour
 
         //objectPosition = Mathf.Pow(1 - tParam, 3) * p0 + 3 * Mathf.Pow(1 - tParam, 2) * tParam * p1 + 3 * (1 - tParam) * Mathf.Pow(tParam, 2) * p2 + Mathf.Pow(tParam, 3) * p3;
         //transform.position = objectPosition;
+
+        if (notes.checkNoteInput() > -1)
+            privateNoteList.Add(notes.checkNoteInput());
+
+        notes.cleanLastPlayedNotes(privateNoteList);
+        Debug.Log(privateNoteList[0]);
+
+        int correctInput = goThroughOptions(new int[][] { right, left });
+        switch (correctInput)
+        {
+            case -1:
+                break;
+
+            case 0:
+                sideToSide += Time.deltaTime;
+                //go right
+                break;
+
+            case 1:
+                sideToSide -= Time.deltaTime;
+                //go left
+                break;
+
+                //case 2:
+                //    //go right
+                //    break;
+
+                //case 3:
+                //    //go left
+                //    break;
+
+        }
+
+        sideToSide = Mathf.Clamp(sideToSide, -2f, 2f);
     }
 
     public static float BezierSingleLength(Vector3[] points)
@@ -85,6 +130,27 @@ public class RouteFollow : MonoBehaviour
         bl[3] = br[0];
 
         return BezierSingleLength(bl) + BezierSingleLength(br);
+    }
+
+        int goThroughOptions(int[][] options)
+    {
+        for (int k = 0; k < options.Length; k++)
+        {
+            for (int i = 0; i < privateNoteList.Count; i++)
+            {
+                if(i > options[k].Length - 2)
+                {
+                    return k;
+                }
+
+                if(options[k][i] != privateNoteList[i])
+                {
+                    break;
+                }
+            }
+        }
+
+        return -1;
     }
 
 
@@ -135,5 +201,11 @@ public class RouteFollow : MonoBehaviour
             routeToGo = 0;
         }
         coroutineAllowed = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //if(collision is een steen)
+        //sterf
     }
 }
