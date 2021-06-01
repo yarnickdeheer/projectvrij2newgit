@@ -103,11 +103,5 @@ public class BearControl : MonoBehaviour
             DBtarget = null;
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "inviroment")
-        {
-            this.gameObject.transform.GetChild(0).GetComponent<BearPushPull>().envo = true;
-        }
-    }
+    
 }

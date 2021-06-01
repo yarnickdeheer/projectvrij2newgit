@@ -11,7 +11,7 @@ public class Patrol : MonoBehaviour
     private int destPoint = 0;
     private NavMeshAgent agent;
 
-
+    //public GameObject DB;
 
     void Start()
     {
@@ -49,5 +49,7 @@ public class Patrol : MonoBehaviour
     
         GotoNextPoint();
     }
+
     
+
 }

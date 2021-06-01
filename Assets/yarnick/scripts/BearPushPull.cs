@@ -30,7 +30,7 @@ public class BearPushPull : MonoBehaviour
             this.gameObject.transform.parent.transform.position = Vector3.MoveTowards(this.gameObject.transform.parent.transform.position, new Vector3(tg.x, this.gameObject.transform.parent.transform.position.y, tg.z), speed * Time.deltaTime);
 
         }
-        Debug.Log(this.gameObject.transform.parent.transform.position +"  ======  "+ tg);
+        //Debug.Log(this.gameObject.transform.parent.transform.position +"  ======  "+ tg);
         if (this.gameObject.transform.parent.transform.position == tg && pushpul==true || envo==true )
         {
             Debug.Log(tgobject.transform.parent.gameObject);
@@ -50,12 +50,14 @@ public class BearPushPull : MonoBehaviour
             //dir = dir.normalized;
             if (other.gameObject.name == "down")
             {
+                Debug.Log("PUSH DIE SHIEEET");
+                //other.gameObject.transform.parent.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                //other.gameObject.transform.parent.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
                 if (Input.GetKeyDown(KeyCode.B))
                 {
-                    other.gameObject.transform.parent.GetComponent<Rigidbody>().AddForce(transform.forward * force);//down coll
-                    
-                    
-                   // pushpull(other.gameObject);
+                   // other.gameObject.transform.parent.GetComponent<Rigidbody>().AddForce(transform.forward * force);//down coll
+                                                                                                                    // pushpull(other.gameObject);
+                    pushpull(0, other.gameObject);
 
                 }
                 if (Input.GetKeyDown(KeyCode.N))
@@ -63,51 +65,105 @@ public class BearPushPull : MonoBehaviour
                     //other.gameObject.transform.parent.GetComponent<Rigidbody>().AddForce(transform.forward * force);//down coll
 
 
-                    pushpull(other.gameObject);
+                    pushpull(1, other.gameObject);
 
                 }
             }
             if (other.gameObject.name == "top")
             {
+                Debug.Log("PUSH DIE SHIEEET");
                 if (Input.GetKeyDown(KeyCode.B))
                 {
                     speed = speed * -1;
                     //other.gameObject.transform.parent.GetComponent<Rigidbody>().AddForce(transform.forward * (force * -1));//up coll
-                    pushpull(other.gameObject);
+                    pushpull(0, other.gameObject);
+
+                }
+                if (Input.GetKeyDown(KeyCode.N))
+                {
+                    //other.gameObject.transform.parent.GetComponent<Rigidbody>().AddForce(transform.forward * force);//down coll
+
+
+                    pushpull(1, other.gameObject);
 
                 }
             }
 
             if (other.gameObject.name == "left")
             {
+                Debug.Log("PUSH DIE SHIEEET");
                 if (Input.GetKeyDown(KeyCode.B))
                 {
                     //other.gameObject.transform.parent.GetComponent<Rigidbody>().AddForce(transform.right * force);//rightcoll
-                    pushpull(other.gameObject);
+                    pushpull(0, other.gameObject);
+                }
+                if (Input.GetKeyDown(KeyCode.N))
+                {
+                    //other.gameObject.transform.parent.GetComponent<Rigidbody>().AddForce(transform.forward * force);//down coll
+
+
+                    pushpull(1, other.gameObject);
+
                 }
             }
 
             if (other.gameObject.name == "right")
             {
+                Debug.Log("PUSH DIE SHIEEET");
                 if (Input.GetKeyDown(KeyCode.B))
                 {
                     //other.gameObject.transform.parent.GetComponent<Rigidbody>().AddForce(transform.right * (force * -1));//left coll
-                    pushpull(other.gameObject);
+                    pushpull(0,other.gameObject);
                 }
+                if (Input.GetKeyDown(KeyCode.N))
+                {
+                    //other.gameObject.transform.parent.GetComponent<Rigidbody>().AddForce(transform.forward * force);//down coll
+
+
+                    pushpull(1, other.gameObject);
+
+                }   
             }
            
             
           
         }
+        
        
     }
-    public void pushpull(GameObject pos)
+    private void OnTriggerExit(Collider other)
     {
-        tg = new Vector3(pos.transform.GetChild(0).position.x, this.gameObject.transform.parent.transform.position.y, pos.transform.GetChild(0).position.z);
-        tgobject = pos.transform.parent.gameObject;
+        if (other.gameObject.name == "down" || other.gameObject.name == "top" || other.gameObject.name == "left" || other.gameObject.name == "right")
+        {
+
+            other.gameObject.transform.parent.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            other.gameObject.transform.parent.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePosition;
+        }
+    }
+    public void pushpull(int pp,GameObject other)
+    {
+
+        if (pp == 0)
+        {
+            Debug.Log("pppp pulllling");
+            tg = new Vector3(other.transform.GetChild(0).transform.position.x, this.gameObject.transform.parent.transform.position.y, other.transform.GetChild(0).transform.position.z);
+
+        }
+        else if (pp == 1)
+        {
+            Debug.Log("pppp pushhing");
+            tg = new Vector3(other.transform.GetChild(1).transform.position.x, this.gameObject.transform.parent.transform.position.y, other.transform.GetChild(1).transform.position.z);
+
+        }
+
+
+
+
+        tgobject = other.transform.parent.gameObject;
+        other.transform.parent.parent = this.gameObject.transform.parent.transform;
         float sp = speed;
-        Debug.Log(pos.transform.position + " == " + pos.transform.localPosition);
-        pos.transform.parent.parent = this.gameObject.transform.parent.transform;
+       // Debug.Log(pos.transform.position + " == " + pos.transform.localPosition);
+        
        // Destroy(this.gameObject.transform.parent.gameObject.GetComponent<Patrol>().target.gameObject);
        //this.gameObject.transform.parent.gameObject.GetComponent<NavMeshAgent>().speed = 2;
        // this.gameObject.transform.parent.gameObject.GetComponent<Patrol>().target = pos.transform;
