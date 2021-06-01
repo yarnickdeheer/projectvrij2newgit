@@ -157,6 +157,10 @@ public class RouteFollow : MonoBehaviour
 
     private IEnumerator GoByTheRoute(int routeNum)
     {
+        if (routeToGo > routes.Length - 1)
+        {
+            routeToGo = 0;
+        }
         coroutineAllowed = false;
         float coveredDistance = 0;
 
@@ -198,14 +202,30 @@ public class RouteFollow : MonoBehaviour
 
         if (routeToGo > routes.Length - 1)
         {
-            routeToGo = 0;
+            coroutineAllowed = false;
         }
-        coroutineAllowed = true;
+        else
+        {
+            coroutineAllowed = true;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         //if(collision is een steen)
         //sterf
+
+        if(collision.gameObject.tag == "Player")
+        {
+            collision.transform.SetParent(transform);
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.transform.SetParent(null);
+        }
     }
 }
