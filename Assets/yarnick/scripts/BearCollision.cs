@@ -21,9 +21,9 @@ public class BearCollision : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "enviroment")
+        if (collision.gameObject.layer == 12)
         {
-            Debug.Log("basinga");
+            //SDebug.Log("basinga");
             bear.GetComponent<BearPushPull>().envo = true;
             nav.GetComponent<NavMeshAgent>().speed = 0;
         }

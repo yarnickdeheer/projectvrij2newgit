@@ -28,9 +28,9 @@ public class MoveAbleObject : MonoBehaviour
     IEnumerator wait()
     {
         this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
-        rb.constraints = RigidbodyConstraints.None;
+       // rb.constraints = RigidbodyConstraints.None;
         yield return new WaitForSeconds(2);
         this.gameObject.tag = "ground";
-        rb.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
+       // rb.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
     }
 }

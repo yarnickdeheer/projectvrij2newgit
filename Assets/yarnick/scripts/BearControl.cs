@@ -18,9 +18,17 @@ public class BearControl : MonoBehaviour
 
 
 
+    private CleanNotes notes;
+
+    //public int[] forwards;
+    //public int[] backwards;
+    public int[] rightup;
+    private List<int> privateNoteList;
+
     void Start()
     {
-        
+        privateNoteList = new List<int>();
+        notes = FindObjectOfType<CleanNotes>();
     }
 
     // Update is called once per frame
@@ -28,42 +36,106 @@ public class BearControl : MonoBehaviour
     {
 
 
+        if (notes.checkNoteInput() > -1)
+            privateNoteList.Add(notes.checkNoteInput());
 
+        //cleanLastPlayedNotes(privateNoteList);
+        Debug.Log(privateNoteList[0]);
 
-
-
-
-
-
-        if (DBpotential ==4)
+        int correctInput = goThroughOptions(new int[][] { rightup});
+        if (inrange == true)
         {
-            destroy = true;
+            switch (correctInput)
+            {
+                case -1:
+                    break;
+
+                case 0:
+                    //follow
+
+                    bear.speed = 3.5f;
+                    Destroy(ss);
+                    ss = Instantiate(target, target.transform.position, Quaternion.identity);
+
+                    bear.gameObject.GetComponent<Patrol>().target = ss.transform;
+                    bear.gameObject.GetComponent<MeshRenderer>().material = green;
+                    jump.transform.localScale = new Vector3(1, 5, 1);
+                    jump.tag = "ground";
+                    break;
+
+            }
         }
-        else
+
+
+
+
+
+
+        //    if (DBpotential ==4)
+        //{
+        //    destroy = true;
+        //}
+        //else
+        //{
+        //    destroy = false;
+        //}
+        //if (Input.GetKeyDown(KeyCode.E) && inrange == true)
+        //{
+        //    bear.speed = 3.5f;
+        //    Destroy(ss);
+        //    ss =  Instantiate(target, target.transform.position, Quaternion.identity);
+            
+        //    bear.gameObject.GetComponent<Patrol>().target = ss.transform;
+        //    bear.gameObject.GetComponent<MeshRenderer>().material = green;
+        //    jump.transform.localScale = new Vector3(1, 5, 1);
+        //    jump.tag = "ground";
+        //}
+        //if (Input.GetKeyDown(KeyCode.R) && inrange == true)
+        //{
+        //    // jump active
+        //    bear.gameObject.GetComponent<MeshRenderer>().material = red;
+        //    jump.transform.localScale = new Vector3(1,1,1);
+        //    jump.tag = "ground";
+        //}
+        //if (Input.GetKeyDown(KeyCode.V) && destroy == true)
+        //{
+        //    DB.GetComponent<Patrol>().target = DBtarget.transform;
+        //    DB.GetComponent<DestroyBear>().target = DBtarget;
+        //}
+
+        if (privateNoteList.Count == 4)
         {
-            destroy = false;
+            cleanLastPlayedNotes(privateNoteList);
         }
-        if (Input.GetKeyDown(KeyCode.E) && inrange == true)
+    }
+
+
+    int goThroughOptions(int[][] options)
+    {
+        for (int k = 0; k < options.Length; k++)
         {
-            bear.speed = 3.5f;
-            Destroy(ss);
-            ss =  Instantiate(target, target.transform.position, Quaternion.identity);
-            bear.gameObject.GetComponent<Patrol>().target = ss.transform;
-            bear.gameObject.GetComponent<MeshRenderer>().material = green;
-            jump.transform.localScale = new Vector3(1, 5, 1);
-            jump.tag = "ground";
+            for (int i = 0; i < privateNoteList.Count; i++)
+            {
+                if (i > options[k].Length - 2)
+                {
+                    return k;
+                }
+
+                if (options[k][i] != privateNoteList[i])
+                {
+                    break;
+                }
+            }
         }
-        if (Input.GetKeyDown(KeyCode.R) && inrange == true)
+
+        return -1;
+    }
+
+    public void cleanLastPlayedNotes(List<int> played)
+    {
+        while (privateNoteList.Count == 4)
         {
-            // jump active
-            bear.gameObject.GetComponent<MeshRenderer>().material = red;
-            jump.transform.localScale = new Vector3(1,1,1);
-            jump.tag = "ground";
-        }
-        if (Input.GetKeyDown(KeyCode.V) && destroy == true)
-        {
-            DB.GetComponent<Patrol>().target = DBtarget.transform;
-            DB.GetComponent<DestroyBear>().target = DBtarget;
+            privateNoteList.Clear();
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -71,8 +143,13 @@ public class BearControl : MonoBehaviour
 
         if (other.gameObject.tag == "bear")
         {
+            Debug.Log("bbbb" + other.gameObject.name);
             inrange = true;
-        } else if (other.gameObject.tag == "destroybear")
+            ss.GetComponent<BearTarget>().bear = other.gameObject.GetComponent<NavMeshAgent>();
+            bear = other.gameObject.GetComponent<NavMeshAgent>();
+
+        }
+        else if (other.gameObject.tag == "destroybear")
         {
             DB = other.gameObject;
             DBpotential += 1;
@@ -81,10 +158,24 @@ public class BearControl : MonoBehaviour
         {
             DBpotential += 1;
             DBtarget = other.gameObject;
-            
+
         }
 
 
+    }
+
+
+
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "bear")
+        {
+         
+            ss.GetComponent<BearTarget>().bear = other.gameObject.GetComponent<NavMeshAgent>();
+            bear = other.gameObject.GetComponent<NavMeshAgent>();
+
+        }
     }
     private void OnTriggerExit(Collider other)
     {
