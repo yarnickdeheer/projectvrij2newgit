@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMOD;
+using FMODUnity;
 
 public class CleanNotes : MonoBehaviour
 {
@@ -15,6 +17,9 @@ public class CleanNotes : MonoBehaviour
     private Canvas canvas;
     public Vector3[] NoteStartLoc;
 
+    public StudioEventEmitter noteHandler;
+    int fmodNote = -2;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -27,6 +32,34 @@ public class CleanNotes : MonoBehaviour
     {
         //hier checken we voor input
         int noteThisUpdate = checkNoteInput();
+        switch (noteThisUpdate)
+        {
+            case -1:
+                break;
+
+            case 0:
+                break;
+
+            case 1:
+                break;
+
+            case 2:
+                break;
+
+            case 3:
+                break;
+        }
+
+
+        if (checkNoteKeyLifted() == fmodNote || fmodNote == -2)
+        {
+            fmodNote = noteThisUpdate;
+        }
+
+        noteHandler.SetParameter("Noot", fmodNote + 1, false);
+        if (!noteHandler.IsPlaying())
+            noteHandler.Play();
+        
         
         //en als er input was, geven we dat door aan een andere functie die ze op het scherm zet
         if (noteThisUpdate >= 0)
@@ -58,6 +91,31 @@ public class CleanNotes : MonoBehaviour
         if (Input.GetKeyDown(fourthNoteInput))
         {
             return 3; 
+        }
+
+        return -1;
+    }
+
+    public int checkNoteKeyLifted()
+    {
+        if (Input.GetKeyUp(firstNoteInput))
+        {
+            return 0;
+        }
+
+        if (Input.GetKeyUp(secondNoteInput))
+        {
+            return 1;
+        }
+
+        if (Input.GetKeyUp(thirdNoteInput))
+        {
+            return 2;
+        }
+
+        if (Input.GetKeyUp(fourthNoteInput))
+        {
+            return 3;
         }
 
         return -1;
