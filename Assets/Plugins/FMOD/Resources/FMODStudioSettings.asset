@@ -407,9 +407,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SwitchSettingsMigration: 1
   HasSourceProject: 0
-  HasPlatforms: 1
-  sourceProjectPath: 
-  sourceBankPath: FMODassets
+  HasPlatforms: 0
+  sourceProjectPath: FMODassets/Desktop/Aria.fspro
+  sourceBankPath: FMODassets/Desktop/Build/Desktop
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -419,7 +419,7 @@ MonoBehaviour:
   EncryptionKey: 
   ImportType: 0
   TargetAssetPath: FMODBanks
-  TargetBankFolder: Desktop
+  TargetBankFolder: Build
   LoggingLevel: 2
   SpeakerModeSettings: []
   SampleRateSettings: []
