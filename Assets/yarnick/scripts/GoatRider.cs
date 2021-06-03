@@ -103,7 +103,7 @@ public class GoatRider : MonoBehaviour
             privateNoteList.Add(notes.checkNoteInput());
 
         //cleanLastPlayedNotes(privateNoteList);
-        Debug.Log(privateNoteList[0]);
+       // Debug.Log(privateNoteList[0]);
 
         int correctInput = goThroughOptions(new int[][] { rightup, leftup, rightdown, leftdown });
         if (mounted == true)
