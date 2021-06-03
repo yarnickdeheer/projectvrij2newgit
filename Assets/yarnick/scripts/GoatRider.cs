@@ -23,19 +23,42 @@ public class GoatRider : MonoBehaviour
     public float tijd;
     public Text timer;
     public bool top;
+
+
+
+
+
+
+    private CleanNotes notes;
+
+    //public int[] forwards;
+    //public int[] backwards;
+    public int[] rightup;
+    public int[] leftup;
+
+    public int[] rightdown;
+    public int[] leftdown;
+    private List<int> privateNoteList;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        privateNoteList = new List<int>();
+        notes = FindObjectOfType<CleanNotes>();
     }
+
+
+
 
     // Update is called once per frame
     void Update()
     {
+   
+
         if (mounted == true && tijd > 0)
         {
             // start timer when mounted
-            tijd -= Time.deltaTime;
+            //tijd -= Time.deltaTime;
             timer.text = tijd.ToString("0");
 
         }else if (mounted == true && tijd < 0)
@@ -72,31 +95,117 @@ public class GoatRider : MonoBehaviour
 
         }
 
+
+
+
+
+        if (notes.checkNoteInput() > -1)
+            privateNoteList.Add(notes.checkNoteInput());
+
+        //cleanLastPlayedNotes(privateNoteList);
+        Debug.Log(privateNoteList[0]);
+
+        int correctInput = goThroughOptions(new int[][] { rightup, leftup, rightdown, leftdown });
         if (mounted == true)
         {
+            switch (correctInput)
+            {
+                
+                case -1:
+                    break;
 
-            if (Input.GetKeyDown(KeyCode.Alpha1) && pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRU[0] != null)
-            {
-                // rechts boven
-                MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRU[0].transform);
+                case 0:
+                    //go right
+                    int a = 0;
+                    if (pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRU[0] != null && a ==0)
+                    {
+                        // rechts boven
+                        MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRU[0].transform);
+                        //a++;
+                    }
+                    a = 0;
+                    //cleanLastPlayedNotes(privateNoteList);
+
+                    break;
+
+                case 1:
+                    //go left
+                    int b = 0;
+                    if (pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLU[0] != null && b == 0)
+                    {
+                        // links boven
+                        MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLU[0].transform);
+                    }
+                    b = 0;
+                    //cleanLastPlayedNotes(privateNoteList);
+                    break;
+
+                case 2:
+                    //    //go right
+                    int c = 0;
+                    if (pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRD[0] != null && c == 0)
+                    {
+                        // rechts onder
+                        MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRD[0].transform);
+                    }
+                    c = 0;
+                    //cleanLastPlayedNotes(privateNoteList);
+                    break;
+
+                case 3:
+                    //    //go left
+                    int d = 0;
+                    if (pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLD[0] != null && d == 0)
+                    {
+                        // links onder
+                        MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLD[0].transform);
+                    }
+                    d = 0;
+                    //cleanLastPlayedNotes(privateNoteList);
+                    break;
+
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha2) && pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLU[0] != null)
+
+            if(privateNoteList.Count == 4)
             {
-                // links boven
-                MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLU[0].transform);
+                cleanLastPlayedNotes(privateNoteList);
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha3) && pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRD[0] != null)
-            {
-                // rechts onder
-                MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRD[0].transform);
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha4) && pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLD[0] != null)
-            {
-                // links onder
-                MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLD[0].transform);
-            }
+
 
         }
+
+
+
+
+
+
+
+
+        //if (mounted == true)
+        //{
+
+        //    if (Input.GetKeyDown(KeyCode.Alpha1) && pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRU[0] != null)
+        //    {
+        //        // rechts boven
+        //        MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRU[0].transform);
+        //    }
+        //    else if (Input.GetKeyDown(KeyCode.Alpha2) && pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLU[0] != null)
+        //    {
+        //        // links boven
+        //        MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLU[0].transform);
+        //    }
+        //    else if (Input.GetKeyDown(KeyCode.Alpha3) && pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRD[0] != null)
+        //    {
+        //        // rechts onder
+        //        MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRD[0].transform);
+        //    }
+        //    else if (Input.GetKeyDown(KeyCode.Alpha4) && pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLD[0] != null)
+        //    {
+        //        // links onder
+        //        MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLD[0].transform);
+        //    }
+
+        //}
         if ( pos[i].gameObject.GetComponent<GoatPlatform>().end == true && i != 0 )
             {
             if (top == true)
@@ -140,7 +249,34 @@ public class GoatRider : MonoBehaviour
         }
         
     }
+    int goThroughOptions(int[][] options)
+    {
+        for (int k = 0; k < options.Length; k++)
+        {
+            for (int i = 0; i < privateNoteList.Count; i++)
+            {
+                if (i > options[k].Length - 2)
+                {
+                    return k;
+                }
 
+                if (options[k][i] != privateNoteList[i])
+                {
+                    break;
+                }
+            }
+        }
+
+        return -1;
+    }
+
+    public void cleanLastPlayedNotes(List<int> played)
+    {
+        while (privateNoteList.Count == 4)
+        {
+            privateNoteList.Clear();
+        }
+    }
     private void MoveToRUPlatform(Transform platformTransform)
     {
         int f = pos[i].gameObject.GetComponent<GoatPlatform>().cost;
