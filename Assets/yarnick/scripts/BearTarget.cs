@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 public class BearTarget : MonoBehaviour
 {
-   [HideInInspector] public NavMeshAgent bear;
+   public NavMeshAgent bear;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "target")

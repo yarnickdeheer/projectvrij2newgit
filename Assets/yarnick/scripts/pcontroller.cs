@@ -161,6 +161,7 @@ public class pcontroller : MonoBehaviour
 
             anim.SetBool("sidemovement", false);
             anim.SetBool("backmovement", false);
+            anim.SetTrigger("anim");
             anim.SetBool("frontmovement", true);
             //this.GetComponent<SpriteRenderer>().sprite = sprites[0];
         }
