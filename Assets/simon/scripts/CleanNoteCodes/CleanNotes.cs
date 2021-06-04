@@ -17,7 +17,7 @@ public class CleanNotes : MonoBehaviour
     private Canvas canvas;
     public Vector3[] NoteStartLoc;
 
-    //public StudioEventEmitter noteHandler;
+    public StudioEventEmitter noteHandler;
     int fmodNote = -2;
 
     // Start is called before the first frame update
@@ -32,33 +32,16 @@ public class CleanNotes : MonoBehaviour
     {
         //hier checken we voor input
         int noteThisUpdate = checkNoteInput();
-        switch (noteThisUpdate)
-        {
-            case -1:
-                break;
-
-            case 0:
-                break;
-
-            case 1:
-                break;
-
-            case 2:
-                break;
-
-            case 3:
-                break;
-        }
-
+   
 
         if (checkNoteKeyLifted() == fmodNote || fmodNote == -2)
         {
             fmodNote = noteThisUpdate;
         }
 
-        //noteHandler.SetParameter("Noot", fmodNote + 1, false);
-        //if (!noteHandler.IsPlaying())
-        //    noteHandler.Play();
+        noteHandler.SetParameter("Noot", fmodNote + 1, false);
+        if (!noteHandler.IsPlaying())
+            noteHandler.Play();
         
         
         //en als er input was, geven we dat door aan een andere functie die ze op het scherm zet
