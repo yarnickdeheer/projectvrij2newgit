@@ -17,7 +17,7 @@ public class Rocks : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionstay(Collision collision)
     {
         Debug.Log("hit anything" + " " + collision.gameObject.tag +"  dasda" + turtls.ride);
          
@@ -35,3 +35,5 @@ public class Rocks : MonoBehaviour
         }
     }
 }
+ 
+ 
