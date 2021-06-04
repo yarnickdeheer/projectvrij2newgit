@@ -24,7 +24,7 @@ public class GoatRider : MonoBehaviour
     public Text timer;
     public bool top;
 
-
+    private Transform oldParent;
 
 
 
@@ -45,6 +45,7 @@ public class GoatRider : MonoBehaviour
     {
         privateNoteList = new List<int>();
         notes = FindObjectOfType<CleanNotes>();
+        oldParent = this.transform.parent;
     }
 
 
@@ -103,7 +104,9 @@ public class GoatRider : MonoBehaviour
             privateNoteList.Add(notes.checkNoteInput());
 
         //cleanLastPlayedNotes(privateNoteList);
-       // Debug.Log(privateNoteList[0]);
+        // Debug.Log(privateNoteList[0]);
+
+
 
         int correctInput = goThroughOptions(new int[][] { rightup, leftup, rightdown, leftdown });
         if (mounted == true)
@@ -116,51 +119,64 @@ public class GoatRider : MonoBehaviour
 
                 case 0:
                     //go right
-                    int a = 0;
-                    if (pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRU[0] != null && a ==0)
+                  
+                    if (pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRU.Length != 0)
                     {
                         // rechts boven
                         MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRU[0].transform);
                         //a++;
                     }
-                    a = 0;
+                    else
+                    {
+                        break;
+                    }     
                     //cleanLastPlayedNotes(privateNoteList);
 
                     break;
 
                 case 1:
                     //go left
-                    int b = 0;
-                    if (pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLU[0] != null && b == 0)
+                    if (pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLU.Length != 0)
                     {
                         // links boven
                         MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLU[0].transform);
                     }
-                    b = 0;
+
+                    else
+                    {
+                        break;
+                    }
                     //cleanLastPlayedNotes(privateNoteList);
                     break;
 
                 case 2:
                     //    //go right
-                    int c = 0;
-                    if (pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRD[0] != null && c == 0)
+                    if (pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRD.Length != 0)
                     {
                         // rechts onder
                         MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRD[0].transform);
                     }
-                    c = 0;
+
+                    else
+                    {
+                        break;
+                    }
                     //cleanLastPlayedNotes(privateNoteList);
                     break;
 
                 case 3:
                     //    //go left
-                    int d = 0;
-                    if (pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLD[0] != null && d == 0)
+               
+                    if (pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLD.Length != 0)
                     {
                         // links onder
                         MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLD[0].transform);
                     }
-                    d = 0;
+
+                    else
+                    {
+                        break; 
+                    }
                     //cleanLastPlayedNotes(privateNoteList);
                     break;
 
@@ -212,13 +228,13 @@ public class GoatRider : MonoBehaviour
             {
                 goatEnd = pos[i];
                 mounted = false;
-                player.transform.parent = null;
+                this.transform.parent = oldParent;
                 cam.SetActive(false);
                 pcam.SetActive(true);
-                player.GetComponent<pcontroller>().enabled = true;
-                player.transform.position = new Vector3(pos[i].position.x, pos[i].position.y + 0.2f, pos[i].position.z);
+                player.GetComponent<pcontroller>().enabled = true; // deze is het niet
+                player.transform.position = new Vector3(pos[i].position.x, pos[i].position.y, pos[i].position.z);//deze is het niet
                 player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationZ;
+                player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
                 timer.text = tijd.ToString(" ");
                 tijd = 5;
                 top = false;
@@ -226,6 +242,19 @@ public class GoatRider : MonoBehaviour
                 pos.Add(goatStart);
                 i = 0;
 
+                //maincam.gameObject.SetActive(false);
+                //turtlecam.gameObject.SetActive(true);
+                //buddy.GetComponent<BuddyMovement>().cam = turtlecam.gameObject;
+                //this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+                //this.transform.parent = other.transform.parent;
+                //this.transform.position = other.transform.position;
+                //if (other.gameObject.tag == "turtle" && ride == true)
+                //{
+                //    this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                //    this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+                //    this.transform.parent = oldParent;
+                //    tut = false;
+                //}
             }
             else
             {
@@ -234,10 +263,10 @@ public class GoatRider : MonoBehaviour
                 player.transform.parent = null;
                 cam.SetActive(false);
                 pcam.SetActive(true);
-                player.GetComponent<pcontroller>().enabled = true;
-                player.transform.position = new Vector3(pos[i].position.x, pos[i].position.y + 0.2f, pos[i].position.z);
+                player.GetComponent<pcontroller>().enabled = true;//deze is het niet
+                player.transform.position = new Vector3(pos[i].position.x, pos[i].position.y + 0.2f, pos[i].position.z);//deze is het niet
                 player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationZ;
+                player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
                 timer.text = tijd.ToString(" ");
                 tijd = 5;
                 top = true;
@@ -298,10 +327,10 @@ public class GoatRider : MonoBehaviour
                 mounted = true;
                 cam.SetActive(true);
                 pcam.SetActive(false);
-                player.GetComponent<pcontroller>().enabled = false;
-                
+                player.GetComponent<pcontroller>().enabled = false;// deze is het niet
+
                 player.transform.parent = goat.transform;
-                player.transform.localPosition = new Vector3(0, goat.transform.position.y + 90, 0);
+                player.transform.localPosition = new Vector3(0, goat.transform.position.y + 90, 0);//deze is het niet
 
                 player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
                 tijd = 5;

@@ -13,6 +13,8 @@ TagManager:
   - bear
   - moveable
   - enviroment
+  - turtle
+  - end
   layers:
   - Default
   - TransparentFX
@@ -28,7 +30,7 @@ TagManager:
   - move
   - enviroment
   - Post P Two
-  - 
+  - turtle
   - 
   - 
   - 

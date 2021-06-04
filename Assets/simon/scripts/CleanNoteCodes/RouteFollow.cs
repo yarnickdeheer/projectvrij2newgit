@@ -6,7 +6,7 @@ public class RouteFollow : MonoBehaviour
 {
     [SerializeField]
 
-    private Transform[] routes;
+    public Transform[] routes;
 
     private int routeToGo;
     
@@ -15,7 +15,7 @@ public class RouteFollow : MonoBehaviour
     private Vector3 objectPosition;
 
     private float speedModifier;
-    private float speedInDistance;
+    public float speedInDistance;
 
     private bool coroutineAllowed;
 
@@ -41,7 +41,7 @@ public class RouteFollow : MonoBehaviour
         routeToGo = 0;
         tParam = 0f;
         speedModifier = 0.5f;
-        speedInDistance = 2f;
+        speedInDistance = 0f;
         coroutineAllowed = true;
     }
 
@@ -215,17 +215,17 @@ public class RouteFollow : MonoBehaviour
         //if(collision is een steen)
         //sterf
 
-        if(collision.gameObject.tag == "Player")
-        {
-            collision.transform.SetParent(transform);
-        }
+        //if(collision.gameObject.tag == "Player")
+        //{
+        //    collision.transform.SetParent(transform);
+        //}
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            collision.transform.SetParent(null);
-        }
+        //if (collision.gameObject.tag == "Player")
+        //{
+        //    collision.transform.SetParent(null);
+        //}
     }
 }
