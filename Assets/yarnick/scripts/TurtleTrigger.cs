@@ -30,16 +30,15 @@ public class TurtleTrigger : MonoBehaviour
             ///this.transform.localScale = oldScale;
            
         }
-        if (turtle.gameObject.transform.position == turtle.routes[4].GetChild(3).transform.position)
+        if (turtle.gameObject.transform.position == turtle.routes[3].GetChild(3).transform.position)
         {
             Debug.Log("end of the ride sadge");
             
         }
     }
-
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "turtle" && ride == false)
+        if (other.gameObject.CompareTag("turtle") && ride == false)
         {
             maincam.gameObject.SetActive(false);
             turtlecam.gameObject.SetActive(true);
@@ -53,9 +52,17 @@ public class TurtleTrigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "turtle" && ride == false)
+        if (other.gameObject.CompareTag("turtle") && ride == false)
         {
             speed = 2;
+            maincam.gameObject.SetActive(false);
+            turtlecam.gameObject.SetActive(true);
+            buddy.GetComponent<BuddyMovement>().cam = turtlecam.gameObject;
+            this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+            this.transform.parent = other.transform.parent;
+            this.transform.position = other.transform.position;
+
+            tut = true;
         }
             if (other.gameObject.tag == "end" && ride == false)
         {
@@ -70,7 +77,7 @@ public class TurtleTrigger : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "turtle" && ride == true)
+        if (other.gameObject.CompareTag("turtle") && ride == true)
         {
             this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;

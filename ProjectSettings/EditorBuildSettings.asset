@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Tommy/tersteru 2.unity
+    guid: 8a15d2085e4c4ac4e94fc30287c24870
   m_configObjects: {}

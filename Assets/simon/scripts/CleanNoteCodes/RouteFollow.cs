@@ -65,7 +65,7 @@ public class RouteFollow : MonoBehaviour
             privateNoteList.Add(notes.checkNoteInput());
 
         notes.cleanLastPlayedNotes(privateNoteList);
-        Debug.Log(privateNoteList[0]);
+        ///Debug.Log(privateNoteList[0]);
 
         int correctInput = goThroughOptions(new int[][] { right, left });
         switch (correctInput)
