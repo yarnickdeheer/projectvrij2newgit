@@ -15,6 +15,7 @@ TagManager:
   - enviroment
   - turtle
   - end
+  - rockks
   layers:
   - Default
   - TransparentFX

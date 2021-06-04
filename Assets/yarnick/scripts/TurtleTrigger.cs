@@ -8,9 +8,10 @@ public class TurtleTrigger : MonoBehaviour
     private Transform oldParent;
     bool tut;
     Vector3 oldScale;
-    bool ride;
+    public bool ride;
     public GameObject buddy;
     public Camera maincam, turtlecam;
+    public float speed =2;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +23,11 @@ public class TurtleTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("speed" +  speed);
+        turtle.speedInDistance = speed;
         if (tut == true)
         {
-            this.transform.localScale = oldScale;
+            ///this.transform.localScale = oldScale;
            
         }
         if (turtle.gameObject.transform.position == turtle.routes[4].GetChild(3).transform.position)
@@ -44,14 +47,19 @@ public class TurtleTrigger : MonoBehaviour
             this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
             this.transform.parent = other.transform.parent;
             this.transform.position = other.transform.position;
-            turtle.speedInDistance = 2;
+            
             tut = true;
         }
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "end" && ride == false)
+        if (other.gameObject.tag == "turtle" && ride == false)
         {
+            speed = 2;
+        }
+            if (other.gameObject.tag == "end" && ride == false)
+        {
+            //speed = 0; 
             maincam.gameObject.SetActive(true);
             turtlecam.gameObject.SetActive(false);
             buddy.GetComponent<BuddyMovement>().cam = maincam.gameObject;
@@ -66,8 +74,23 @@ public class TurtleTrigger : MonoBehaviour
         {
             this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-            this.transform.parent = oldParent;
+            this.transform.parent = oldParent; 
             tut = false;
         }
     }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "rockks" && ride == true)
+    //    {
+    //        speed = 0;
+    //    }
+    //}
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "rockks" && ride == true)
+    //    {
+    //        speed = 2;
+    //    }
+    //}
 }
