@@ -12,17 +12,22 @@ public class TurtleTrigger : MonoBehaviour
     public GameObject buddy;
     public Camera maincam, turtlecam;
     public float speed =2;
+    public GameObject player;
+    private Vector3 pos;
 
     // Start is called before the first frame update
     void Start()
     {
-        oldParent = this.transform.parent;
-        oldScale = this.transform.localScale;
+        oldParent = player.transform.parent;
+        oldScale = player.transform.localScale;
+        //pos = new Vector3(this.transform.position.x, this.transform.position.y + 0.2f, this.transform.position.z);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        pos = new Vector3(this.transform.position.x, this.transform.position.y + 0.3f, this.transform.position.z);
         Debug.Log("speed" +  speed);
         turtle.speedInDistance = speed;
         if (tut == true)
@@ -43,25 +48,30 @@ public class TurtleTrigger : MonoBehaviour
             maincam.gameObject.SetActive(false);
             turtlecam.gameObject.SetActive(true);
             buddy.GetComponent<BuddyMovement>().cam = turtlecam.gameObject;
-            this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-            this.transform.parent = other.transform.parent;
-            this.transform.position = other.transform.position;
-            
+            player.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+            player.transform.parent = this.transform.parent;
+            player.transform.position = this.transform.position;
+            player.GetComponent<pcontroller>().enabled = false;
             tut = true;
         }
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("turtle") && ride == false)
+        if (other.gameObject.CompareTag("Player") && ride == false)
         {
             speed = 2;
             maincam.gameObject.SetActive(false);
             turtlecam.gameObject.SetActive(true);
             buddy.GetComponent<BuddyMovement>().cam = turtlecam.gameObject;
-            this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-            this.transform.parent = other.transform.parent;
-            this.transform.position = other.transform.position;
-
+            player.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
+            player.GetComponent<pcontroller>().enabled = false;
+            player.GetComponent<Animator>().SetBool("frontmovement", false);
+            player.GetComponent<Animator>().SetBool("backmovement", false);
+            player.GetComponent<Animator>().SetBool("sidemovement", false);
+            //player.GetComponent<Animator>().SetBool("viool", false);
+            player.transform.parent = this.transform.parent;
+            player.transform.position = pos;
+            player.transform.eulerAngles = new Vector3(0,0,0);
             tut = true;
         }
             if (other.gameObject.tag == "end" && ride == false)
@@ -71,17 +81,18 @@ public class TurtleTrigger : MonoBehaviour
             turtlecam.gameObject.SetActive(false);
             buddy.GetComponent<BuddyMovement>().cam = maincam.gameObject;
             ride = true;
-            this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-            this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+            player.GetComponent<pcontroller>().enabled = true;
+            player.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            player.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("turtle") && ride == true)
+        if (other.gameObject.CompareTag("Player") && ride == true)
         {
-            this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-            this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-            this.transform.parent = oldParent; 
+            player.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            player.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+            player.transform.parent = oldParent; 
             tut = false;
         }
     }

@@ -17,6 +17,22 @@ public class Rocks : MonoBehaviour
     {
         
     }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "rockks" && turtls.ride == false)
+        {
+            Debug.Log("hit rockks");
+            turtls.speed = 0;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "rockks" && turtls.ride == false)
+        {
+            turtls.speed = 2;
+        }
+    }
+
     private void OnCollisionstay(Collision collision)
     {
         Debug.Log("hit anything" + " " + collision.gameObject.tag +"  dasda" + turtls.ride);
