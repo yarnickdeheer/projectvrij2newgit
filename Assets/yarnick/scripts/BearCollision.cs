@@ -23,7 +23,7 @@ public class BearCollision : MonoBehaviour
     {
         if (collision.gameObject.layer == 12)
         {
-            //SDebug.Log("basinga");
+            Debug.Log("envo");
             bear.GetComponent<BearPushPull>().envo = true;
             nav.GetComponent<NavMeshAgent>().speed = 0;
         }

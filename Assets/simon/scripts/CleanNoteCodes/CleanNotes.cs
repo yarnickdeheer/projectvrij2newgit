@@ -32,24 +32,7 @@ public class CleanNotes : MonoBehaviour
     {
         //hier checken we voor input
         int noteThisUpdate = checkNoteInput();
-        switch (noteThisUpdate)
-        {
-            case -1:
-                break;
-
-            case 0:
-                break;
-
-            case 1:
-                break;
-
-            case 2:
-                break;
-
-            case 3:
-                break;
-        }
-
+   
 
         if (checkNoteKeyLifted() == fmodNote || fmodNote == -2)
         {

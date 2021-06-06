@@ -76,7 +76,7 @@ public class pcontroller : MonoBehaviour
                 anim.SetBool("frontmovement", false);
                 anim.SetBool("backmovement", false);
                 anim.SetBool("sidemovement", false);
-                this.GetComponent<SpriteRenderer>().flipX = false;
+                this.GetComponent<SpriteRenderer>().flipX = true;
                 this.GetComponent<SpriteRenderer>().sprite = sprites[3];
             }
             else if (anim.GetBool("sidemovement") == true && this.GetComponent<SpriteRenderer>().flipX == false)
@@ -84,7 +84,7 @@ public class pcontroller : MonoBehaviour
                 anim.SetBool("frontmovement", false);
                 anim.SetBool("backmovement", false);
                 anim.SetBool("sidemovement", false);
-                this.GetComponent<SpriteRenderer>().flipX = true;
+                this.GetComponent<SpriteRenderer>().flipX = false;
                 this.GetComponent<SpriteRenderer>().sprite = sprites[2];
             }
 
