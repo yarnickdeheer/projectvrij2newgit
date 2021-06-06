@@ -6,12 +6,13 @@ using FMODUnity;
 
 public class CleanNotes : MonoBehaviour
 {
-    public List<int> PlayedNotes = new List<int>();
+    public List<int> PlayedNotes;
 
     public KeyCode firstNoteInput;
     public KeyCode secondNoteInput;
     public KeyCode thirdNoteInput;
     public KeyCode fourthNoteInput;
+    private bool canPlayNote = true;
 
     public GameObject[] NotePrefabs;
     private Canvas canvas;
@@ -23,6 +24,7 @@ public class CleanNotes : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        PlayedNotes = new List<int>() { -1, -1, -1, -1 };
         //als we meer canvasses hebben is dit onhandig, maar slepen in de editor is ook weer naar
         canvas = FindObjectOfType<Canvas>();
     }
@@ -37,18 +39,19 @@ public class CleanNotes : MonoBehaviour
         if (checkNoteKeyLifted() == fmodNote || fmodNote == -2)
         {
             fmodNote = noteThisUpdate;
+            canPlayNote = true;
+
         }
 
         noteHandler.SetParameter("Noot", fmodNote + 1, false);
-        if (!noteHandler.IsPlaying())
-            noteHandler.Play();
         
         
         //en als er input was, geven we dat door aan een andere functie die ze op het scherm zet
-        if (noteThisUpdate >= 0)
+        if (noteThisUpdate >= 0 && canPlayNote == true)
         {
             PlayedNotes.Add(noteThisUpdate);
             UpdateNoteOnScreen(noteThisUpdate);
+            canPlayNote = false;
         }
 
         cleanLastPlayedNotes(PlayedNotes);
