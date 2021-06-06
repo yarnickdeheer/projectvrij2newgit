@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="AudioFile" id="{86b7c4db-2c26-47b7-86be-dff764c5f2d4}">
+	<object class="AudioFile" id="{6335158e-8d6f-47f4-94e2-65722455f735}">
 		<property name="assetPath">
-			<value>Footsteps_Step_3.wav</value>
+			<value>ProjVrij2 - Step 7.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<property name="length">
-			<value>1.486077097505669</value>
+			<value>0.3428344671201814</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{850ffda9-55fb-46a6-8ad8-df6e24391562}</destination>
