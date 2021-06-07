@@ -20,7 +20,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -4010710086211196120}
+  - {fileID: 7084441322634256657}
   MinDistance: 0
   MaxDistance: 0
   Length: 48000
@@ -39,7 +39,7 @@ MonoBehaviour:
   Path: FMODassets/Desktop/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637580844253943369
+  lastModified: 637580761862244664
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -123,7 +123,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -4963780328416469924}
+  - {fileID: 3381419361163759592}
   MinDistance: 1
   MaxDistance: 20
   Length: 25411
@@ -150,7 +150,7 @@ MonoBehaviour:
   - {fileID: -5827167703310152323}
   StringsBanks:
   - {fileID: 5663886046333228633}
-  stringsBankWriteTime: 637580844253953347
+  stringsBankWriteTime: 637580761862344410
   cacheVersion: 6
 --- !u!114 &2113289689476177566
 MonoBehaviour:
@@ -172,6 +172,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &3381419361163759592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Alto_Viool/Noot
+  m_EditorClassIdentifier: 
+  Name: Noot
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &5663886046333228633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,9 +207,29 @@ MonoBehaviour:
   Path: FMODassets/Desktop/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637580844253953347
+  lastModified: 637580761862344410
   LoadResult: 0
   FileSizes:
   - Name: 
     Value: 904
+  Exists: 1
+--- !u!114 &7084441322634256657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Achtergrond_Muziek/Situatie
+  m_EditorClassIdentifier: 
+  Name: Situatie
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
