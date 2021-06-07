@@ -40,6 +40,46 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-4855292285884807327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Achtergrond_Muziek/Situatie
+  m_EditorClassIdentifier: 
+  Name: Situatie
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-3301494274065128854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Alto_Viool/Noot
+  m_EditorClassIdentifier: 
+  Name: Noot
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-2495615052759445561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,7 +166,7 @@ MonoBehaviour:
   - {fileID: 7334257938667135104}
   StringsBanks:
   - {fileID: 516492064049336398}
-  stringsBankWriteTime: 637583240709688472
+  stringsBankWriteTime: 637580761862344410
   cacheVersion: 6
 --- !u!114 &205131896831725077
 MonoBehaviour:
@@ -183,7 +223,7 @@ MonoBehaviour:
   Path: FMODassets/Desktop/Build/Desktop/Master.strings.bank
   Name: Build/Desktop/Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637583240709688472
+  lastModified: 637580761862344410
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -229,7 +269,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 205131896831725077}
+  - {fileID: -3301494274065128854}
   MinDistance: 1
   MaxDistance: 20
   Length: 25411
@@ -348,7 +388,7 @@ MonoBehaviour:
   Path: FMODassets/Desktop/Build/Desktop/Master.bank
   Name: Build/Desktop/Master
   StudioPath: bank:/Master
-  lastModified: 637583240709684672
+  lastModified: 637580761862244664
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -372,7 +412,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -7891803079107896896}
+  - {fileID: -4855292285884807327}
   MinDistance: 0
   MaxDistance: 0
   Length: 48000

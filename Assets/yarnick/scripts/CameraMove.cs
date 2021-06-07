@@ -17,7 +17,7 @@ public class CameraMove : MonoBehaviour
     private float currentY = 0.0f;
     public float Xsensivity = 4.0f;
 
-
+    public Light light;
     public float Ysensivity = 4.0f;
     // Start is called before the first frame update
     void Start()
@@ -40,7 +40,9 @@ public class CameraMove : MonoBehaviour
         transform.position = lookAt.position + rotation * Direction;
 
         transform.LookAt(lookAt.position);
+        //Debug.Log(rotation.y + " DSAD" + rotation.y*-1 + "REVERSE");
 
+        //light.intensity += rotation.y;
 
 
     }
