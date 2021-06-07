@@ -18,7 +18,7 @@ public class RouteFollow : MonoBehaviour
     public float speedInDistance;
 
     private bool coroutineAllowed;
-    public TurtleTrigger trigger;
+
 
     [Range(-2.0f, 2.0f)]
     public float sideToSide;
@@ -74,19 +74,12 @@ public class RouteFollow : MonoBehaviour
                 break;
 
             case 0:
-                if (trigger.mounted == true)
-                {
-
-                    sideToSide += Time.deltaTime;
-                }
+                sideToSide += Time.deltaTime;
                 //go right
                 break;
 
             case 1:
-                if (trigger.mounted == true)
-                {
-                    sideToSide -= Time.deltaTime;
-                }
+                sideToSide -= Time.deltaTime;
                 //go left
                 break;
 

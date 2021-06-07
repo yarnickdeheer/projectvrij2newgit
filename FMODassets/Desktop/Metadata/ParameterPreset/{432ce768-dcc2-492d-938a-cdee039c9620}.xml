@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="ParameterPreset" id="{432ce768-dcc2-492d-938a-cdee039c9620}">
 		<property name="name">
-			<value>Viool_Noot</value>
+			<value>Noot</value>
 		</property>
 		<relationship name="folder">
 			<destination>{229ddcac-0396-486c-a813-473d18e85132}</destination>
@@ -16,13 +16,15 @@
 			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>4</value>
+			<value>6</value>
 		</property>
 		<property name="enumerationLabels">
-			<value>A</value>
+			<value>Off</value>
+			<value>Es</value>
+			<value>F</value>
+			<value>As</value>
 			<value>C</value>
-			<value>E</value>
-			<value>G</value>
+			<value>Off</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>

@@ -95,8 +95,6 @@ public class pcontroller : MonoBehaviour
         if (Input.GetButtonDown("Jump") && ground == true)
         {
             Debug.Log("jump");
-            anim.SetBool("viool", false);
-            anim.SetBool("backjump", true);
             ground = false;
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * (gravityValue / 5));
         }
@@ -148,7 +146,6 @@ public class pcontroller : MonoBehaviour
             anim.SetBool("frontmovement", false);
             anim.SetBool("backmovement", false);
             anim.SetBool("sidemovement", true);
-            anim.SetBool("viool", false);
         }
         else if (Input.GetAxisRaw("Horizontal") > 0)
         {
@@ -158,7 +155,6 @@ public class pcontroller : MonoBehaviour
             anim.SetBool("frontmovement", false);
             anim.SetBool("backmovement", false);
             anim.SetBool("sidemovement", true);
-            anim.SetBool("viool", false);
         }
         else if (Input.GetAxisRaw("Vertical") < 0)
         {
@@ -167,7 +163,6 @@ public class pcontroller : MonoBehaviour
             anim.SetBool("backmovement", false);
             anim.SetTrigger("anim");
             anim.SetBool("frontmovement", true);
-            anim.SetBool("viool", false);
             //this.GetComponent<SpriteRenderer>().sprite = sprites[0];
         }
         else if (Input.GetAxisRaw("Vertical") > 0)
@@ -175,7 +170,6 @@ public class pcontroller : MonoBehaviour
 
             anim.SetBool("frontmovement", false);
             anim.SetBool("sidemovement", false);
-            anim.SetBool("viool", false);
             anim.SetBool("backmovement", true);
             //this.GetComponent<SpriteRenderer>().sprite = sprites[1];
         }
@@ -185,8 +179,7 @@ public class pcontroller : MonoBehaviour
     {
         if (collision.gameObject.tag == "ground")
         {
-
-            anim.SetBool("backjump", false);
+           
             ground = true;
         }
     }

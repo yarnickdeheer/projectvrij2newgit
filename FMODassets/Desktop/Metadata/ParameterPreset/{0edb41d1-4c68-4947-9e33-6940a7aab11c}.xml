@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{0edb41d1-4c68-4947-9e33-6940a7aab11c}">
+		<property name="name">
+			<value>Voetstap_Volume</value>
+		</property>
+		<relationship name="folder">
+			<destination>{229ddcac-0396-486c-a813-473d18e85132}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{f34bd206-81d8-43f1-9807-2677d5dfc9c9}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{f34bd206-81d8-43f1-9807-2677d5dfc9c9}">
+		<property name="initialValue">
+			<value>1</value>
+		</property>
+	</object>
+</objects>
