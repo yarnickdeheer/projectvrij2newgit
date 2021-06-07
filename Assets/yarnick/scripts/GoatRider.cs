@@ -56,7 +56,9 @@ public class GoatRider : MonoBehaviour
     {
         if (privateNoteList.Count >= 4)
         {
-            cleanLastPlayedNotes(notes.PlayedNotes);
+
+            cleanLastPlayedNotes(privateNoteList);
+            //cleanLastPlayedNotes(notes.PlayedNotes);
         }
 
         if (mounted == true && tijd > 0)
@@ -187,7 +189,9 @@ public class GoatRider : MonoBehaviour
 
             if(privateNoteList.Count >= 4)
             {
-                cleanLastPlayedNotes(notes.PlayedNotes);
+                //cleanLastPlayedNotes(notes.PlayedNotes);
+
+                cleanLastPlayedNotes(privateNoteList);
             }
 
 
@@ -228,7 +232,7 @@ public class GoatRider : MonoBehaviour
         if ( pos[i].gameObject.GetComponent<GoatPlatform>().end == true && i != 0 )
             {
             privateNoteList.Clear();
-            notes.PlayedNotes.Clear();
+            //notes.PlayedNotes.Clear();
             if (top == true)
             {
                 goatEnd = pos[i];
@@ -309,7 +313,7 @@ public class GoatRider : MonoBehaviour
         while (privateNoteList.Count >= 4)
         {
 
-            notes.PlayedNotes.Clear() ;
+            //notes.PlayedNotes.Clear() ;
             privateNoteList.Clear();
         }
     }
