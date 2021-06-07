@@ -40,7 +40,7 @@ public class BearControl : MonoBehaviour
             privateNoteList.Add(notes.checkNoteInput());
 
         //cleanLastPlayedNotes(privateNoteList);
-    
+        Debug.Log(privateNoteList[0]);
 
         int correctInput = goThroughOptions(new int[][] { rightup});
         if (inrange == true)

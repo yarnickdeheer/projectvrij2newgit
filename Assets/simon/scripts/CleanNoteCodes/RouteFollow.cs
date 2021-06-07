@@ -6,7 +6,7 @@ public class RouteFollow : MonoBehaviour
 {
     [SerializeField]
 
-    public Transform[] routes;
+    private Transform[] routes;
 
     private int routeToGo;
     
@@ -15,10 +15,10 @@ public class RouteFollow : MonoBehaviour
     private Vector3 objectPosition;
 
     private float speedModifier;
-    public float speedInDistance;
+    private float speedInDistance;
 
     private bool coroutineAllowed;
-    public TurtleTrigger trigger;
+
 
     [Range(-2.0f, 2.0f)]
     public float sideToSide;
@@ -41,7 +41,7 @@ public class RouteFollow : MonoBehaviour
         routeToGo = 0;
         tParam = 0f;
         speedModifier = 0.5f;
-        speedInDistance = 0f;
+        speedInDistance = 2f;
         coroutineAllowed = true;
     }
 
@@ -65,7 +65,7 @@ public class RouteFollow : MonoBehaviour
             privateNoteList.Add(notes.checkNoteInput());
 
         notes.cleanLastPlayedNotes(privateNoteList);
-        ///Debug.Log(privateNoteList[0]);
+        Debug.Log(privateNoteList[0]);
 
         int correctInput = goThroughOptions(new int[][] { right, left });
         switch (correctInput)
@@ -74,19 +74,12 @@ public class RouteFollow : MonoBehaviour
                 break;
 
             case 0:
-                if (trigger.mounted == true)
-                {
-
-                    sideToSide += Time.deltaTime;
-                }
+                sideToSide += Time.deltaTime;
                 //go right
                 break;
 
             case 1:
-                if (trigger.mounted == true)
-                {
-                    sideToSide -= Time.deltaTime;
-                }
+                sideToSide -= Time.deltaTime;
                 //go left
                 break;
 
@@ -169,7 +162,7 @@ public class RouteFollow : MonoBehaviour
             routeToGo = 0;
         }
         coroutineAllowed = false;
-        //float coveredDistance = 0;
+        float coveredDistance = 0;
 
         Vector3 p0 = routes[routeNum].GetChild(0).position;
         Vector3 p1 = routes[routeNum].GetChild(1).position;
@@ -178,20 +171,14 @@ public class RouteFollow : MonoBehaviour
 
         Vector3[] points = new Vector3[] { routes[routeNum].GetChild(0).position, routes[routeNum].GetChild(1).position, routes[routeNum].GetChild(2).position, routes[routeNum].GetChild(3).position };
         float length = BezierSingleLength(points);
-        Debug.Log(length);
 
         // (1/length) * distance
 
-        while (tParam < 1)
+        while (coveredDistance < length)
         {
             //hier gaat het percentage omhoog elke loop
-            //tParam = (1/length) * coveredDistance;
-            //tParam = tParam + Llength(t2⋅v⃗ 1+t⋅v⃗ 2+v⃗ 3)
-            Vector3 v1 = -3 * p0 + 9 * p1 - 9 * p2 + 3 * p3;
-            Vector3 v2 = 6 * p0 - 12 * p1 + 6 * p2;
-            Vector3 v3 = -3 * p0 + 3 * p1;
-            tParam = tParam + ((Time.deltaTime * speedInDistance) / Vector3.Magnitude(Mathf.Pow(tParam, 2) * v1 + tParam * v2 + v3));
-            Debug.Log(tParam);
+            tParam = (1/length) * coveredDistance;
+
             Vector3 oldPos = transform.position;
             if (objectPosition != null)
             {
@@ -200,16 +187,17 @@ public class RouteFollow : MonoBehaviour
 
             //This is working with percentages, but we want it to work with distance, so the speed is constantly the same
             //het is een lastige formule om aan te passen, wat ik kan doen is de afstand in percentage om te zetten en dat te gebruiken
-            objectPosition = Mathf.Pow(1 - tParam, 3) * p0 + 3 * Mathf.Pow(1 - tParam, 2) * tParam * p1 + 3 * (1 - tParam) * Mathf.Pow(tParam, 2) * p2 + Mathf.Pow(tParam, 3) * p3; 
+            objectPosition = Mathf.Pow(1 - tParam, 3) * p0 + 3 * Mathf.Pow(1 - tParam, 2) * tParam * p1 + 3 * (1 - tParam) * Mathf.Pow(tParam, 2) * p2 + Mathf.Pow(tParam, 3) * p3;
+
 
             transform.forward = oldPos - objectPosition;
             Vector3 leftToRight = transform.right * sideToSide;
             transform.position = objectPosition + leftToRight;
-           // coveredDistance += Time.deltaTime * speedInDistance;
+            coveredDistance += Time.deltaTime * speedInDistance;
             yield return new WaitForEndOfFrame();
         }
 
-        tParam = 0f;
+        //tParam = 0f;
         routeToGo += 1;
 
         if (routeToGo > routes.Length - 1)
@@ -227,17 +215,17 @@ public class RouteFollow : MonoBehaviour
         //if(collision is een steen)
         //sterf
 
-        //if(collision.gameObject.tag == "Player")
-        //{
-        //    collision.transform.SetParent(transform);
-        //}
+        if(collision.gameObject.tag == "Player")
+        {
+            collision.transform.SetParent(transform);
+        }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        //if (collision.gameObject.tag == "Player")
-        //{
-        //    collision.transform.SetParent(null);
-        //}
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.transform.SetParent(null);
+        }
     }
 }

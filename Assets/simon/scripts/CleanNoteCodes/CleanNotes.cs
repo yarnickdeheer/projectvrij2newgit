@@ -1,30 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMOD;
-using FMODUnity;
 
 public class CleanNotes : MonoBehaviour
 {
-    public List<int> PlayedNotes;
+    public List<int> PlayedNotes = new List<int>();
 
     public KeyCode firstNoteInput;
     public KeyCode secondNoteInput;
     public KeyCode thirdNoteInput;
     public KeyCode fourthNoteInput;
-    private bool canPlayNote = true;
 
     public GameObject[] NotePrefabs;
     private Canvas canvas;
     public Vector3[] NoteStartLoc;
-    public Animator anim;
-    public StudioEventEmitter noteHandler;
-    int fmodNote = -2;
 
     // Start is called before the first frame update
     void Awake()
     {
-        PlayedNotes = new List<int>() { -1, -1, -1, -1 };
         //als we meer canvasses hebben is dit onhandig, maar slepen in de editor is ook weer naar
         canvas = FindObjectOfType<Canvas>();
     }
@@ -34,24 +27,12 @@ public class CleanNotes : MonoBehaviour
     {
         //hier checken we voor input
         int noteThisUpdate = checkNoteInput();
-   
-
-        if (checkNoteKeyLifted() == fmodNote || fmodNote == -2)
-        {
-            fmodNote = noteThisUpdate;
-            canPlayNote = true;
-
-        }
-
-        noteHandler.SetParameter("Noot", fmodNote + 1, false);
-        
         
         //en als er input was, geven we dat door aan een andere functie die ze op het scherm zet
-        if (noteThisUpdate >= 0 && canPlayNote == true)
+        if (noteThisUpdate >= 0)
         {
             PlayedNotes.Add(noteThisUpdate);
             UpdateNoteOnScreen(noteThisUpdate);
-            canPlayNote = false;
         }
 
         cleanLastPlayedNotes(PlayedNotes);
@@ -61,51 +42,22 @@ public class CleanNotes : MonoBehaviour
     {
         if (Input.GetKeyDown(firstNoteInput))
         {
-            anim.SetBool("viool", true);
             return 0;
         }
 
         if (Input.GetKeyDown(secondNoteInput))
         {
-            anim.SetBool("viool", true);
             return 1;
         }
 
         if (Input.GetKeyDown(thirdNoteInput))
         {
-            anim.SetBool("viool", true);
             return 2;
         }
 
         if (Input.GetKeyDown(fourthNoteInput))
         {
-            anim.SetBool("viool", true);
             return 3; 
-        }
-
-        return -1;
-    }
-
-    public int checkNoteKeyLifted()
-    {
-        if (Input.GetKeyUp(firstNoteInput))
-        {
-            return 0;
-        }
-
-        if (Input.GetKeyUp(secondNoteInput))
-        {
-            return 1;
-        }
-
-        if (Input.GetKeyUp(thirdNoteInput))
-        {
-            return 2;
-        }
-
-        if (Input.GetKeyUp(fourthNoteInput))
-        {
-            return 3;
         }
 
         return -1;
@@ -114,7 +66,7 @@ public class CleanNotes : MonoBehaviour
     void UpdateNoteOnScreen(int whatNote)
     {
         if (NotePrefabs.Length > 0)
-            Instantiate(NotePrefabs[whatNote], NoteStartLoc[whatNote], new Quaternion(0, 0, 0, 0), canvas.transform.GetChild(1).transform);
+            Instantiate(NotePrefabs[whatNote], NoteStartLoc[whatNote], new Quaternion(0, 0, 0, 0), canvas.transform);
     }
 
     public void cleanLastPlayedNotes(List<int> played)

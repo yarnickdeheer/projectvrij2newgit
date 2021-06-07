@@ -4,11 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 0
-    path: Assets/Tommy/tersteru 2.unity
-    guid: 8a15d2085e4c4ac4e94fc30287c24870
-  - enabled: 1
-    path: Assets/Tommy/testeru 3.unity
-    guid: f502becf0781ab642b0b27eb084d3049
+  m_Scenes: []
   m_configObjects: {}

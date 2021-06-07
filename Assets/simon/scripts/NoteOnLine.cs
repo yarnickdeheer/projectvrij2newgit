@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class NoteOnLine : MonoBehaviour
 {
-    public Transform endpos;
-    private float veci;
     // Start is called before the first frame update
     void Start()
     {
-        veci = transform.position.x + 900;
+        
     }
 
     // Update is called once per frame
@@ -17,7 +15,7 @@ public class NoteOnLine : MonoBehaviour
     {
         transform.position += new Vector3(Time.deltaTime * 300, 0, 0);
 
-        if(transform.position.x > veci )
+        if(transform.position.x > Screen.width)
         {
             Destroy(this.gameObject);
         }
