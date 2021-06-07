@@ -184,7 +184,7 @@ public class RouteFollow : MonoBehaviour
             Vector3 v2 = 6 * p0 - 12 * p1 + 6 * p2;
             Vector3 v3 = -3 * p0 + 3 * p1;
             tParam = tParam + ((Time.deltaTime * speedInDistance) / Vector3.Magnitude(Mathf.Pow(tParam, 2) * v1 + tParam * v2 + v3));
-            Debug.Log(tParam);
+//            Debug.Log(tParam);
             Vector3 oldPos = transform.position;
             if (objectPosition != null)
             {
