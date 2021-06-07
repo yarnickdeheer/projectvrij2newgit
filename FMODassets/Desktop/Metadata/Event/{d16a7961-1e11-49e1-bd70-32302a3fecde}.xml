@@ -1377,9 +1377,6 @@
 		<relationship name="destination">
 			<destination>{e3c04119-d91a-44b7-ae85-bd210e98ce54}</destination>
 		</relationship>
-		<relationship name="triggerConditions">
-			<destination>{83aecc4c-a91f-43ad-8bb2-64ef1332da29}</destination>
-		</relationship>
 	</object>
 	<object class="NamedMarker" id="{e3c04119-d91a-44b7-ae85-bd210e98ce54}">
 		<property name="position">
@@ -2471,17 +2468,6 @@
 			<destination>{1573f74e-aa5c-4702-a9f2-3195146d32f4}</destination>
 			<destination>{7b987906-3de4-4c7c-9397-09b3c4ffc50c}</destination>
 			<destination>{1b36681e-fc81-4c1f-b8a5-7773ef39d390}</destination>
-		</relationship>
-	</object>
-	<object class="ParameterCondition" id="{83aecc4c-a91f-43ad-8bb2-64ef1332da29}">
-		<property name="minimum">
-			<value>5</value>
-		</property>
-		<property name="maximum">
-			<value>5</value>
-		</property>
-		<relationship name="parameter">
-			<destination>{ab3f13b3-b8c4-436d-91e5-a95c5350167c}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{d39a82c7-b2e5-445c-a8e8-c90ad5f23dc4}" />

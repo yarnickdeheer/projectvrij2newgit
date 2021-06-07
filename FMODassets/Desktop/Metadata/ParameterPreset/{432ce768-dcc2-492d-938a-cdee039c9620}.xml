@@ -16,7 +16,7 @@
 			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>6</value>
+			<value>5</value>
 		</property>
 		<property name="enumerationLabels">
 			<value>Off</value>
@@ -24,7 +24,6 @@
 			<value>F</value>
 			<value>As</value>
 			<value>C</value>
-			<value>Off</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>
