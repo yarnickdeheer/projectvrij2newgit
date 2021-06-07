@@ -27,7 +27,7 @@ public class GoatRider : MonoBehaviour
     private Transform oldParent;
 
 
-
+    public Animator goatAnim;
 
     private CleanNotes notes;
 
@@ -128,6 +128,7 @@ public class GoatRider : MonoBehaviour
                     if (pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRU.Length != 0)
                     {
                         // rechts boven
+                        goatAnim.gameObject.GetComponent<SpriteRenderer>().flipX = true;
                         MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRU[0].transform);
                         //a++;
                     }
@@ -144,6 +145,7 @@ public class GoatRider : MonoBehaviour
                     if (pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLU.Length != 0)
                     {
                         // links boven
+                        goatAnim.gameObject.GetComponent<SpriteRenderer>().flipX = false;
                         MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLU[0].transform);
                     }
 
@@ -235,6 +237,9 @@ public class GoatRider : MonoBehaviour
             //notes.PlayedNotes.Clear();
             if (top == true)
             {
+
+                goatAnim.SetBool("mounted", false);
+                goatAnim.SetBool("jump", false);
                 goatEnd = pos[i];
                 mounted = false;
                 this.transform.parent = oldParent;
@@ -244,6 +249,7 @@ public class GoatRider : MonoBehaviour
                 player.transform.position = new Vector3(pos[i].position.x, pos[i].position.y, pos[i].position.z);//deze is het niet
                 player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                 player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+                player.GetComponent<SpriteRenderer>().enabled = true;
                 timer.text = tijd.ToString(" ");
                 tijd = 5;
                 top = false;
@@ -270,8 +276,11 @@ public class GoatRider : MonoBehaviour
                 goatEnd = pos[i];
                 mounted = false;
                 player.transform.parent = null;
+                goatAnim.SetBool("mounted", false);
+                goatAnim.SetBool("jump", false);
                 cam.SetActive(false);
                 pcam.SetActive(true);
+                player.GetComponent<SpriteRenderer>().enabled = true;
                 player.GetComponent<pcontroller>().enabled = true;//deze is het niet
                 player.transform.position = new Vector3(pos[i].position.x, pos[i].position.y + 0.2f, pos[i].position.z);//deze is het niet
                 player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
@@ -335,6 +344,8 @@ public class GoatRider : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.G) && mounted ==false)
             {
                 //mount
+                player.GetComponent<SpriteRenderer>().enabled = false;
+                goatAnim.SetBool("mounted", true);
                 mounted = true;
                 cam.SetActive(true);
                 pcam.SetActive(false);
