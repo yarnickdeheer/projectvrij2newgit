@@ -16,7 +16,7 @@ public class CleanNotes : MonoBehaviour
     public GameObject[] NotePrefabs;
     private Canvas canvas;
     public Vector3[] NoteStartLoc;
-
+    public Animator anim;
     public StudioEventEmitter noteHandler;
     int fmodNote = -2;
 
@@ -58,21 +58,25 @@ public class CleanNotes : MonoBehaviour
     {
         if (Input.GetKeyDown(firstNoteInput))
         {
+            anim.SetBool("viool", true);
             return 0;
         }
 
         if (Input.GetKeyDown(secondNoteInput))
         {
+            anim.SetBool("viool", true);
             return 1;
         }
 
         if (Input.GetKeyDown(thirdNoteInput))
         {
+            anim.SetBool("viool", true);
             return 2;
         }
 
         if (Input.GetKeyDown(fourthNoteInput))
         {
+            anim.SetBool("viool", true);
             return 3; 
         }
 

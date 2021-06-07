@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000221AAFD6F48 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000221AAFD5628 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,15 +16,15 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] SoundI::release                          : Background_Track_3 (00000221AB03E658)
-[LOG] SoundI::release                          :     Background_Track_3 (00000221CCD48538)
-[LOG] SoundI::release                          :     Background_Track_3 (00000221D077BA78)
-[LOG] SoundI::release                          : Background_Track_2 (00000221AB03E148)
-[LOG] SoundI::release                          :     Background_Track_2 (00000221CCD471B8)
-[LOG] SoundI::release                          :     Background_Track_2 (00000221D077B8C8)
-[LOG] SoundI::release                          : Background_Track_1 (00000221D077B3B8)
-[LOG] SoundI::release                          :     Background_Track_1 (00000221CCD44AB8)
-[LOG] SoundI::release                          :     Background_Track_1 (00000221D077B058)
+[LOG] SoundI::release                          : Background_Track_3 (00000222591E0878)
+[LOG] SoundI::release                          :     Background_Track_3 (00000221CCD4ADD8)
+[LOG] SoundI::release                          :     Background_Track_3 (000002225913A838)
+[LOG] SoundI::release                          : Background_Track_2 (00000222591DFE58)
+[LOG] SoundI::release                          :     Background_Track_2 (00000221CCD4B118)
+[LOG] SoundI::release                          :     Background_Track_2 (0000022259139FC8)
+[LOG] SoundI::release                          : Background_Track_1 (00000222591E1B08)
+[LOG] SoundI::release                          :     Background_Track_1 (00000221CCD4A5B8)
+[LOG] SoundI::release                          :     Background_Track_1 (000002225913A9E8)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
