@@ -14,7 +14,6 @@ public class TurtleTrigger : MonoBehaviour
     public float speed =2;
     public GameObject player;
     private Vector3 pos;
-    public bool mounted;
 
     // Start is called before the first frame update
     void Start()
@@ -69,15 +68,11 @@ public class TurtleTrigger : MonoBehaviour
             player.GetComponent<Animator>().SetBool("frontmovement", false);
             player.GetComponent<Animator>().SetBool("backmovement", false);
             player.GetComponent<Animator>().SetBool("sidemovement", false);
-            player.GetComponent<Animator>().SetBool("backjump", false);
-            player.GetComponent<Animator>().SetBool("sidejump", false);
-            player.GetComponent<Animator>().SetBool("viool", true);
             //player.GetComponent<Animator>().SetBool("viool", false);
             player.transform.parent = this.transform.parent;
             player.transform.position = pos;
             player.transform.eulerAngles = new Vector3(0,0,0);
             tut = true;
-            mounted = true;
         }
             if (other.gameObject.tag == "end" && ride == false)
         {
@@ -99,7 +94,6 @@ public class TurtleTrigger : MonoBehaviour
             player.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
             player.transform.parent = oldParent; 
             tut = false;
-            mounted = false;
         }
     }
 
