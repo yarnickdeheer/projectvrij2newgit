@@ -13,9 +13,6 @@ TagManager:
   - bear
   - moveable
   - enviroment
-  - turtle
-  - end
-  - rockks
   layers:
   - Default
   - TransparentFX
@@ -30,8 +27,8 @@ TagManager:
   - Post Processing
   - move
   - enviroment
-  - Post P Two
-  - turtle
+  - 
+  - 
   - 
   - 
   - 
