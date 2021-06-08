@@ -66,26 +66,7 @@ public class TurtleTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && ride == false)
         {
-            speed = 2;
-            maincam.gameObject.SetActive(false);
-            turtlecam.gameObject.SetActive(true);
-            buddy.GetComponent<BuddyMovement>().cam = turtlecam.gameObject;
-            player.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
-            player.GetComponent<pcontroller>().enabled = false;
-            player.GetComponent<Animator>().SetBool("frontmovement", false);
-            player.GetComponent<Animator>().SetBool("backmovement", false);
-            player.GetComponent<Animator>().SetBool("sidemovement", false);
-            player.GetComponent<Animator>().SetBool("backjump", false);
-            player.GetComponent<Animator>().SetBool("sidejump", false);
-            player.GetComponent<Animator>().SetBool("viool", true);
-            //player.GetComponent<Animator>().SetBool("viool", false);
-            player.transform.parent = this.transform.parent;
-            player.transform.position = pos;
-            player.transform.eulerAngles = new Vector3(0,0,0);
-            tut = true;
-            mounted = true;
-            turtlecontrol.mounted = true;
-            backgroundMusic.SetParameter("Situatie", 2, false);
+            StartTurtle();
         }
             if (other.gameObject.tag == "end" && ride == false)
         {
@@ -112,6 +93,30 @@ public class TurtleTrigger : MonoBehaviour
             backgroundMusic.SetParameter("Situatie", 0, false);
             water.spawnLoc = secondRespawn;
         }
+    }
+
+    public void StartTurtle()
+    {
+        speed = 2;
+        maincam.gameObject.SetActive(false);
+        turtlecam.gameObject.SetActive(true);
+        buddy.GetComponent<BuddyMovement>().cam = turtlecam.gameObject;
+        player.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
+        player.GetComponent<pcontroller>().enabled = false;
+        player.GetComponent<Animator>().SetBool("frontmovement", false);
+        player.GetComponent<Animator>().SetBool("backmovement", false);
+        player.GetComponent<Animator>().SetBool("sidemovement", false);
+        player.GetComponent<Animator>().SetBool("backjump", false);
+        player.GetComponent<Animator>().SetBool("sidejump", false);
+        player.GetComponent<Animator>().SetBool("viool", true);
+        //player.GetComponent<Animator>().SetBool("viool", false);
+        player.transform.parent = this.transform.parent;
+        player.transform.position = pos;
+        player.transform.eulerAngles = new Vector3(0, 0, 0);
+        tut = true;
+        mounted = true;
+        turtlecontrol.mounted = true;
+        backgroundMusic.SetParameter("Situatie", 2, false);
     }
 
     //private void OnCollisionEnter(Collision collision)

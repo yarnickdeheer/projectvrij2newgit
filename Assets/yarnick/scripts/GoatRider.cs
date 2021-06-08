@@ -42,12 +42,30 @@ public class GoatRider : MonoBehaviour
 
     public StudioEventEmitter backgroundMusic;
 
+    [SerializeField]
+
+    public Transform[] routes;
+
+    private float tParam;
+
+    private Vector3 objectPosition;
+
+    private float speedModifier;
+    public float speedInDistance;
+
+    private bool coroutineAllowed;
+
     // Start is called before the first frame update
     void Start()
     {
         privateNoteList = new List<int>();
         notes = FindObjectOfType<CleanNotes>();
         oldParent = this.transform.parent;
+
+        tParam = 0f;
+        speedModifier = 0.5f;
+        coroutineAllowed = true;
+
     }
 
 
@@ -117,7 +135,8 @@ public class GoatRider : MonoBehaviour
 
 
         int correctInput = goThroughOptions(new int[][] { rightup, leftup, rightdown, leftdown });
-        if (mounted == true)
+
+        if (mounted == true && coroutineAllowed)
         {
             switch (correctInput)
             {
@@ -337,8 +356,9 @@ public class GoatRider : MonoBehaviour
         tijd -= f;
         pos.Add(platformTransform);
         i++;
-        goat.transform.position = new Vector3(pos[i].position.x, pos[i].position.y + 0.2f, pos[i].position.z);
+        Vector3 targetLoc = new Vector3(pos[i].position.x, pos[i].position.y + 0.2f, pos[i].position.z);
         tijd = 5;
+        StartCoroutine(GoatByTheRoute(createBezierCurve(goat.transform.position, goat.transform.position + new Vector3(0,1,0), targetLoc + new Vector3(0,1,0), targetLoc), targetLoc.z));
     }
 
 
@@ -364,6 +384,44 @@ public class GoatRider : MonoBehaviour
                 tijd = 5;
             }
         }
+    }
+
+    Transform createBezierCurve(Vector3 pos1, Vector3 pos2, Vector3 pos3, Vector3 pos4)
+    {
+        GameObject emptyObject = new GameObject();
+        GameObject routeParent = Instantiate(emptyObject, pos1, new Quaternion(0, 0, 0, 0));
+        GameObject Transform1 = Instantiate(emptyObject, pos1, new Quaternion(0, 0, 0, 0), routeParent.transform);
+        GameObject Transform2 = Instantiate(emptyObject, pos2, new Quaternion(0, 0, 0, 0), routeParent.transform);
+        GameObject Transform3 = Instantiate(emptyObject, pos3, new Quaternion(0, 0, 0, 0), routeParent.transform);
+        GameObject Transform4 = Instantiate(emptyObject, pos4, new Quaternion(0, 0, 0, 0), routeParent.transform);
+
+        routeParent.AddComponent<Route>();
+        Route newRoute = routeParent.GetComponent<Route>();
+        newRoute.controlPoints = new Transform[4] { Transform1.transform, Transform2.transform, Transform3.transform, Transform4.transform };
+
+        return routeParent.transform;
+    }
+
+    private IEnumerator GoatByTheRoute(Transform route, float zPos)
+    {
+        coroutineAllowed = false;
+
+        Vector2 p0 = route.GetChild(0).position;
+        Vector2 p1 = route.GetChild(1).position;
+        Vector2 p2 = route.GetChild(2).position;
+        Vector2 p3 = route.GetChild(3).position;
+
+        while (tParam < 1)
+        {
+            tParam += Time.deltaTime * speedModifier;
+            objectPosition = Mathf.Pow(1 - tParam, 3) * p0 + 3 * Mathf.Pow(1 - tParam, 2) * tParam * p1 + 3 * (1 - tParam) * Mathf.Pow(tParam, 2) * p2 + Mathf.Pow(tParam, 3) * p3;
+            transform.position = new Vector3(objectPosition.x, objectPosition.y, zPos);
+            yield return new WaitForEndOfFrame();
+        }
+
+        tParam = 0f;
+
+        coroutineAllowed = true;
     }
 
 }
