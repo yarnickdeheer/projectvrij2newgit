@@ -73,8 +73,8 @@ public class TurtleTrigger : MonoBehaviour
             if (other.gameObject.tag == "end" && ride == false)
         {
             //speed = 0; 
-            maincam.gameObject.SetActive(true);
-            turtlecam.gameObject.SetActive(false);
+            //maincam.gameObject.SetActive(true);
+            //turtlecam.gameObject.SetActive(false);
             buddy.GetComponent<BuddyMovement>().cam = maincam.gameObject;
             ride = true;
             player.GetComponent<pcontroller>().enabled = true;

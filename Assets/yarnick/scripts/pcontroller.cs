@@ -27,6 +27,15 @@ public class pcontroller : MonoBehaviour
 
     public StudioEventEmitter footsteps;
     public StudioEventEmitter jumpSound;
+
+
+
+
+    public GameObject turtlecam;
+    public GameObject cam;
+    public GameObject turtle;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -204,7 +213,9 @@ public class pcontroller : MonoBehaviour
     {
         if (collision.gameObject.tag == "ground")
         {
-
+            //turtle.SetActive(false);
+            cam.gameObject.SetActive(true);
+            turtlecam.gameObject.SetActive(false);
             anim.SetBool("backjump", false);
             ground = true;
         }
