@@ -19,7 +19,10 @@ public class CleanNotes : MonoBehaviour
     public Vector3[] NoteStartLoc;
     public Animator player;
     public StudioEventEmitter noteHandler;
+    public StudioEventEmitter grabAlto;
     int fmodNote = -2;
+
+
 
     // Start is called before the first frame update
     void Awake()
@@ -59,24 +62,40 @@ public class CleanNotes : MonoBehaviour
     {
         if (Input.GetKeyDown(firstNoteInput))
         {
+            if (player.GetBool("viool") == false && grabAlto.IsPlaying() == false)
+            {
+                grabAlto.Play();
+            }
             player.SetBool("viool", true);
             return 0;
         }
 
         if (Input.GetKeyDown(secondNoteInput))
         {
+            if (player.GetBool("viool") == false && grabAlto.IsPlaying() == false)
+            {
+                grabAlto.Play();
+            }
             player.SetBool("viool", true);
             return 1;
         }
 
         if (Input.GetKeyDown(thirdNoteInput))
         {
+            if (player.GetBool("viool") == false && grabAlto.IsPlaying() == false)
+            {
+                grabAlto.Play();
+            }
             player.SetBool("viool", true);
             return 2;
         }
 
         if (Input.GetKeyDown(fourthNoteInput))
         {
+            if (player.GetBool("viool") == false && grabAlto.IsPlaying() == false)
+            {
+                grabAlto.Play();
+            }
             player.SetBool("viool", true);
             return 3; 
         }
