@@ -40,6 +40,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-8263264383600197347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Alto_Viool/Noot
+  m_EditorClassIdentifier: 
+  Name: Noot
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-7834583801757335583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,7 +79,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7428709741824126360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +141,7 @@ MonoBehaviour:
   Path: FMODassets/Desktop/Build/Desktop/Master.bank
   Name: Build/Desktop/Master
   StudioPath: bank:/Master
-  lastModified: 637587765178316449
+  lastModified: 637587816694704328
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -145,7 +165,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 5545411937611778070}
+  - {fileID: -3963580492574137301}
   MinDistance: 0
   MaxDistance: 0
   Length: 48000
@@ -165,6 +185,26 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-3963580492574137301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Achtergrond_Muziek/Situatie
+  m_EditorClassIdentifier: 
+  Name: Situatie
+  Min: 0
+  Max: 3
+  Default: 0
   ID:
     data1: 0
     data2: 0
@@ -211,7 +251,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-3270243497368620351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +312,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 2522634568758794813}
+  - {fileID: 8849687967666181555}
   MinDistance: 1
   MaxDistance: 20
   Length: 342
@@ -296,7 +336,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -3641018796067640495}
+  - {fileID: -8263264383600197347}
   MinDistance: 1
   MaxDistance: 20
   Length: 25411
@@ -357,7 +397,7 @@ MonoBehaviour:
   - {fileID: -6341101453376020177}
   StringsBanks:
   - {fileID: 3447653222358421001}
-  stringsBankWriteTime: 637587765178416182
+  stringsBankWriteTime: 637587816694993566
   cacheVersion: 6
 --- !u!114 &1460302904141154143
 MonoBehaviour:
@@ -398,7 +438,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &2429668086844384185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,7 +481,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &3447653222358421001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,11 +497,11 @@ MonoBehaviour:
   Path: FMODassets/Desktop/Build/Desktop/Master.strings.bank
   Name: Build/Desktop/Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637587765178416182
+  lastModified: 637587816694993566
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1544
+    Value: 1500
   Exists: 1
 --- !u!114 &4487137906975368745
 MonoBehaviour:
@@ -505,7 +545,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &5670703851440069930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,10 +589,30 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -7834583801757335583}
+  - {fileID: 6832867197405812048}
   MinDistance: 1
   MaxDistance: 20
   Length: 50400
+--- !u!114 &6832867197405812048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Fluitbomen/Fluitboom_Afstand
+  m_EditorClassIdentifier: 
+  Name: Fluitboom_Afstand
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &6976767042114091816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,17 +626,36 @@ MonoBehaviour:
   m_Name: event:/Rivier
   m_EditorClassIdentifier: 
   Path: event:/Rivier
-  guid: 73830b7548c16b4b8b5cdd88f14b6764
+  guid: a09f06e1db77f34c99da9035c2eb5b44
   Banks:
   - {fileID: -6341101453376020177}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 2195715897630950424}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 48813
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8849687967666181555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Voetstappen/Voetstap_Volume
+  m_EditorClassIdentifier: 
+  Name: Voetstap_Volume
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &9105676324821347008
 MonoBehaviour:
   m_ObjectHideFlags: 0
