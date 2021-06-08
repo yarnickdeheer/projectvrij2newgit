@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using FMODUnity;
 public class pcontroller : MonoBehaviour
 {
     private bool groundedPlayer;
@@ -23,6 +24,9 @@ public class pcontroller : MonoBehaviour
 
 
     public AnimationClip[] idles;
+
+    public StudioEventEmitter footsteps;
+    public StudioEventEmitter jumpSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +46,9 @@ public class pcontroller : MonoBehaviour
 
         if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
         {
+            if (footsteps.IsPlaying() == false && groundedPlayer)
+                footsteps.Play();
+
             Move();
         }
 
@@ -99,6 +106,8 @@ public class pcontroller : MonoBehaviour
             anim.SetBool("backjump", true);
             ground = false;
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * (gravityValue / 5));
+            if (jumpSound.IsPlaying() == false)
+                jumpSound.Play();
         }
         else if (Input.GetButtonDown("Jump") && dubblejump == true)
         {

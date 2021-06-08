@@ -5,17 +5,17 @@ using UnityEngine;
 public class RiverSoundMover : MonoBehaviour
 {
     Vector3 startPos;
-    float plusXLim, minXLim, plusZLim, minZLim;
+    public float plusXLim, minXLim, plusZLim, minZLim;
     Transform playerTransform;
     // Start is called before the first frame update
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         startPos = transform.position;
-        plusXLim = startPos.x + 4;
-        minXLim = startPos.x - 3;
-        plusZLim = startPos.z + 23;
-        minZLim = startPos.z - 20;
+        plusXLim = startPos.x + plusXLim;
+        minXLim = startPos.x - minXLim;
+        plusZLim = startPos.z + plusZLim;
+        minZLim = startPos.z - minZLim;
     }
 
     // Update is called once per frame

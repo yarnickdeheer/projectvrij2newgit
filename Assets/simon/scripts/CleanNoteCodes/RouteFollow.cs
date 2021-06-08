@@ -68,29 +68,32 @@ public class RouteFollow : MonoBehaviour
         ///Debug.Log(privateNoteList[0]);
 
         int correctInput = goThroughOptions(new int[][] { right, left });
-        switch (correctInput)
+        if (correctInput > -1)
         {
-            case -1:
-                break;
+            switch (correctInput)
+            {
+                case -1:
+                    break;
 
-            case 0:
-                sideToSide += Time.deltaTime;
-                //go right
-                break;
+                case 0:
+                    sideToSide += Time.deltaTime;
+                    //go right
+                    break;
 
-            case 1:
-                sideToSide -= Time.deltaTime;
-                //go left
-                break;
+                case 1:
+                    sideToSide -= Time.deltaTime;
+                    //go left
+                    break;
 
-                //case 2:
-                //    //go right
-                //    break;
+                    //case 2:
+                    //    //go right
+                    //    break;
 
-                //case 3:
-                //    //go left
-                //    break;
+                    //case 3:
+                    //    //go left
+                    //    break;
 
+            }
         }
 
         sideToSide = Mathf.Clamp(sideToSide, -2f, 2f);
