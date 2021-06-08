@@ -40,6 +40,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-7834583801757335583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Fluitbomen/Fluitboom_Afstand
+  m_EditorClassIdentifier: 
+  Name: Fluitboom_Afstand
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-7428709741824126360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,12 +77,35 @@ MonoBehaviour:
   Banks:
   - {fileID: -6341101453376020177}
   IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6675672003766338632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Melodie_Feedback
+  m_EditorClassIdentifier: 
+  Path: event:/Melodie_Feedback
+  guid: 4c799e4faa540b41b40dbad15994a87d
+  Banks:
+  - {fileID: -6341101453376020177}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 0
+  Length: 841
 --- !u!114 &-6341101453376020177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +121,7 @@ MonoBehaviour:
   Path: FMODassets/Desktop/Build/Desktop/Master.bank
   Name: Build/Desktop/Master
   StudioPath: bank:/Master
-  lastModified: 637587126716599343
+  lastModified: 637587765178316449
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -102,7 +145,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -1178321295932006540}
+  - {fileID: 5545411937611778070}
   MinDistance: 0
   MaxDistance: 0
   Length: 48000
@@ -122,6 +165,49 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-3851307567531860402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Alto_Viool_Pakken
+  m_EditorClassIdentifier: 
+  Path: event:/Alto_Viool_Pakken
+  guid: f84eb9e1d7b1bc4ab992c905d5999e2b
+  Banks:
+  - {fileID: -6341101453376020177}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3641018796067640495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Alto_Viool/Noot
+  m_EditorClassIdentifier: 
+  Name: Noot
+  Min: 0
+  Max: 4
+  Default: 0
   ID:
     data1: 0
     data2: 0
@@ -186,7 +272,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 1460302904141154143}
+  - {fileID: 2522634568758794813}
   MinDistance: 1
   MaxDistance: 20
   Length: 342
@@ -210,10 +296,33 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -8870091338992257620}
+  - {fileID: -3641018796067640495}
   MinDistance: 1
   MaxDistance: 20
   Length: 25411
+--- !u!114 &-16378057504711479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Stamboerijnen
+  m_EditorClassIdentifier: 
+  Path: event:/Stamboerijnen
+  guid: c2b761d23510b3419f2d191c88675713
+  Banks:
+  - {fileID: -6341101453376020177}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1411
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,14 +345,84 @@ MonoBehaviour:
   - {fileID: -5924823192868980271}
   - {fileID: -735034884757525710}
   - {fileID: 6071617415109360648}
+  - {fileID: 5670703851440069930}
+  - {fileID: -6675672003766338632}
+  - {fileID: 2429668086844384185}
+  - {fileID: 9105676324821347008}
+  - {fileID: -16378057504711479}
+  - {fileID: 4487137906975368745}
+  - {fileID: -3851307567531860402}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6341101453376020177}
   StringsBanks:
   - {fileID: 3447653222358421001}
-  stringsBankWriteTime: 637586975129526103
+  stringsBankWriteTime: 637587765178416182
   cacheVersion: 6
 --- !u!114 &1460302904141154143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Voetstappen/Voetstap_Volume
+  m_EditorClassIdentifier: 
+  Name: Voetstap_Volume
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &2195715897630950424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Rivier/Rivier_Afstand
+  m_EditorClassIdentifier: 
+  Name: Rivier_Afstand
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &2429668086844384185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Schildpad_Botsing
+  m_EditorClassIdentifier: 
+  Path: event:/Schildpad_Botsing
+  guid: 4f3e7cf317bbd14b83886ffb355fa092
+  Banks:
+  - {fileID: -6341101453376020177}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2522634568758794813
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -278,12 +457,78 @@ MonoBehaviour:
   Path: FMODassets/Desktop/Build/Desktop/Master.strings.bank
   Name: Build/Desktop/Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637586975129526103
+  lastModified: 637587765178416182
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1122
+    Value: 1544
   Exists: 1
+--- !u!114 &4487137906975368745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Berggeit_Landing
+  m_EditorClassIdentifier: 
+  Path: event:/Berggeit_Landing
+  guid: f5e48c5b9f3852489df8459092f0e893
+  Banks:
+  - {fileID: -6341101453376020177}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 222
+--- !u!114 &5545411937611778070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Achtergrond_Muziek/Situatie
+  m_EditorClassIdentifier: 
+  Name: Situatie
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &5670703851440069930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Jump
+  m_EditorClassIdentifier: 
+  Path: event:/Jump
+  guid: 24be084f02958c4a92afc40609ec0a60
+  Banks:
+  - {fileID: -6341101453376020177}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 300
 --- !u!114 &6071617415109360648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,11 +546,12 @@ MonoBehaviour:
   Banks:
   - {fileID: -6341101453376020177}
   IsStream: 1
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  Parameters:
+  - {fileID: -7834583801757335583}
+  MinDistance: 1
+  MaxDistance: 20
   Length: 50400
 --- !u!114 &6976767042114091816
 MonoBehaviour:
@@ -320,13 +566,37 @@ MonoBehaviour:
   m_Name: event:/Rivier
   m_EditorClassIdentifier: 
   Path: event:/Rivier
-  guid: 0134bfd737754f468e8b5bd714f071f8
+  guid: 73830b7548c16b4b8b5cdd88f14b6764
+  Banks:
+  - {fileID: -6341101453376020177}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 2195715897630950424}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 48813
+--- !u!114 &9105676324821347008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Totems_Verplaatsen
+  m_EditorClassIdentifier: 
+  Path: event:/Totems_Verplaatsen
+  guid: 74225d2fdeb7f642883084b9d422f130
   Banks:
   - {fileID: -6341101453376020177}
   IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
+  Is3D: 1
+  IsOneShot: 0
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3907
