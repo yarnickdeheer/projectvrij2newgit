@@ -108,7 +108,7 @@ public class TurtleTrigger : MonoBehaviour
         player.GetComponent<Animator>().SetBool("sidemovement", false);
         player.GetComponent<Animator>().SetBool("backjump", false);
         player.GetComponent<Animator>().SetBool("sidejump", false);
-        player.GetComponent<Animator>().SetBool("viool", true);
+        player.GetComponent<Animator>().SetBool("vioolZ", true);
         //player.GetComponent<Animator>().SetBool("viool", false);
         player.transform.parent = this.transform.parent;
         player.transform.position = pos;
