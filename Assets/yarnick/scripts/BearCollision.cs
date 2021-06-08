@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class BearCollision : MonoBehaviour
 {
     public GameObject nav,bear;
-
+    public Animator bearfront, bearback, bearsideL, bearsideR;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +23,10 @@ public class BearCollision : MonoBehaviour
     {
         if (collision.gameObject.layer == 12)
         {
+            bearback.SetBool("walk", false);
+            bearsideL.SetBool("walk", false);
+            bearsideR.SetBool("walk", false);
+            bearfront.SetBool("walk", false);
             Debug.Log("envo");
             bear.GetComponent<BearPushPull>().envo = true;
             nav.GetComponent<NavMeshAgent>().speed = 0;
