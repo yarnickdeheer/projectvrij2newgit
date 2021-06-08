@@ -35,7 +35,7 @@ public class RouteFollow : MonoBehaviour
 
     // Start is called before the first frame update
 
-    void Start()
+    void Awake()
     {
         privateNoteList = new List<int>();
         notes = FindObjectOfType<CleanNotes>();
