@@ -40,10 +40,8 @@ public class CleanNotes : MonoBehaviour
         {
             fmodNote = noteThisUpdate;
             canPlayNote = true;
-
+            noteHandler.SetParameter("Noot", fmodNote + 1, false);
         }
-
-        noteHandler.SetParameter("Noot", fmodNote + 1, false);
         
         
         //en als er input was, geven we dat door aan een andere functie die ze op het scherm zet
