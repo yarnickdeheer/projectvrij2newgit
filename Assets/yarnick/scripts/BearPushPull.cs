@@ -74,7 +74,7 @@ public class BearPushPull : MonoBehaviour
     //        {
     //            //-25.953
 
-    //            this.gameObject.transform.parent.transform.eulerAngles = new Vector3(this.gameObject.transform.parent.transform.rotation.x, -25.953f, this.gameObject.transform.parent.transform.rotation.z);
+    //           
 
     //        }
     //        if (other.gameObject.name == "top")
@@ -117,7 +117,7 @@ public class BearPushPull : MonoBehaviour
             if (other.gameObject.name == "down")
             {
                 Debug.Log("PUSH DIE SHIEEET" + other.gameObject.transform.position);
-                //this.gameObject.transform.parent.transform.position = other.gameObject.transform.position;
+                this.gameObject.transform.parent.transform.eulerAngles = new Vector3(this.gameObject.transform.parent.transform.rotation.x, -25.953f, this.gameObject.transform.parent.transform.rotation.z);
                 if (notes.checkNoteInput() > -1)
                     privateNoteList.Add(notes.checkNoteInput());
 
@@ -164,7 +164,8 @@ public class BearPushPull : MonoBehaviour
             if (other.gameObject.name == "top")
             {
                 Debug.Log("PUSH DIE SHIEEET" + other.gameObject.transform.position);
-                this.gameObject.transform.parent.transform.position = other.gameObject.transform.position;
+                this.gameObject.transform.parent.transform.eulerAngles = new Vector3(this.gameObject.transform.parent.transform.rotation.x, 154.35f, this.gameObject.transform.parent.transform.rotation.z);
+
                 if (notes.checkNoteInput() > -1)
                     privateNoteList.Add(notes.checkNoteInput());
 
@@ -208,6 +209,8 @@ public class BearPushPull : MonoBehaviour
             {
                 Debug.Log("PUSH DIE SHIEEET" + other.gameObject.transform.position);
                 //this.gameObject.transform.parent.transform.position = other.gameObject.transform.position;
+                this.gameObject.transform.parent.transform.eulerAngles = new Vector3(this.gameObject.transform.parent.transform.rotation.x, 64.5f, this.gameObject.transform.parent.transform.rotation.z);
+
                 if (notes.checkNoteInput() > -1)
                     privateNoteList.Add(notes.checkNoteInput());
 
