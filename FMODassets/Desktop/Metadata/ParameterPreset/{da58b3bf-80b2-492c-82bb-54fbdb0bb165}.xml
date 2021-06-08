@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{da58b3bf-80b2-492c-82bb-54fbdb0bb165}">
+		<property name="name">
+			<value>Fluitboom_Afstand</value>
+		</property>
+		<relationship name="folder">
+			<destination>{229ddcac-0396-486c-a813-473d18e85132}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{9099e56a-355e-4ca8-94f2-1fd18a5cba81}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{9099e56a-355e-4ca8-94f2-1fd18a5cba81}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

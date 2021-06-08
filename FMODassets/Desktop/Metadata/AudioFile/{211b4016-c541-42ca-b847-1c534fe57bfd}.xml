@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{211b4016-c541-42ca-b847-1c534fe57bfd}">
+		<property name="assetPath">
+			<value>Alto_Grab.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.94777777777777783</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{850ffda9-55fb-46a6-8ad8-df6e24391562}</destination>
+		</relationship>
+	</object>
+</objects>
