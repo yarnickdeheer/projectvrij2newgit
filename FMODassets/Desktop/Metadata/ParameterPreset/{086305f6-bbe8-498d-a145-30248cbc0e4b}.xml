@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{086305f6-bbe8-498d-a145-30248cbc0e4b}">
+		<property name="name">
+			<value>Rivier_Afstand</value>
+		</property>
+		<relationship name="folder">
+			<destination>{229ddcac-0396-486c-a813-473d18e85132}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{f3f8d294-a38e-46cf-9214-20b637dc2569}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{f3f8d294-a38e-46cf-9214-20b637dc2569}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
