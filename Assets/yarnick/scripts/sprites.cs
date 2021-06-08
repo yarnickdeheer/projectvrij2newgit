@@ -56,30 +56,30 @@ public class sprites : MonoBehaviour
         {
             //front || angle <= 45 && angle >= -45 && direction.back == true
             // cam.GetComponent<MeshRenderer>().material = afbeeldingen[0];
-            afbeeldingen[0].SetActive(true);
-            afbeeldingen[1].SetActive(false);
-            afbeeldingen[2].SetActive(false);
-            afbeeldingen[3].SetActive(false);
+            afbeeldingen[0].GetComponent<SpriteRenderer>().enabled = true;
+            afbeeldingen[1].GetComponent<SpriteRenderer>().enabled = false;
+            afbeeldingen[2].GetComponent<SpriteRenderer>().enabled = false;
+            afbeeldingen[3].GetComponent<SpriteRenderer>().enabled = false;
 
         }
         else if (angle <=45 && angle >=-45 )
         {
             //back || angle >= 135 && angle <= 180 && direction.front == true || angle >= -190 && angle <= -135 && direction.front == true
             //cam.GetComponent<MeshRenderer>().material = afbeeldingen[1];
-            afbeeldingen[0].SetActive(false);
-            afbeeldingen[1].SetActive(true); 
-            afbeeldingen[2].SetActive(false);
-            afbeeldingen[3].SetActive(false);
+            afbeeldingen[0].GetComponent<SpriteRenderer>().enabled = false;
+            afbeeldingen[1].GetComponent<SpriteRenderer>().enabled = true; 
+            afbeeldingen[2].GetComponent<SpriteRenderer>().enabled = false;
+            afbeeldingen[3].GetComponent<SpriteRenderer>().enabled = false;
         }
         else if (angle >=45 && angle <=135  )
         {
             //right || angle > -135 && angle < -45 &&  direction.back == true
             // cam.GetComponent<MeshRenderer>().material = afbeeldingen[2];
           
-                afbeeldingen[0].SetActive(false);
-                afbeeldingen[1].SetActive(false);
-                afbeeldingen[2].SetActive(true);
-                afbeeldingen[3].SetActive(false);
+                afbeeldingen[0].GetComponent<SpriteRenderer>().enabled = false;
+                afbeeldingen[1].GetComponent<SpriteRenderer>().enabled = false;
+                afbeeldingen[2].GetComponent<SpriteRenderer>().enabled = true;
+                afbeeldingen[3].GetComponent<SpriteRenderer>().enabled = false;
             
 
         }
@@ -89,10 +89,10 @@ public class sprites : MonoBehaviour
             // cam.GetComponent<MeshRenderer>().material = afbeeldingen[3];
         
         
-                afbeeldingen[0].SetActive(false);
-                afbeeldingen[1].SetActive(false);
-                afbeeldingen[2].SetActive(false);
-                afbeeldingen[3].SetActive(true);
+                afbeeldingen[0].GetComponent<SpriteRenderer>().enabled = false;
+                afbeeldingen[1].GetComponent<SpriteRenderer>().enabled = false;
+                afbeeldingen[2].GetComponent<SpriteRenderer>().enabled = false;
+                afbeeldingen[3].GetComponent<SpriteRenderer>().enabled = true;
             
         }
 

@@ -13,6 +13,8 @@ public class BearControl : MonoBehaviour
     public GameObject ss;
     public GameObject jump;
     private GameObject DB,DBtarget;
+
+    public Animator bearfront, bearback, bearsideL, bearsideR;
     int DBpotential;
     public bool inrange, destroy;
 
@@ -52,7 +54,14 @@ public class BearControl : MonoBehaviour
 
                 case 0:
                     //follow
-
+                    bearback.SetBool("walk", true);
+                    bearsideL.SetBool("walk", true);
+                    bearsideR.SetBool("walk", true);
+                    bearfront.SetBool("walk", true);
+                    bearsideL.SetBool("pull", false);
+                    bearsideR.SetBool("pull", false);
+                    bearsideL.SetBool("push", false);
+                    bearsideR.SetBool("push", false);
                     bear.speed = 3.5f;
                     Destroy(ss);
                     ss = Instantiate(target, target.transform.position, Quaternion.identity);

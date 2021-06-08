@@ -26,6 +26,7 @@ public class RouteFollow : MonoBehaviour
     private CleanNotes notes;
 
     private List<int> privateNoteList;
+    public bool mounted;
 
     //public int[] forwards;
     //public int[] backwards;
@@ -68,32 +69,36 @@ public class RouteFollow : MonoBehaviour
         ///Debug.Log(privateNoteList[0]);
 
         int correctInput = goThroughOptions(new int[][] { right, left });
-        if (correctInput > -1)
+        switch (correctInput)
         {
-            switch (correctInput)
-            {
-                case -1:
-                    break;
+            case -1:
+                break;
 
-                case 0:
+            case 0:
+                if (mounted == true)
+                {
+
                     sideToSide += Time.deltaTime;
-                    //go right
-                    break;
+                }
+                //go right
+                break;
 
-                case 1:
+            case 1:
+                if (mounted == true)
+                {
                     sideToSide -= Time.deltaTime;
-                    //go left
-                    break;
+                }
+                //go left
+                break;
 
-                    //case 2:
-                    //    //go right
-                    //    break;
+                //case 2:
+                //    //go right
+                //    break;
 
-                    //case 3:
-                    //    //go left
-                    //    break;
+                //case 3:
+                //    //go left
+                //    break;
 
-            }
         }
 
         sideToSide = Mathf.Clamp(sideToSide, -2f, 2f);
