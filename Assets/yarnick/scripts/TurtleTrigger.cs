@@ -15,7 +15,7 @@ public class TurtleTrigger : MonoBehaviour
     public GameObject player;
     private Vector3 pos;
     public bool mounted;
-
+    public RouteFollow turtlecontrol;
     // Start is called before the first frame update
     void Start()
     {
@@ -78,6 +78,7 @@ public class TurtleTrigger : MonoBehaviour
             player.transform.eulerAngles = new Vector3(0,0,0);
             tut = true;
             mounted = true;
+            turtlecontrol.mounted = true;
         }
             if (other.gameObject.tag == "end" && ride == false)
         {
@@ -99,6 +100,7 @@ public class TurtleTrigger : MonoBehaviour
             player.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
             player.transform.parent = oldParent; 
             tut = false;
+            turtlecontrol.mounted = false ;
             mounted = false;
         }
     }

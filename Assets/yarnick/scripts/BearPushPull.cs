@@ -16,7 +16,7 @@ public class BearPushPull : MonoBehaviour
     GameObject tgobject;
     public bool envo;
     float dist, temp;
-
+    public Animator bearleft, bearright;
 
     private CleanNotes notes;
 
@@ -66,6 +66,37 @@ public class BearPushPull : MonoBehaviour
 
        
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "moveable")
+        {
+            if (other.gameObject.name == "down")
+            {
+                //-25.953
+            }
+            if (other.gameObject.name == "top")
+            {
+
+                //154.35
+            }
+                if (other.gameObject.name == "right")
+            {
+                StartCoroutine(delay());
+                
+                this.gameObject.transform.parent.transform.position = other.gameObject.transform.GetChild(0).transform.position;
+                this.gameObject.transform.parent.GetComponent<Patrol>().enabled = true;
+                //-116.459
+
+
+            }
+            if (other.gameObject.name == "left")
+            {
+                //64.5
+            } 
+
+        }
+
+        }
     private void OnTriggerStay(Collider other)
     {
          
@@ -77,8 +108,8 @@ public class BearPushPull : MonoBehaviour
             //dir = dir.normalized;
             if (other.gameObject.name == "down")
             {
-                Debug.Log("PUSH DIE SHIEEET");
-
+                Debug.Log("PUSH DIE SHIEEET" + other.gameObject.transform.position);
+                this.gameObject.transform.parent.transform.position = other.gameObject.transform.position;
                 if (notes.checkNoteInput() > -1)
                     privateNoteList.Add(notes.checkNoteInput());
 
@@ -124,7 +155,8 @@ public class BearPushPull : MonoBehaviour
             }
             if (other.gameObject.name == "top")
             {
-                Debug.Log("PUSH DIE SHIEEET");
+                Debug.Log("PUSH DIE SHIEEET" + other.gameObject.transform.position);
+                this.gameObject.transform.parent.transform.position = other.gameObject.transform.position;
                 if (notes.checkNoteInput() > -1)
                     privateNoteList.Add(notes.checkNoteInput());
 
@@ -135,6 +167,7 @@ public class BearPushPull : MonoBehaviour
                         break;
 
                     case 0:
+
                         pushpull(0, other.gameObject);
                         break;
                     case 1:
@@ -165,6 +198,8 @@ public class BearPushPull : MonoBehaviour
 
             if (other.gameObject.name == "left")
             {
+                Debug.Log("PUSH DIE SHIEEET" + other.gameObject.transform.position);
+                this.gameObject.transform.parent.transform.position = other.gameObject.transform.position;
                 if (notes.checkNoteInput() > -1)
                     privateNoteList.Add(notes.checkNoteInput());
 
@@ -175,9 +210,12 @@ public class BearPushPull : MonoBehaviour
                         break;
 
                     case 0:
+                   
+
                         pushpull(0, other.gameObject);
                         break;
                     case 1:
+                   
                         pushpull(1, other.gameObject);
                         break;
 
@@ -204,6 +242,8 @@ public class BearPushPull : MonoBehaviour
 
             if (other.gameObject.name == "right")
             {
+
+                Debug.Log("PUSH DIE SHIEEET" + other.gameObject.transform.position);
                 if (notes.checkNoteInput() > -1)
                     privateNoteList.Add(notes.checkNoteInput());
 
@@ -291,6 +331,10 @@ public class BearPushPull : MonoBehaviour
 
         if (pp == 0)
         {
+            bearleft.SetBool("walk", false);
+            bearright.SetBool("walk", false);
+            bearleft.SetBool("pull", true);
+            bearright.SetBool("pull", true);
             Debug.Log("pppp pulllling");
             tg = new Vector3(other.transform.GetChild(0).transform.position.x, this.gameObject.transform.parent.transform.position.y, other.transform.GetChild(0).transform.position.z);
 
@@ -298,6 +342,10 @@ public class BearPushPull : MonoBehaviour
         else if (pp == 1)
         {
             Debug.Log("pppp pushhing");
+            bearleft.SetBool("walk", false);
+            bearright.SetBool("walk", false);
+            bearleft.SetBool("push", true);
+            bearright.SetBool("push", true);
             tg = new Vector3(other.transform.GetChild(1).transform.position.x, this.gameObject.transform.parent.transform.position.y, other.transform.GetChild(1).transform.position.z);
 
         }
@@ -341,5 +389,11 @@ public class BearPushPull : MonoBehaviour
             dist = Vector3.Distance(this.gameObject.transform.parent.transform.position, new Vector3(tg.x, this.gameObject.transform.parent.transform.position.y, tg.z));
         }
         pushpul = false;
+    }
+
+    IEnumerator delay()
+    {
+        this.gameObject.transform.parent.GetComponent<Patrol>().enabled = false;
+        yield return new WaitForSeconds(.5f);
     }
 }

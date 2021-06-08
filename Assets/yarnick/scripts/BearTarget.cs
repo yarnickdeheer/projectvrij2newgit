@@ -5,10 +5,15 @@ using UnityEngine.AI;
 public class BearTarget : MonoBehaviour
 {
    public NavMeshAgent bear;
+   public Animator bearfront, bearback, bearsideL, bearsideR;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "target")
         {
+            bearback.SetBool("walk", false);
+            bearsideL.SetBool("walk", false);
+            bearsideR.SetBool("walk", false);
+            bearfront.SetBool("walk", false);
             bear.speed = 0;
         }
     }

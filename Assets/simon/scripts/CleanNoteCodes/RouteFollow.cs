@@ -26,6 +26,7 @@ public class RouteFollow : MonoBehaviour
     private CleanNotes notes;
 
     private List<int> privateNoteList;
+    public bool mounted;
 
     //public int[] forwards;
     //public int[] backwards;
@@ -74,12 +75,19 @@ public class RouteFollow : MonoBehaviour
                 break;
 
             case 0:
-                sideToSide += Time.deltaTime;
+                if (mounted == true)
+                {
+
+                    sideToSide += Time.deltaTime;
+                }
                 //go right
                 break;
 
             case 1:
-                sideToSide -= Time.deltaTime;
+                if (mounted == true)
+                {
+                    sideToSide -= Time.deltaTime;
+                }
                 //go left
                 break;
 
