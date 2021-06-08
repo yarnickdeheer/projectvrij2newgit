@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000022296091BF8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000225144DF9B8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,73 +16,5 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] SystemI::createSound                     : filename = FMODassets\Desktop/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 00000222A5CB86C8 : node = 0000022296810BA0
-[LOG] SystemI::createSound                     : add node to async list : head = 000002229463FCC8.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000222A5CB86C8
-[LOG] SystemI::createSoundInternal             :     Create name='FMODassets\Desktop/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5067360
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 46080
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000022296810CB0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Waterfall', format=5, channels=2, frequency=48000, lengthbytes=610208, lengthpcm=2782372, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000222A5CB86C8
-[LOG] SoundI::release                          :  (0000022291F17308)
-[LOG] SoundI::release                          :     Es_Tail_2 (00000222957C4B18)
-[LOG] SoundI::release                          :  (0000022291F16BD8)
-[LOG] SoundI::release                          :     Es_Tail_1 (00000222957C42F8)
-[LOG] SoundI::release                          :  (0000022291F154D8)
-[LOG] SoundI::release                          :     C_Tail_2 (00000222F8D55548)
-[LOG] SoundI::release                          :  (0000022291F196F8)
-[LOG] SoundI::release                          :     C_Tail_1 (00000222957C3E18)
-[LOG] SoundI::release                          :  (0000022291F18728)
-[LOG] SoundI::release                          :     Es_Attack_2 (00000222F8D55888)
-[LOG] SoundI::release                          :  (0000022291F18FC8)
-[LOG] SoundI::release                          :     Es_Attack_1 (00000222957C3458)
-[LOG] SoundI::release                          :  (0000022291F19B48)
-[LOG] SoundI::release                          :     F_Attack_2 (00000222F8D55A28)
-[LOG] SoundI::release                          :  (0000022291F18898)
-[LOG] SoundI::release                          :     F_Attack_1 (00000222957C4638)
-[LOG] SoundI::release                          :  (0000022291F19E28)
-[LOG] SoundI::release                          :     As_Tail_2 (00000222957C3938)
-[LOG] SoundI::release                          : Waterfall (00000222A5CB86C8)
-[LOG] SoundI::release                          :     Waterfall (00000222957C4CB8)
-[LOG] SoundI::release                          :     Waterfall (00000222A5CBAD98)
-[LOG] SoundI::release                          : Background_Track_3 (00000222A5CBF2C8)
-[LOG] SoundI::release                          :     Background_Track_3 (0000022290580F48)
-[LOG] SoundI::release                          :     Background_Track_3 (00000222A5CC3138)
-[LOG] SoundI::release                          : Background_Track_2 (00000222A5CBEDB8)
-[LOG] SoundI::release                          :     Background_Track_2 (000002229057E368)
-[LOG] SoundI::release                          :     Background_Track_2 (00000222A5CC3648)
-[LOG] SoundI::release                          : Background_Track_1 (00000222A5CBBB18)
-[LOG] SoundI::release                          :     Background_Track_1 (000002229057D808)
-[LOG] SoundI::release                          :     Background_Track_1 (00000222A5CBC028)
-[LOG] SoundI::release                          :  (0000022291F17758)
-[LOG] SoundI::release                          :     As_Tail_1 (00000222957C4978)
-[LOG] SoundI::release                          :  (0000022291F18CE8)
-[LOG] SoundI::release                          :     C_Attack_2 (00000222957C47D8)
-[LOG] SoundI::release                          :  (0000022291F16EB8)
-[LOG] SoundI::release                          :     C_Attack_1 (00000222957C35F8)
-[LOG] SoundI::release                          :  (0000022291F19588)
-[LOG] SoundI::release                          :     F_Tail_2 (00000222957C32B8)
-[LOG] SoundI::release                          :  (0000022291F168F8)
-[LOG] SoundI::release                          :     F_Tail_1 (00000222957C3C78)
-[LOG] SoundI::release                          :  (0000022291F178C8)
-[LOG] SoundI::release                          :     As_Attack_2 (00000222957C4E58)
-[LOG] SoundI::release                          :  (0000022291F17A38)
-[LOG] SoundI::release                          :     As_Attack_1 (00000222957C3FB8)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
