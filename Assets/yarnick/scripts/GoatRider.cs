@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using FMODUnity;
 public class GoatRider : MonoBehaviour
 {
 
@@ -40,6 +40,8 @@ public class GoatRider : MonoBehaviour
     public int[] leftdown;
     private List<int> privateNoteList;
 
+    public StudioEventEmitter backgroundMusic;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -74,6 +76,7 @@ public class GoatRider : MonoBehaviour
             goat.transform.position = new Vector3(goatStart.position.x, goatStart.position.y + 0.2f, goatStart.position.z);
 
             mounted = false;
+            backgroundMusic.SetParameter("Situatie", 0, false);
             player.transform.parent = null;
             cam.SetActive(false);
             pcam.SetActive(true);
@@ -242,6 +245,7 @@ public class GoatRider : MonoBehaviour
                 goatAnim.SetBool("jump", false);
                 goatEnd = pos[i];
                 mounted = false;
+                backgroundMusic.SetParameter("Situatie", 0, false);
                 this.transform.parent = oldParent;
                 cam.SetActive(false);
                 pcam.SetActive(true);
@@ -275,6 +279,7 @@ public class GoatRider : MonoBehaviour
             {
                 goatEnd = pos[i];
                 mounted = false;
+                backgroundMusic.SetParameter("Situatie", 0, false);
                 player.transform.parent = null;
                 goatAnim.SetBool("mounted", false);
                 goatAnim.SetBool("jump", false);
@@ -347,6 +352,7 @@ public class GoatRider : MonoBehaviour
                 player.GetComponent<SpriteRenderer>().enabled = false;
                 goatAnim.SetBool("mounted", true);
                 mounted = true;
+                backgroundMusic.SetParameter("Situatie", 1, false);
                 cam.SetActive(true);
                 pcam.SetActive(false);
                 player.GetComponent<pcontroller>().enabled = false;// deze is het niet

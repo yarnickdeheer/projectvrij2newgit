@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class TurtleTrigger : MonoBehaviour
 {
@@ -16,6 +17,11 @@ public class TurtleTrigger : MonoBehaviour
     private Vector3 pos;
     public bool mounted;
     public RouteFollow turtlecontrol;
+
+    public StudioEventEmitter backgroundMusic;
+
+    public WaterDeath water;
+    public Transform secondRespawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -79,6 +85,7 @@ public class TurtleTrigger : MonoBehaviour
             tut = true;
             mounted = true;
             turtlecontrol.mounted = true;
+            backgroundMusic.SetParameter("Situatie", 2, false);
         }
             if (other.gameObject.tag == "end" && ride == false)
         {
@@ -102,6 +109,8 @@ public class TurtleTrigger : MonoBehaviour
             tut = false;
             turtlecontrol.mounted = false ;
             mounted = false;
+            backgroundMusic.SetParameter("Situatie", 0, false);
+            water.spawnLoc = secondRespawn;
         }
     }
 
