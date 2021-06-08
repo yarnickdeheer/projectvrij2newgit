@@ -21,12 +21,21 @@ public class pcontroller : MonoBehaviour
     public Sprite[] sprites;
 
     public Transform target;
-
+    public SpriteRenderer alto;
 
     public AnimationClip[] idles;
 
     public StudioEventEmitter footsteps;
     public StudioEventEmitter jumpSound;
+
+
+
+
+    public GameObject turtlecam;
+    public GameObject cam;
+    public GameObject turtle;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -104,6 +113,7 @@ public class pcontroller : MonoBehaviour
             Debug.Log("jump");
             anim.SetBool("viool", false);
             anim.SetBool("vioolZ", false);
+            alto.enabled = true;
             anim.SetBool("backjump", true);
             ground = false;
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * (gravityValue / 5));
@@ -160,6 +170,7 @@ public class pcontroller : MonoBehaviour
             anim.SetBool("sidemovement", true);
             anim.SetBool("viool", false);
             anim.SetBool("vioolZ", false);
+            alto.enabled = true;
         }
         else if (Input.GetAxisRaw("Horizontal") > 0)
         {
@@ -171,6 +182,7 @@ public class pcontroller : MonoBehaviour
             anim.SetBool("sidemovement", true);
             anim.SetBool("viool", false);
             anim.SetBool("vioolZ", false);
+            alto.enabled = true;
         }
         else if (Input.GetAxisRaw("Vertical") < 0)
         {
@@ -181,6 +193,7 @@ public class pcontroller : MonoBehaviour
             anim.SetBool("frontmovement", true);
             anim.SetBool("viool", false);
             anim.SetBool("vioolZ", false);
+            alto.enabled = true;
             //this.GetComponent<SpriteRenderer>().sprite = sprites[0];
         }
         else if (Input.GetAxisRaw("Vertical") > 0)
@@ -191,6 +204,7 @@ public class pcontroller : MonoBehaviour
             anim.SetBool("viool", false);
             anim.SetBool("vioolZ", false);
             anim.SetBool("backmovement", true);
+            alto.enabled = true;
             //this.GetComponent<SpriteRenderer>().sprite = sprites[1];
         }
     }
@@ -199,7 +213,9 @@ public class pcontroller : MonoBehaviour
     {
         if (collision.gameObject.tag == "ground")
         {
-
+            //turtle.SetActive(false);
+            cam.gameObject.SetActive(true);
+            turtlecam.gameObject.SetActive(false);
             anim.SetBool("backjump", false);
             ground = true;
         }

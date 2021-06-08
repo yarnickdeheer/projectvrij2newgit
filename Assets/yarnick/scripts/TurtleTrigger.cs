@@ -22,6 +22,8 @@ public class TurtleTrigger : MonoBehaviour
 
     public WaterDeath water;
     public Transform secondRespawn;
+    public sprites sprite;
+    public SpriteRenderer alto;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +36,7 @@ public class TurtleTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pos = new Vector3(this.transform.position.x, this.transform.position.y + 0.3f, this.transform.position.z);
+        pos = new Vector3(this.transform.position.x, this.transform.position.y , this.transform.position.z);
         Debug.Log("speed" +  speed);
         turtle.speedInDistance = speed;
         if (tut == true)
@@ -71,8 +73,8 @@ public class TurtleTrigger : MonoBehaviour
             if (other.gameObject.tag == "end" && ride == false)
         {
             //speed = 0; 
-            maincam.gameObject.SetActive(true);
-            turtlecam.gameObject.SetActive(false);
+            //maincam.gameObject.SetActive(true);
+            //turtlecam.gameObject.SetActive(false);
             buddy.GetComponent<BuddyMovement>().cam = maincam.gameObject;
             ride = true;
             player.GetComponent<pcontroller>().enabled = true;
@@ -109,6 +111,8 @@ public class TurtleTrigger : MonoBehaviour
         player.GetComponent<Animator>().SetBool("backjump", false);
         player.GetComponent<Animator>().SetBool("sidejump", false);
         player.GetComponent<Animator>().SetBool("vioolZ", true);
+        alto.enabled = false;
+        sprite.cam = turtlecam.gameObject;
         //player.GetComponent<Animator>().SetBool("viool", false);
         player.transform.parent = this.transform.parent;
         player.transform.position = pos;

@@ -54,7 +54,7 @@ public class GoatRider : MonoBehaviour
     public float speedInDistance;
 
     private bool coroutineAllowed;
-
+    public SpriteRenderer alto;
     // Start is called before the first frame update
     void Start()
     {
@@ -369,6 +369,7 @@ public class GoatRider : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.G) && mounted ==false)
             {
                 //mount
+                alto.enabled = false;
                 player.GetComponent<SpriteRenderer>().enabled = false;
                 goatAnim.SetBool("mounted", true);
                 mounted = true;

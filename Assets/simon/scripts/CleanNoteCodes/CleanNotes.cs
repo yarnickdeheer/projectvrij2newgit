@@ -23,6 +23,7 @@ public class CleanNotes : MonoBehaviour
     int fmodNote = -2;
 
 
+    public SpriteRenderer alto;
 
     // Start is called before the first frame update
     void Awake()
@@ -67,6 +68,8 @@ public class CleanNotes : MonoBehaviour
                 grabAlto.Play();
             }
             player.SetBool("viool", true);
+
+            alto.enabled = false;
             return 0;
         }
 
@@ -77,6 +80,8 @@ public class CleanNotes : MonoBehaviour
                 grabAlto.Play();
             }
             player.SetBool("viool", true);
+
+            alto.enabled = false;
             return 1;
         }
 
@@ -87,6 +92,8 @@ public class CleanNotes : MonoBehaviour
                 grabAlto.Play();
             }
             player.SetBool("viool", true);
+
+            alto.enabled = false;
             return 2;
         }
 
@@ -97,6 +104,8 @@ public class CleanNotes : MonoBehaviour
                 grabAlto.Play();
             }
             player.SetBool("viool", true);
+
+            alto.enabled = false;
             return 3; 
         }
 
