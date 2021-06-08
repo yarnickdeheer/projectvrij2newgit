@@ -5,7 +5,7 @@
 			<value>Waterval</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{2d0e789a-d0cd-4d3c-b376-10f4416ae928}</destination>
@@ -118,6 +118,7 @@
 	<object class="MixerBusEffectChain" id="{51051927-a2a4-4e13-b372-401d2f81a521}">
 		<relationship name="effects">
 			<destination>{8c1824a9-90c8-4cce-aeb0-cf1e79b0b7f3}</destination>
+			<destination>{a93b027b-6a82-45f0-b3db-7bedbdf3f6a8}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ddeea44f-5f29-40d1-87b2-77aca6ed2950}" />
@@ -140,5 +141,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{d1147dae-f3c4-408e-bfc0-37ef169132a0}" />
 	<object class="MixerBusFader" id="{8c1824a9-90c8-4cce-aeb0-cf1e79b0b7f3}" />
+	<object class="SpatialiserEffect" id="{a93b027b-6a82-45f0-b3db-7bedbdf3f6a8}" />
 	<object class="MixerBusFader" id="{33f27dc6-03b9-4204-aa57-b3372e196064}" />
 </objects>

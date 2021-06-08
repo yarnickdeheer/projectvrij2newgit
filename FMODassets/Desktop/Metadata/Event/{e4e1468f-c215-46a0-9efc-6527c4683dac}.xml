@@ -5,7 +5,7 @@
 			<value>Fluitbomen</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{2d0e789a-d0cd-4d3c-b376-10f4416ae928}</destination>
@@ -240,6 +240,7 @@
 	<object class="MixerBusEffectChain" id="{120ce7d1-14cc-45a9-b0f1-75d17ce8393c}">
 		<relationship name="effects">
 			<destination>{f256e8a4-7b7f-4fab-99d7-7bc9519cba66}</destination>
+			<destination>{afd2bfd2-63c8-4e84-a557-93f0486643cc}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{3d77f9bc-3c56-4f3a-9f23-e47861d20a7a}" />
@@ -308,6 +309,7 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{f256e8a4-7b7f-4fab-99d7-7bc9519cba66}" />
+	<object class="SpatialiserEffect" id="{afd2bfd2-63c8-4e84-a557-93f0486643cc}" />
 	<object class="AutomationPoint" id="{4518b7c9-95ce-421c-a69d-8e4fe28b1c1f}">
 		<property name="position">
 			<value>0</value>

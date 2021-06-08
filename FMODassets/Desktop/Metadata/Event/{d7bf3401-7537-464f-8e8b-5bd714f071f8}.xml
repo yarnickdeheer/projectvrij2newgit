@@ -5,7 +5,7 @@
 			<value>Rivier</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{2d0e789a-d0cd-4d3c-b376-10f4416ae928}</destination>
@@ -118,6 +118,7 @@
 	<object class="MixerBusEffectChain" id="{0e036d13-14bb-403d-92ae-5ee3dc1f6a79}">
 		<relationship name="effects">
 			<destination>{98e0a6e6-c5cc-47d8-a556-1e9947534443}</destination>
+			<destination>{9e0d6687-31f7-4013-b30c-fe0f873cd877}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{c68c1028-bd1c-4a46-b53e-1662c8c39c17}" />
@@ -140,5 +141,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{fd2740ae-a01e-4041-9212-1f6c7e3700ec}" />
 	<object class="MixerBusFader" id="{98e0a6e6-c5cc-47d8-a556-1e9947534443}" />
+	<object class="SpatialiserEffect" id="{9e0d6687-31f7-4013-b30c-fe0f873cd877}" />
 	<object class="MixerBusFader" id="{1ea07f76-3032-4d68-a88c-db132c53b291}" />
 </objects>
