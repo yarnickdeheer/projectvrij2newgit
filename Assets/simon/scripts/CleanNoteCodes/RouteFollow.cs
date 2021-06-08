@@ -25,6 +25,7 @@ public class RouteFollow : MonoBehaviour
 
     private CleanNotes notes;
 
+    [SerializeField]
     private List<int> privateNoteList;
     public bool mounted;
 
@@ -32,6 +33,8 @@ public class RouteFollow : MonoBehaviour
     //public int[] backwards;
     public int[] right;
     public int[] left;
+
+    float moveSpeed;
 
     // Start is called before the first frame update
 
@@ -69,16 +72,20 @@ public class RouteFollow : MonoBehaviour
         ///Debug.Log(privateNoteList[0]);
 
         int correctInput = goThroughOptions(new int[][] { right, left });
+        Debug.Log(correctInput);
+
+
         switch (correctInput)
         {
             case -1:
+
                 break;
 
             case 0:
                 if (mounted == true)
                 {
 
-                    sideToSide += Time.deltaTime;
+                    moveSpeed = Time.deltaTime;
                 }
                 //go right
                 break;
@@ -86,7 +93,7 @@ public class RouteFollow : MonoBehaviour
             case 1:
                 if (mounted == true)
                 {
-                    sideToSide -= Time.deltaTime;
+                    moveSpeed = -Time.deltaTime;
                 }
                 //go left
                 break;
@@ -101,6 +108,7 @@ public class RouteFollow : MonoBehaviour
 
         }
 
+        sideToSide += moveSpeed;
         sideToSide = Mathf.Clamp(sideToSide, -2f, 2f);
     }
 
@@ -148,11 +156,13 @@ public class RouteFollow : MonoBehaviour
             {
                 if(i > options[k].Length - 2)
                 {
+                    Debug.Log("RETURN GOOD HAHA");
                     return k;
                 }
 
                 if(options[k][i] != privateNoteList[i])
                 {
+                    Debug.Log("Breaking at" + " " + k + " " + i);
                     break;
                 }
             }
