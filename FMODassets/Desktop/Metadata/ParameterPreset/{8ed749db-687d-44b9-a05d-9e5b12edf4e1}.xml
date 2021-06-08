@@ -13,13 +13,13 @@
 	</object>
 	<object class="GameParameter" id="{f53244ba-f195-448e-a0c5-19cc481ce71a}">
 		<property name="maximum">
-			<value>2</value>
+			<value>3</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>
 		</property>
 		<property name="seekSpeed">
-			<value>1.1799999475479126</value>
+			<value>1.7699999213218689</value>
 		</property>
 	</object>
 </objects>

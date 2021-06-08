@@ -66,37 +66,45 @@ public class BearPushPull : MonoBehaviour
 
        
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "moveable")
-        {
-            if (other.gameObject.name == "down")
-            {
-                //-25.953
-            }
-            if (other.gameObject.name == "top")
-            {
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.tag == "moveable")
+    //    {
+    //        if (other.gameObject.name == "down")
+    //        {
+    //            //-25.953
 
-                //154.35
-            }
-                if (other.gameObject.name == "right")
-            {
-                StartCoroutine(delay());
+    //            this.gameObject.transform.parent.transform.eulerAngles = new Vector3(this.gameObject.transform.parent.transform.rotation.x, -25.953f, this.gameObject.transform.parent.transform.rotation.z);
+
+    //        }
+    //        if (other.gameObject.name == "top")
+    //        {
+    //            this.gameObject.transform.parent.transform.eulerAngles = new Vector3(this.gameObject.transform.parent.transform.rotation.x, 154.35f, this.gameObject.transform.parent.transform.rotation.z);
+
+    //            //154.35
+    //        }
+    //        if (other.gameObject.name == "right")
+    //        {
+    //            StartCoroutine(delay());
                 
-                this.gameObject.transform.parent.transform.position = other.gameObject.transform.GetChild(0).transform.position;
-                this.gameObject.transform.parent.GetComponent<Patrol>().enabled = true;
-                //-116.459
+    //           // this.gameObject.transform.parent.transform.position = other.gameObject.transform.GetChild(0).transform.position;
+    //           // this.gameObject.transform.parent.GetComponent<Patrol>().enabled = true;
+
+    //            this.gameObject.transform.parent.transform.eulerAngles = new Vector3(this.gameObject.transform.parent.transform.rotation.x, -116.459f, this.gameObject.transform.parent.transform.rotation.z);
+    //            //-116.459
 
 
-            }
-            if (other.gameObject.name == "left")
-            {
-                //64.5
-            } 
+    //        }
+    //        if (other.gameObject.name == "left")
+    //        {
+    //            //64.5
+    //            this.gameObject.transform.parent.transform.eulerAngles = new Vector3(this.gameObject.transform.parent.transform.rotation.x, 64.5f, this.gameObject.transform.parent.transform.rotation.z);
 
-        }
+    //        }
 
-        }
+    //    }
+
+    //    }
     private void OnTriggerStay(Collider other)
     {
          
@@ -109,7 +117,7 @@ public class BearPushPull : MonoBehaviour
             if (other.gameObject.name == "down")
             {
                 Debug.Log("PUSH DIE SHIEEET" + other.gameObject.transform.position);
-                this.gameObject.transform.parent.transform.position = other.gameObject.transform.position;
+                //this.gameObject.transform.parent.transform.position = other.gameObject.transform.position;
                 if (notes.checkNoteInput() > -1)
                     privateNoteList.Add(notes.checkNoteInput());
 
@@ -199,7 +207,7 @@ public class BearPushPull : MonoBehaviour
             if (other.gameObject.name == "left")
             {
                 Debug.Log("PUSH DIE SHIEEET" + other.gameObject.transform.position);
-                this.gameObject.transform.parent.transform.position = other.gameObject.transform.position;
+                //this.gameObject.transform.parent.transform.position = other.gameObject.transform.position;
                 if (notes.checkNoteInput() > -1)
                     privateNoteList.Add(notes.checkNoteInput());
 
@@ -243,7 +251,9 @@ public class BearPushPull : MonoBehaviour
             if (other.gameObject.name == "right")
             {
 
-                Debug.Log("PUSH DIE SHIEEET" + other.gameObject.transform.position);
+                //Debug.Log("PUSH DIE SHIEEET" + other.gameObject.transform.position);
+                this.gameObject.transform.parent.transform.eulerAngles = new Vector3(this.gameObject.transform.parent.transform.rotation.x, -116.459f, this.gameObject.transform.parent.transform.rotation.z);
+
                 if (notes.checkNoteInput() > -1)
                     privateNoteList.Add(notes.checkNoteInput());
 
@@ -393,7 +403,7 @@ public class BearPushPull : MonoBehaviour
 
     IEnumerator delay()
     {
-        this.gameObject.transform.parent.GetComponent<Patrol>().enabled = false;
+       /// this.gameObject.transform.parent.GetComponent<Patrol>().enabled = false;
         yield return new WaitForSeconds(.5f);
     }
 }
