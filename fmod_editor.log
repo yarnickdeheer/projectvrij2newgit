@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000018A69C3CFD8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000018A6A7298D8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,3 +16,176 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 5067360
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 46016
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000003FB04DF198
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB9A597D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB9A597D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB9A597E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB9A597F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000018935547AB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Alto_Grab', format=5, channels=2, frequency=48000, lengthbytes=9280, lengthpcm=45493, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.860945.
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001876F8FCDF8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001876F8FCDF8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001876F8FD308
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001876F8FD308
+[LOG] SoundI::release                          :  (0000018938090228)
+[LOG] SoundI::release                          :     Alto_Grab (000001895E172CD8)
+[LOG] SoundI::release                          :  (000001876F97A828)
+[LOG] SoundI::release                          :     ProjVrij2 - Step 1 (000001876691DF08)
+[LOG] SoundI::release                          :  (000001876F97CD88)
+[LOG] SoundI::release                          :     ProjVrij2 - Step 5 (000001895FA04808)
+[LOG] SoundI::release                          :  (000001876F980878)
+[LOG] SoundI::release                          :     ProjVrij2 - Step 6 (000001895FA04188)
+[LOG] SoundI::release                          :  (000001876F97E768)
+[LOG] SoundI::release                          :     ProjVrij2 - Step 7 (000001895FA04668)
+[LOG] SoundI::release                          :  (000001876F9782C8)
+[LOG] SoundI::release                          :     ProjVrij2 - Step 8 (000001876691D6E8)
+[LOG] SoundI::release                          :  (000001876F978158)
+[LOG] SoundI::release                          :     ProjVrij2 - Step 9 (000001876691D3A8)
+[LOG] SoundI::release                          :  (000001876F97D798)
+[LOG] SoundI::release                          :     PV2 Opname - jomps1 (00000189A5D173C8)
+[LOG] SoundI::release                          :  (000001876F97CEF8)
+[LOG] SoundI::release                          :     PV2 Opname - jomps2 (00000189A5D17708)
+[LOG] SoundI::release                          :  (000001876F97EBB8)
+[LOG] SoundI::release                          :     PV2 Opname - jomps3 (00000189A5D16BA8)
+[LOG] SoundI::release                          :  (000001876F9809E8)
+[LOG] SoundI::release                          :     PV2 Opname - jomps4 (00000189A5D17228)
+[LOG] SoundI::release                          :  (000001876F97E8D8)
+[LOG] SoundI::release                          :     Es_Tail_2 (000001895FA03B08)
+[LOG] SoundI::release                          :  (000001876F97E488)
+[LOG] SoundI::release                          :     Es_Tail_1 (000001895FA044C8)
+[LOG] SoundI::release                          :  (000001876F978FB8)
+[LOG] SoundI::release                          :     C_Tail_2 (000001876691E0A8)
+[LOG] SoundI::release                          :  (000001876F97F738)
+[LOG] SoundI::release                          :     C_Tail_1 (00000189A5D17088)
+[LOG] SoundI::release                          :  (000001876F979128)
+[LOG] SoundI::release                          :     Es_Attack_2 (000001876691D888)
+[LOG] SoundI::release                          :  (000001876F97ED28)
+[LOG] SoundI::release                          :     Es_Attack_1 (00000189A5D16D48)
+[LOG] SoundI::release                          :  (000001876F979408)
+[LOG] SoundI::release                          :     F_Attack_2 (000001876691DA28)
+[LOG] SoundI::release                          :  (000001876F97DBE8)
+[LOG] SoundI::release                          :     F_Attack_1 (000001895FA04328)
+[LOG] SoundI::release                          :  (000001876F97F178)
+[LOG] SoundI::release                          :     As_Tail_2 (00000189A5D8E5C8)
+[LOG] SoundI::release                          : Background_Track_3 (000001876F8FE3E8)
+[LOG] SoundI::release                          :     Background_Track_3 (0000018A6AA0C408)
+[LOG] SoundI::release                          :     Background_Track_3 (000001876F8FF678)
+[LOG] SoundI::release                          : Background_Track_2 (00000189F66A5518)
+[LOG] SoundI::release                          :     Background_Track_2 (000001895E07E1D8)
+[LOG] SoundI::release                          :     Background_Track_2 (000001876F8FCFA8)
+[LOG] SoundI::release                          : Background_Track_1 (00000189F66274B8)
+[LOG] SoundI::release                          :     Background_Track_1 (000001895E07E858)
+[LOG] SoundI::release                          :     Background_Track_1 (000001876F8FF318)
+[LOG] SoundI::release                          : Waterfall (00000189F6674C48)
+[LOG] SoundI::release                          :     Waterfall (000001876691D548)
+[LOG] SoundI::release                          :     Waterfall (00000187702C7FE8)
+[LOG] SoundI::release                          : Water_Stream (00000189627B78A8)
+[LOG] SoundI::release                          :     Water_Stream (000001895E07DB58)
+[LOG] SoundI::release                          :     Water_Stream (000001876F8FC738)
+[LOG] SoundI::release                          : Water_Stream (00000189F6A63208)
+[LOG] SoundI::release                          :     Water_Stream (000001895E07ED38)
+[LOG] SoundI::release                          :     Water_Stream (000001876F8FEFB8)
+[LOG] SoundI::release                          : Water_Stream (00000189F6676598)
+[LOG] SoundI::release                          :     Water_Stream (0000018962DFF758)
+[LOG] SoundI::release                          :     Water_Stream (000001876F8FEC58)
+[LOG] SoundI::release                          : Filmrol (0000018A691E8638)
+[LOG] SoundI::release                          :     Filmrol (000001895E07E038)
+[LOG] SoundI::release                          :     Filmrol (000001876F8FD308)
+[LOG] SoundI::release                          : Fluit2 (0000018A691E9C28)
+[LOG] SoundI::release                          :     Fluit2 (000001895E07F218)
+[LOG] SoundI::release                          :     Fluit2 (000001876F8FCDF8)
+[LOG] SoundI::release                          : Filmrol (00000189627B7038)
+[LOG] SoundI::release                          :     Filmrol (000001895E07F3B8)
+[LOG] SoundI::release                          :     Filmrol (000001876F900098)
+[LOG] SoundI::release                          : Fluit2 (00000189627B42A8)
+[LOG] SoundI::release                          :     Fluit2 (000001895E07F078)
+[LOG] SoundI::release                          :     Fluit2 (000001876F8FE598)
+[LOG] SoundI::release                          : Filmrol (0000018A691E8128)
+[LOG] SoundI::release                          :     Filmrol (000001895E07EB98)
+[LOG] SoundI::release                          :     Filmrol (000001876F8FF168)
+[LOG] SoundI::release                          : Fluit2 (00000189F6B455B8)
+[LOG] SoundI::release                          :     Fluit2 (000001895E07DE98)
+[LOG] SoundI::release                          :     Fluit2 (000001876F8FCC48)
+[LOG] SoundI::release                          : Filmrol (00000189627B7C08)
+[LOG] SoundI::release                          :     Filmrol (000001895E07EED8)
+[LOG] SoundI::release                          :     Filmrol (000001876F8FFEE8)
+[LOG] SoundI::release                          : Fluit2 (00000189627B5028)
+[LOG] SoundI::release                          :     Fluit2 (0000018962DFE578)
+[LOG] SoundI::release                          :     Fluit2 (000001876F900248)
+[LOG] SoundI::release                          : Filmrol (00000189F6B45258)
+[LOG] SoundI::release                          :     Filmrol (000001895E07E6B8)
+[LOG] SoundI::release                          :     Filmrol (000001876F8FEE08)
+[LOG] SoundI::release                          : Fluit2 (00000189F6B46D58)
+[LOG] SoundI::release                          :     Fluit2 (000001895E07DCF8)
+[LOG] SoundI::release                          :     Fluit2 (000001876F8FCA98)
+[LOG] SoundI::release                          : Filmrol (00000189F6B45C78)
+[LOG] SoundI::release                          :     Filmrol (000001895E07E9F8)
+[LOG] SoundI::release                          :     Filmrol (000001876F8FC8E8)
+[LOG] SoundI::release                          : Fluit2 (00000189627B5BF8)
+[LOG] SoundI::release                          :     Fluit2 (000001895E07F6F8)
+[LOG] SoundI::release                          :     Fluit2 (000001876F8FEAA8)
+[LOG] SoundI::release                          : Filmrol (00000189627B7548)
+[LOG] SoundI::release                          :     Filmrol (0000018962DFE098)
+[LOG] SoundI::release                          :     Filmrol (000001876F8FE8F8)
+[LOG] SoundI::release                          : Fluit2 (00000189627B6108)
+[LOG] SoundI::release                          :     Fluit2 (0000018962DFFDD8)
+[LOG] SoundI::release                          :     Fluit2 (000001876F8FDED8)
+[LOG] SoundI::release                          : Filmrol (00000189627B6618)
+[LOG] SoundI::release                          :     Filmrol (0000018962DFFA98)
+[LOG] SoundI::release                          :     Filmrol (000001876F8FF828)
+[LOG] SoundI::release                          : Fluit2 (00000189F6677168)
+[LOG] SoundI::release                          :     Fluit2 (0000018962DFF8F8)
+[LOG] SoundI::release                          :     Fluit2 (000001876F8FE088)
+[LOG] SoundI::release                          : Filmrol (00000189627B4CC8)
+[LOG] SoundI::release                          :     Filmrol (000001895E07D9B8)
+[LOG] SoundI::release                          :     Filmrol (000001876F8FFD38)
+[LOG] SoundI::release                          : Fluit2 (00000189627B47B8)
+[LOG] SoundI::release                          :     Fluit2 (000001895E07F558)
+[LOG] SoundI::release                          :     Fluit2 (000001876F8FFB88)
+[LOG] SoundI::release                          : Filmrol (00000189627B4E78)
+[LOG] SoundI::release                          :     Filmrol (000001895E07E518)
+[LOG] SoundI::release                          :     Filmrol (000001876F8FE748)
+[LOG] SoundI::release                          : Fluit2 (00000189627B4B18)
+[LOG] SoundI::release                          :     Fluit2 (000001895E07E378)
+[LOG] SoundI::release                          :     Fluit2 (000001876F8FC588)
+[LOG] SoundI::release                          : Filmrol (00000189F6676238)
+[LOG] SoundI::release                          :     Filmrol (0000018962DFE238)
+[LOG] SoundI::release                          :     Filmrol (000001876F8FE238)
+[LOG] SoundI::release                          : Fluit2 (00000189F6675308)
+[LOG] SoundI::release                          :     Fluit2 (0000018962DFEF38)
+[LOG] SoundI::release                          :     Fluit2 (000001876F8FF4C8)
+[LOG] SoundI::release                          :  (000001876F97C658)
+[LOG] SoundI::release                          :     As_Tail_1 (000001895FA03FE8)
+[LOG] SoundI::release                          :  (000001876F979578)
+[LOG] SoundI::release                          :     C_Attack_2 (000001876691DBC8)
+[LOG] SoundI::release                          :  (000001876F97D628)
+[LOG] SoundI::release                          :     C_Attack_1 (000001895FA03CA8)
+[LOG] SoundI::release                          :  (000001876F97F2E8)
+[LOG] SoundI::release                          :     F_Tail_2 (00000189A5D16EE8)
+[LOG] SoundI::release                          :  (000001876F979858)
+[LOG] SoundI::release                          :     F_Tail_1 (000001895FA03E48)
+[LOG] SoundI::release                          :  (000001876F980148)
+[LOG] SoundI::release                          :     As_Attack_2 (00000189A5D17568)
+[LOG] SoundI::release                          :  (000001876F97C938)
+[LOG] SoundI::release                          :     As_Attack_1 (00000189A5D178A8)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.

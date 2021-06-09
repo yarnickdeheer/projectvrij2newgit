@@ -157,6 +157,12 @@ public class BearControl : MonoBehaviour
             ss.GetComponent<BearTarget>().bear = other.gameObject.GetComponent<NavMeshAgent>();
             bear = other.gameObject.GetComponent<NavMeshAgent>();
 
+            bearfront = other.gameObject.transform.GetChild(4).GetChild(0).GetComponent<Animator>();
+            bearback = other.gameObject.transform.GetChild(4).GetChild(2).GetComponent<Animator>();
+            bearsideL= other.gameObject.transform.GetChild(4).GetChild(1).GetComponent<Animator>();
+            bearsideR = other.gameObject.transform.GetChild(4).GetChild(3).GetComponent<Animator>();
+
+
         }
         else if (other.gameObject.tag == "destroybear")
         {

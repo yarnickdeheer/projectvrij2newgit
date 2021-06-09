@@ -219,10 +219,7 @@ public class pcontroller : MonoBehaviour
             anim.SetBool("backjump", false);
             ground = true;
         }
-        if (collision.gameObject.tag == "kill")
-        {
-            turtle.SetActive(false);
-        }
+      
     }
     private void OnCollisionStay(Collision collision)
     {
@@ -231,6 +228,16 @@ public class pcontroller : MonoBehaviour
            
             ground = true;
 
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "kill")
+        {
+            Debug.Log("kill the turtle");
+            cam.gameObject.SetActive(true);
+            turtlecam.gameObject.SetActive(false);
+            turtle.SetActive(false);
         }
     }
 }
