@@ -17,6 +17,7 @@ TagManager:
   - rockks
   - end
   - kill
+  - uitrigger
   layers:
   - Default
   - TransparentFX

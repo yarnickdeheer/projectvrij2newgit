@@ -29,6 +29,8 @@ public class TurtleTrigger : MonoBehaviour
 
     public Transform respawnAtEnd;
 
+    public StudioEventEmitter[] riverSounds;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -77,6 +79,10 @@ public class TurtleTrigger : MonoBehaviour
             if (other.gameObject.tag == "end" && ride == false)
         {
             //speed = 0; 
+            ui.texture = null;
+            var tempColor = ui.color;
+            tempColor.a = 0f;
+            ui.color = tempColor;
             maincam.gameObject.SetActive(true);
             turtlecam.gameObject.SetActive(false);
             buddy.GetComponent<BuddyMovement>().cam = maincam.gameObject;
@@ -98,6 +104,10 @@ public class TurtleTrigger : MonoBehaviour
             turtlecontrol.mounted = false ;
             mounted = false;
             backgroundMusic.SetParameter("Situatie", 0, false);
+            foreach (StudioEventEmitter emit in riverSounds)
+            {
+                emit.enabled = true;
+            }
             water.spawnLoc = secondRespawn;
         }
     }
@@ -106,6 +116,9 @@ public class TurtleTrigger : MonoBehaviour
     {
         pos = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         ui.texture = turtleUI;
+        var tempColor = ui.color;
+        tempColor.a = 1f;
+        ui.color = tempColor;
         speed = 2;
         maincam.gameObject.SetActive(false);
         turtlecam.gameObject.SetActive(true);
@@ -128,6 +141,10 @@ public class TurtleTrigger : MonoBehaviour
         mounted = true;
         turtlecontrol.mounted = true;
         backgroundMusic.SetParameter("Situatie", 2, false);
+        foreach(StudioEventEmitter emit in riverSounds)
+        {
+            emit.enabled = false;
+        }
     }
 
     //private void OnCollisionEnter(Collision collision)
