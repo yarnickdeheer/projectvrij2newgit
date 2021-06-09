@@ -69,7 +69,7 @@ public class BearControl : MonoBehaviour
                     bear.speed = 3.5f;
                     Destroy(ss);
                     ss = Instantiate(target, target.transform.position, Quaternion.identity);
-
+                    ss.GetComponent<SpriteRenderer>().material = null;
                     bear.gameObject.GetComponent<Patrol>().target = ss.transform;
                     bear.gameObject.GetComponent<MeshRenderer>().material = green;
                     jump.transform.localScale = new Vector3(1, 5, 1);

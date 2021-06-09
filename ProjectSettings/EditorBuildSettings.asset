@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/yarnick/scenes/sendhelp.unity
     guid: 4583aa8c8a7dafa48b8efbeeb0aed4b7
-  - enabled: 0
+  - enabled: 1
     path: Assets/Tommy/EndScene.unity
     guid: 011eb33a1212aa1448fdd19373093258
   m_configObjects: {}

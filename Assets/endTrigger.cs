@@ -14,7 +14,7 @@ public class endTrigger : MonoBehaviour
     void Endvideo()
     {
         Debug.Log("EINDIG DIE VIDEO");
-        SceneManager.LoadScene("Main Menu");
+      //  SceneManager.LoadScene("Main Menu");
     }
 
     void finishgame(VideoPlayer player)
@@ -29,5 +29,9 @@ public class endTrigger : MonoBehaviour
         Debug.Log("done");
 
         //  Time.timeScale = 1;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        SceneManager.LoadScene(1);
     }
 }
