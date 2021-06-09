@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{789980fe-0f46-402b-a9d5-89a0636c42e4}">
+		<property name="assetPath">
+			<value>Aria_Main_Theme.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>124.36365079365079</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{850ffda9-55fb-46a6-8ad8-df6e24391562}</destination>
+		</relationship>
+	</object>
+</objects>
