@@ -100,6 +100,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-7584471603951454741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Voetstappen/Voetstap_Volume
+  m_EditorClassIdentifier: 
+  Name: Voetstap_Volume
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-7428709741824126360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +163,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-6807716435569392441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Achtergrond_Muziek/Situatie
+  m_EditorClassIdentifier: 
+  Name: Situatie
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-6675672003766338632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +221,7 @@ MonoBehaviour:
   Path: FMODassets/Desktop/Build/Desktop/Master.bank
   Name: Build/Desktop/Master
   StudioPath: bank:/Master
-  lastModified: 637587816694704328
+  lastModified: 637588072749721569
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -225,10 +265,10 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -5554562092695940083}
+  - {fileID: -6807716435569392441}
   MinDistance: 0
   MaxDistance: 0
-  Length: 48000
+  Length: 68727
 --- !u!114 &-5923512508763319746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,7 +328,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-5039092170355146328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,6 +471,26 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
+  Exists: 0
+--- !u!114 &-1391742175333494489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Fluitbomen/Fluitboom_Afstand
+  m_EditorClassIdentifier: 
+  Name: Fluitboom_Afstand
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &-1178321295932006540
 MonoBehaviour:
@@ -472,7 +532,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 5128922964762822249}
+  - {fileID: -7584471603951454741}
   MinDistance: 1
   MaxDistance: 20
   Length: 342
@@ -495,7 +555,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-250144431936850955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,7 +596,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -2656273689848544353}
+  - {fileID: 5328380230581677142}
   MinDistance: 1
   MaxDistance: 20
   Length: 25411
@@ -592,12 +652,14 @@ MonoBehaviour:
   - {fileID: -16378057504711479}
   - {fileID: 4487137906975368745}
   - {fileID: -3851307567531860402}
+  - {fileID: 6840015110416643188}
+  - {fileID: 7026538979116913657}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6341101453376020177}
   StringsBanks:
   - {fileID: 3447653222358421001}
-  stringsBankWriteTime: 637587816694993566
+  stringsBankWriteTime: 637588072750853662
   cacheVersion: 6
 --- !u!114 &1220726388128864867
 MonoBehaviour:
@@ -717,11 +779,11 @@ MonoBehaviour:
   Path: FMODassets/Desktop/Build/Desktop/Master.strings.bank
   Name: Build/Desktop/Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637587816694993566
+  lastModified: 637588072750853662
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1500
+    Value: 1614
   Exists: 1
 --- !u!114 &4487137906975368745
 MonoBehaviour:
@@ -805,6 +867,26 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
+  Exists: 0
+--- !u!114 &5328380230581677142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Alto_Viool/Noot
+  m_EditorClassIdentifier: 
+  Name: Noot
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &5545411937611778070
 MonoBehaviour:
@@ -869,7 +951,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -567637771307334017}
+  - {fileID: -1391742175333494489}
   MinDistance: 1
   MaxDistance: 20
   Length: 50400
@@ -893,6 +975,29 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &6840015110416643188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Beren_Voetstappen
+  m_EditorClassIdentifier: 
+  Path: event:/Beren_Voetstappen
+  guid: 46f4fe3d6ea6a847a1eb730b509caa2c
+  Banks:
+  - {fileID: -6341101453376020177}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 128
 --- !u!114 &6936372081673891265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -956,6 +1061,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &7026538979116913657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Main_Menu_Muziek
+  m_EditorClassIdentifier: 
+  Path: event:/Main_Menu_Muziek
+  guid: de3198adc18a554499c5f43ea3d12418
+  Banks:
+  - {fileID: -6341101453376020177}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 124363
 --- !u!114 &7182297643266762432
 MonoBehaviour:
   m_ObjectHideFlags: 0
