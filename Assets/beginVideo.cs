@@ -6,15 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class beginVideo : MonoBehaviour
 {
-    private void Update()
+    VideoPlayer player;
+    private void Start()
     {
-        VideoPlayer player = GetComponent<VideoPlayer>();
+        player = GetComponent<VideoPlayer>();
+    }
+    private void Update()
+    { 
         player.loopPointReached += finishgame;
     }
     void Endvideo()
     {
         Debug.Log("EINDIG DIE VIDEO");
-        SceneManager.LoadScene("playtestv2");
+        SceneManager.LoadScene(2);
     }
 
     void finishgame(VideoPlayer player)

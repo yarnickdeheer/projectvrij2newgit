@@ -29,6 +29,8 @@ public class TurtleTrigger : MonoBehaviour
 
     public Transform respawnAtEnd;
 
+    public StudioEventEmitter[] riverSounds;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -102,6 +104,10 @@ public class TurtleTrigger : MonoBehaviour
             turtlecontrol.mounted = false ;
             mounted = false;
             backgroundMusic.SetParameter("Situatie", 0, false);
+            foreach (StudioEventEmitter emit in riverSounds)
+            {
+                emit.enabled = true;
+            }
             water.spawnLoc = secondRespawn;
         }
     }
@@ -135,6 +141,10 @@ public class TurtleTrigger : MonoBehaviour
         mounted = true;
         turtlecontrol.mounted = true;
         backgroundMusic.SetParameter("Situatie", 2, false);
+        foreach(StudioEventEmitter emit in riverSounds)
+        {
+            emit.enabled = false;
+        }
     }
 
     //private void OnCollisionEnter(Collision collision)
