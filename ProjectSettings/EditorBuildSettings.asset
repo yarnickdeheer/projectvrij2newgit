@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Tommy/Main Menu.unity
     guid: d4250f967bf669f4a8b6bf05f3fa8d8c
   - enabled: 1
+    path: Assets/Tommy/BeginCutScene.unity
+    guid: d64c82e8c88e95c4dac64df33201a0aa
+  - enabled: 0
     path: Assets/Tommy/Testeru3.unity
     guid: 3348cca4c9a3ac14695e9c0f2b9dcbdf
+  - enabled: 1
+    path: Assets/yarnick/scenes/playtestv2.unity
+    guid: 7563d34742482eb45b51d75ea5a50b35
+  - enabled: 1
+    path: Assets/Tommy/EndScene.unity
+    guid: 011eb33a1212aa1448fdd19373093258
   m_configObjects: {}
