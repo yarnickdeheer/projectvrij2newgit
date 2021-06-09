@@ -213,11 +213,15 @@ public class pcontroller : MonoBehaviour
     {
         if (collision.gameObject.tag == "ground")
         {
-            //turtle.SetActive(false);
+            
             cam.gameObject.SetActive(true);
             turtlecam.gameObject.SetActive(false);
             anim.SetBool("backjump", false);
             ground = true;
+        }
+        if (collision.gameObject.tag == "kill")
+        {
+            turtle.SetActive(false);
         }
     }
     private void OnCollisionStay(Collision collision)

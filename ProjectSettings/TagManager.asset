@@ -13,6 +13,10 @@ TagManager:
   - bear
   - moveable
   - enviroment
+  - turtle
+  - rockks
+  - end
+  - kill
   layers:
   - Default
   - TransparentFX

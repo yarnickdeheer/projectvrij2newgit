@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
-
+using UnityEngine.UI;
 public class TurtleTrigger : MonoBehaviour
 {
     public RouteFollow turtle;
@@ -24,6 +24,9 @@ public class TurtleTrigger : MonoBehaviour
     public Transform secondRespawn;
     public sprites sprite;
     public SpriteRenderer alto;
+    public RawImage ui;
+    public Texture turtleUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -99,6 +102,8 @@ public class TurtleTrigger : MonoBehaviour
 
     public void StartTurtle()
     {
+
+        ui.texture = turtleUI;
         speed = 2;
         maincam.gameObject.SetActive(false);
         turtlecam.gameObject.SetActive(true);
