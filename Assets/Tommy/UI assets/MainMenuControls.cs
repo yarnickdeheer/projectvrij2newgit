@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using FMODUnity;
 public class MainMenuControls : MonoBehaviour
 {
-
+    public GameObject menu, startvideo;
+    public StudioEventEmitter mainaudio;
     public void StartGame()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+        menu.SetActive(false);
+        mainaudio.enabled = false;
+        startvideo.SetActive(true);
+        //SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+
     }
 
     public void QuitGame()
@@ -24,7 +29,7 @@ public class MainMenuControls : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        SceneManager.LoadScene(0);
+        //SceneManager.LoadSceneAsync(2);
     }
 
     public void PauseGame()

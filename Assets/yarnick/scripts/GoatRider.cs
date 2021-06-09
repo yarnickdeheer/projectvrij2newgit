@@ -21,7 +21,7 @@ public class GoatRider : MonoBehaviour
 
     //timer 
     public float tijd;
-    public Text timer;
+    //public Text timer;
     public bool top;
 
     private Transform oldParent;
@@ -95,7 +95,7 @@ public class GoatRider : MonoBehaviour
         {
             // start timer when mounted
             //tijd -= Time.deltaTime;
-            timer.text = tijd.ToString("0");
+           // timer.text = tijd.ToString("0");
 
         }else if (mounted == true && tijd < 0)
         {
@@ -286,7 +286,7 @@ public class GoatRider : MonoBehaviour
                 player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                 player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
                 player.GetComponent<SpriteRenderer>().enabled = true;
-                timer.text = tijd.ToString(" ");
+              //  timer.text = tijd.ToString(" ");
                 tijd = 5;
                 top = false;
                 pos.Clear();
@@ -326,7 +326,7 @@ public class GoatRider : MonoBehaviour
                 player.transform.position = new Vector3(pos[i].position.x, pos[i].position.y + 0.2f, pos[i].position.z);//deze is het niet
                 player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                 player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-                timer.text = tijd.ToString(" ");
+               // timer.text = tijd.ToString(" ");
                 tijd = 5;
                 top = true;
                 pos.Clear();
