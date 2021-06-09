@@ -63,6 +63,7 @@ public class GoatRider : MonoBehaviour
     public RawImage ui;
     public Texture goatUI;
     bool jumpdone;
+
     // Start is called before the first frame update
     void Start()
     {
