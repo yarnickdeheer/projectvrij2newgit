@@ -23,10 +23,13 @@ public class beginVideo : MonoBehaviour
 
         //SceneManager.LoadScene(2);
         pl.enabled = true;
-        Destroy(this.gameObject.transform.parent);
-        Destroy(sd);
-        Destroy(black);
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject.transform.parent);
+       // Destroy(sd);
+        sd.SetActive(false);
+        //Destroy(black);
+        black.SetActive(false);
+        this.gameObject.SetActive(false);
+        //Destroy(this.gameObject);
         
     }
 

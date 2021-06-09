@@ -10,9 +10,10 @@ public class MainMenuControls : MonoBehaviour
     public void StartGame()
     {
         Time.timeScale = 1;
-        menu.SetActive(false);
+       
         mainaudio.enabled = false;
         startvideo.SetActive(true);
+        menu.SetActive(false);
         //SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
 
     }

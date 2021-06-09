@@ -21,6 +21,7 @@ public class CleanNotes : MonoBehaviour
     public StudioEventEmitter noteHandler;
     public StudioEventEmitter grabAlto;
     int fmodNote = -2;
+    public GameObject parent;
 
 
     public SpriteRenderer alto;
@@ -140,7 +141,7 @@ public class CleanNotes : MonoBehaviour
     void UpdateNoteOnScreen(int whatNote)
     {
         if (NotePrefabs.Length > 0)
-            Instantiate(NotePrefabs[whatNote], NoteStartLoc[whatNote], new Quaternion(0, 0, 0, 0), canvas.transform.GetChild(1).transform);
+            Instantiate(NotePrefabs[whatNote], NoteStartLoc[whatNote], new Quaternion(0, 0, 0, 0), parent.transform);
     }
 
     public void cleanLastPlayedNotes(List<int> played)
