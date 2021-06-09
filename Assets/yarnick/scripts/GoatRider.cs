@@ -55,9 +55,18 @@ public class GoatRider : MonoBehaviour
 
     private bool coroutineAllowed;
     public SpriteRenderer alto;
+
+    public StudioEventEmitter landing;
+
+
+
+    public RawImage ui;
+    public Texture goatUI;
+    bool jumpdone;
     // Start is called before the first frame update
     void Start()
     {
+        landing = GetComponent<StudioEventEmitter>();
         privateNoteList = new List<int>();
         notes = FindObjectOfType<CleanNotes>();
         oldParent = this.transform.parent;
@@ -257,9 +266,12 @@ public class GoatRider : MonoBehaviour
             {
             privateNoteList.Clear();
             //notes.PlayedNotes.Clear();
-            if (top == true)
+            if (top == true && jumpdone == true)
             {
-
+                ui.texture = null;
+                var tempColor = ui.color;
+                tempColor.a = 0f;
+                ui.color = tempColor;
                 goatAnim.SetBool("mounted", false);
                 goatAnim.SetBool("jump", false);
                 goatEnd = pos[i];
@@ -294,8 +306,12 @@ public class GoatRider : MonoBehaviour
                 //    tut = false;
                 //}
             }
-            else
+            else if(jumpdone == true)
             {
+                ui.texture = null;
+                var tempColor = ui.color;
+                tempColor.a = 0f;
+                ui.color = tempColor;
                 goatEnd = pos[i];
                 mounted = false;
                 backgroundMusic.SetParameter("Situatie", 0, false);
@@ -347,7 +363,7 @@ public class GoatRider : MonoBehaviour
         {
 
             //notes.PlayedNotes.Clear() ;
-            privateNoteList.Clear();
+            privateNoteList.RemoveAt(0); privateNoteList.RemoveAt(0);
         }
     }
     private void MoveToRUPlatform(Transform platformTransform)
@@ -356,19 +372,25 @@ public class GoatRider : MonoBehaviour
         tijd -= f;
         pos.Add(platformTransform);
         i++;
+        goatAnim.SetBool("jump", true);
         Vector3 targetLoc = new Vector3(pos[i].position.x, pos[i].position.y + 0.2f, pos[i].position.z);
         tijd = 5;
         StartCoroutine(GoatByTheRoute(createBezierCurve(goat.transform.position, goat.transform.position + new Vector3(0,1,0), targetLoc + new Vector3(0,1,0), targetLoc), targetLoc.z));
+
     }
 
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == player)
         {
-            if (Input.GetKeyDown(KeyCode.G) && mounted ==false)
+            if (mounted == false && top == false)
             {
                 //mount
+                var tempColor = ui.color;
+                tempColor.a = 1f;
+                ui.color = tempColor;
+                ui.texture = goatUI;
                 alto.enabled = false;
                 player.GetComponent<SpriteRenderer>().enabled = false;
                 goatAnim.SetBool("mounted", true);
@@ -405,6 +427,7 @@ public class GoatRider : MonoBehaviour
 
     private IEnumerator GoatByTheRoute(Transform route, float zPos)
     {
+        jumpdone = false;
         coroutineAllowed = false;
 
         Vector2 p0 = route.GetChild(0).position;
@@ -419,10 +442,13 @@ public class GoatRider : MonoBehaviour
             transform.position = new Vector3(objectPosition.x, objectPosition.y, zPos);
             yield return new WaitForEndOfFrame();
         }
+        landing.Play();
 
         tParam = 0f;
 
         coroutineAllowed = true;
+        goatAnim.SetBool("jump", false);
+        jumpdone = true;
     }
 
 }

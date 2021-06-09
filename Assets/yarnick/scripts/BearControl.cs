@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using FMODUnity;
 
 public class BearControl : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class BearControl : MonoBehaviour
     public Animator bearfront, bearback, bearsideL, bearsideR;
     int DBpotential;
     public bool inrange, destroy;
+    public StudioEventEmitter bearSteps;
 
 
 
@@ -70,6 +72,7 @@ public class BearControl : MonoBehaviour
                     bear.gameObject.GetComponent<MeshRenderer>().material = green;
                     jump.transform.localScale = new Vector3(1, 5, 1);
                     jump.tag = "ground";
+                    bearSteps.Play();
                     break;
 
             }
@@ -144,7 +147,8 @@ public class BearControl : MonoBehaviour
     {
         while (privateNoteList.Count == 4)
         {
-            privateNoteList.Clear();
+            privateNoteList.RemoveAt(0);
+            //privateNoteList.Clear();
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -161,6 +165,7 @@ public class BearControl : MonoBehaviour
             bearback = other.gameObject.transform.GetChild(4).GetChild(2).GetComponent<Animator>();
             bearsideL= other.gameObject.transform.GetChild(4).GetChild(1).GetComponent<Animator>();
             bearsideR = other.gameObject.transform.GetChild(4).GetChild(3).GetComponent<Animator>();
+            bearSteps = bear.GetComponent<StudioEventEmitter>();
 
 
         }

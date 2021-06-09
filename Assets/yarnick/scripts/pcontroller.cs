@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using FMODUnity;
+using UnityEngine.UI;
 public class pcontroller : MonoBehaviour
 {
     private bool groundedPlayer;
@@ -34,6 +35,10 @@ public class pcontroller : MonoBehaviour
     public GameObject turtlecam;
     public GameObject cam;
     public GameObject turtle;
+
+
+    public RawImage ui;
+    public Texture bearUI;
 
 
     // Start is called before the first frame update
@@ -238,6 +243,23 @@ public class pcontroller : MonoBehaviour
             cam.gameObject.SetActive(true);
             turtlecam.gameObject.SetActive(false);
             turtle.SetActive(false);
+        }
+        if (other.gameObject.tag == "uitrigger")
+        {
+            ui.texture = bearUI;
+            var tempColor = ui.color;
+            tempColor.a =1f;
+            ui.color = tempColor;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "uitrigger")
+        {
+            ui.texture = null;
+            var tempColor = ui.color;
+            tempColor.a = 0f;
+            ui.color = tempColor;
         }
     }
 }

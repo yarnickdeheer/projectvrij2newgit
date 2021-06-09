@@ -343,8 +343,8 @@ public class BearPushPull : MonoBehaviour
     {
         while (privateNoteList.Count >= 4)
         {
-         
-            privateNoteList.Clear();
+            privateNoteList.RemoveAt(0);
+            //privateNoteList.Clear();
         }
     }
 
