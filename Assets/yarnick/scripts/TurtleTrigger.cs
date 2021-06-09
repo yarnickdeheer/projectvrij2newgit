@@ -27,8 +27,10 @@ public class TurtleTrigger : MonoBehaviour
     public RawImage ui;
     public Texture turtleUI;
 
+    public Transform respawnAtEnd;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         oldParent = player.transform.parent;
         oldScale = player.transform.localScale;
@@ -39,7 +41,6 @@ public class TurtleTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pos = new Vector3(this.transform.position.x, this.transform.position.y , this.transform.position.z);
         Debug.Log("speed" +  speed);
         turtle.speedInDistance = speed;
         if (tut == true)
@@ -76,13 +77,14 @@ public class TurtleTrigger : MonoBehaviour
             if (other.gameObject.tag == "end" && ride == false)
         {
             //speed = 0; 
-            //maincam.gameObject.SetActive(true);
-            //turtlecam.gameObject.SetActive(false);
+            maincam.gameObject.SetActive(true);
+            turtlecam.gameObject.SetActive(false);
             buddy.GetComponent<BuddyMovement>().cam = maincam.gameObject;
             ride = true;
             player.GetComponent<pcontroller>().enabled = true;
             player.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             player.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+            player.transform.position = respawnAtEnd.transform.position;
         }
     }
     private void OnTriggerExit(Collider other)
@@ -102,7 +104,7 @@ public class TurtleTrigger : MonoBehaviour
 
     public void StartTurtle()
     {
-
+        pos = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         ui.texture = turtleUI;
         speed = 2;
         maincam.gameObject.SetActive(false);

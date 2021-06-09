@@ -55,9 +55,12 @@ public class GoatRider : MonoBehaviour
 
     private bool coroutineAllowed;
     public SpriteRenderer alto;
+
+    public StudioEventEmitter landing;
     // Start is called before the first frame update
     void Start()
     {
+        landing = GetComponent<StudioEventEmitter>();
         privateNoteList = new List<int>();
         notes = FindObjectOfType<CleanNotes>();
         oldParent = this.transform.parent;
@@ -419,6 +422,7 @@ public class GoatRider : MonoBehaviour
             transform.position = new Vector3(objectPosition.x, objectPosition.y, zPos);
             yield return new WaitForEndOfFrame();
         }
+        landing.Play();
 
         tParam = 0f;
 
