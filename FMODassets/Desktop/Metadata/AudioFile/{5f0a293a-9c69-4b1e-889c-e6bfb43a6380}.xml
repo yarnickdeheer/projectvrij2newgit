@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{5f0a293a-9c69-4b1e-889c-e6bfb43a6380}">
+		<property name="assetPath">
+			<value>BGM_River.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>67.636349206349209</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{850ffda9-55fb-46a6-8ad8-df6e24391562}</destination>
+		</relationship>
+	</object>
+</objects>
