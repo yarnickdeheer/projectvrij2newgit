@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000018A6A72B1F8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000018A6A72CB18 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,3 +16,279 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018A6AC20828
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018A6AC20828
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018A6AC22EF8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018A6AC22EF8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018A6AC22B98
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018A6AC22B98
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 8285472
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 51168
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000003FB04DEFC8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB9A597D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB9A597D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB9A597E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB9A597F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000018B32B296F8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='ProjVrij2 - Step 9', format=5, channels=1, frequency=48000, lengthbytes=3232, lengthpcm=16456, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.311760.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 8285472
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 51168
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000003FB04DEFC8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB9A597D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB9A597D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB9A597E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB9A597F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000018B32B296F8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='ProjVrij2 - Step 1', format=5, channels=1, frequency=48000, lengthbytes=3264, lengthpcm=16456, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.175988.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 8285472
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 51168
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000003FB04DEFC8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB9A597D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB9A597D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB9A597E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB9A597F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000018B32B296F8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='ProjVrij2 - Step 8', format=5, channels=1, frequency=48000, lengthbytes=3040, lengthpcm=16456, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.149378.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 8285472
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 51168
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000003FB04DEFC8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB9A597D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB9A597D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB9A597E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB9A597F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000018B32B296F8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='ProjVrij2 - Step 6', format=5, channels=1, frequency=48000, lengthbytes=3232, lengthpcm=16456, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.311760.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 8285472
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 51168
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000003FB04DEFC8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB9A597D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB9A597D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB9A597E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB9A597F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000018B32B296F8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='ProjVrij2 - Step 5', format=5, channels=1, frequency=48000, lengthbytes=3360, lengthpcm=16456, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.144234.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 8285472
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 51168
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000003FB04DEFC8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB9A597D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB9A597D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB9A597E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB9A597F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000018B32B296F8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='ProjVrij2 - Step 7', format=5, channels=1, frequency=48000, lengthbytes=3168, lengthpcm=16456, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.155418.
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018A6AC23258
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018A6AC23258
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018A6AC22328
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018A6AC22328
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018A6AC23258
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018A6AC23258
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018A6AC22328
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018A6AC22328
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 8285472
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 51168
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000003FB04DEFC8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB9A597D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB9A597D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB9A597E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB9A597F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000018B31073438
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Alto_Grab', format=5, channels=2, frequency=48000, lengthbytes=9280, lengthpcm=45493, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.860945.
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018A6AC23258
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018A6AC23258
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018A6AC22328
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018A6AC22328
+[LOG] SoundI::release                          :  (000001876F9730D8)
+[LOG] SoundI::release                          :     Alto_Grab (0000018B33705428)
+[LOG] SoundI::release                          :  (000001876F97CD88)
+[LOG] SoundI::release                          :     ProjVrij2 - Step 1 (0000018B30C4B048)
+[LOG] SoundI::release                          :  (000001876F97F178)
+[LOG] SoundI::release                          :     ProjVrij2 - Step 5 (0000018B30C4B528)
+[LOG] SoundI::release                          :  (000001876F980B58)
+[LOG] SoundI::release                          :     ProjVrij2 - Step 6 (0000018B30C4B1E8)
+[LOG] SoundI::release                          :  (000001876F97F2E8)
+[LOG] SoundI::release                          :     ProjVrij2 - Step 7 (0000018B30C4B6C8)
+[LOG] SoundI::release                          :  (000001876F97ED28)
+[LOG] SoundI::release                          :     ProjVrij2 - Step 8 (0000018B30C4B388)
+[LOG] SoundI::release                          :  (000001876F97EBB8)
+[LOG] SoundI::release                          :     ProjVrij2 - Step 9 (000001895DB992C8)
+[LOG] SoundI::release                          :  (0000018B3117AFF8)
+[LOG] SoundI::release                          :     Es_Tail_2 (00000189F6CFCF88)
+[LOG] SoundI::release                          :  (0000018B311832C8)
+[LOG] SoundI::release                          :     Es_Tail_1 (00000189F6CFCDE8)
+[LOG] SoundI::release                          :  (0000018B31181D38)
+[LOG] SoundI::release                          :     C_Tail_2 (00000189F6CFDAE8)
+[LOG] SoundI::release                          :  (0000018B31177AC8)
+[LOG] SoundI::release                          :     C_Tail_1 (00000189F6CFD468)
+[LOG] SoundI::release                          :  (0000018B31181EA8)
+[LOG] SoundI::release                          :     Es_Attack_2 (00000189F6CFDC88)
+[LOG] SoundI::release                          :  (0000018B3117ABA8)
+[LOG] SoundI::release                          :     Es_Attack_1 (00000189F6CFBF48)
+[LOG] SoundI::release                          :  (0000018B31182E78)
+[LOG] SoundI::release                          :     F_Attack_2 (00000189F6CFC908)
+[LOG] SoundI::release                          :  (0000018B3117AA38)
+[LOG] SoundI::release                          :     F_Attack_1 (00000189F6CFD948)
+[LOG] SoundI::release                          :  (0000018B311766A8)
+[LOG] SoundI::release                          :     As_Tail_2 (000001895E1765B8)
+[LOG] SoundI::release                          : BGM_Goat (0000018B32DB9668)
+[LOG] SoundI::release                          :     BGM_Goat (000001895E105328)
+[LOG] SoundI::release                          :     BGM_Goat (0000018A6AC20828)
+[LOG] SoundI::release                          : BGM_River (0000018B32DBB678)
+[LOG] SoundI::release                          :     BGM_River (000001895E105188)
+[LOG] SoundI::release                          :     BGM_River (0000018A6AC22EF8)
+[LOG] SoundI::release                          : BGM_Exploring (0000018B32DB9158)
+[LOG] SoundI::release                          :     BGM_Exploring (000001895E104FE8)
+[LOG] SoundI::release                          :     BGM_Exploring (0000018A6AC22D48)
+[LOG] SoundI::release                          : BGM_Bear (0000018B32DBB168)
+[LOG] SoundI::release                          :     BGM_Bear (000001895E104E48)
+[LOG] SoundI::release                          :     BGM_Bear (0000018A6AC22B98)
+[LOG] SoundI::release                          : Waterfall (0000018A691E8488)
+[LOG] SoundI::release                          :     Waterfall (00000189F6CFDE28)
+[LOG] SoundI::release                          :     Waterfall (0000018B3241DD18)
+[LOG] SoundI::release                          : Water_Stream (0000018B32DBBEE8)
+[LOG] SoundI::release                          :     Water_Stream (000001895E105CE8)
+[LOG] SoundI::release                          :     Water_Stream (0000018A6AC21C68)
+[LOG] SoundI::release                          : Water_Stream (0000018B32DB9818)
+[LOG] SoundI::release                          :     Water_Stream (000001895E104CA8)
+[LOG] SoundI::release                          :     Water_Stream (0000018A6AC22688)
+[LOG] SoundI::release                          : Water_Stream (00000189F6B45408)
+[LOG] SoundI::release                          :     Water_Stream (0000018766EC7DE8)
+[LOG] SoundI::release                          :     Water_Stream (0000018A6A2D89B8)
+[LOG] SoundI::release                          : Filmrol (00000189F66A5518)
+[LOG] SoundI::release                          :     Filmrol (000001895E105B48)
+[LOG] SoundI::release                          :     Filmrol (0000018A6AC20D38)
+[LOG] SoundI::release                          : Fluit2 (00000189F66274B8)
+[LOG] SoundI::release                          :     Fluit2 (000001895E1054C8)
+[LOG] SoundI::release                          :     Fluit2 (0000018A6AC230A8)
+[LOG] SoundI::release                          : Filmrol (000001876F8FCFA8)
+[LOG] SoundI::release                          :     Filmrol (000001895E105668)
+[LOG] SoundI::release                          :     Filmrol (0000018A6A2DA818)
+[LOG] SoundI::release                          : Fluit2 (00000189F6A63058)
+[LOG] SoundI::release                          :     Fluit2 (0000018766EC68C8)
+[LOG] SoundI::release                          :     Fluit2 (0000018A6A2DA668)
+[LOG] SoundI::release                          : Filmrol (0000018B32DB8A98)
+[LOG] SoundI::release                          :     Filmrol (000001895E104B08)
+[LOG] SoundI::release                          :     Filmrol (0000018A6AC209D8)
+[LOG] SoundI::release                          : Fluit2 (0000018B32DBBD38)
+[LOG] SoundI::release                          :     Fluit2 (000001895E1066A8)
+[LOG] SoundI::release                          :     Fluit2 (0000018A6AC204C8)
+[LOG] SoundI::release                          : Filmrol (00000189F6675308)
+[LOG] SoundI::release                          :     Filmrol (0000018766EC6728)
+[LOG] SoundI::release                          :     Filmrol (0000018A6A2DA4B8)
+[LOG] SoundI::release                          : Fluit2 (00000189627B5898)
+[LOG] SoundI::release                          :     Fluit2 (0000018766EC6A68)
+[LOG] SoundI::release                          :     Fluit2 (0000018A6A2DA308)
+[LOG] SoundI::release                          : Filmrol (0000018B32DB9D28)
+[LOG] SoundI::release                          :     Filmrol (000001895E105808)
+[LOG] SoundI::release                          :     Filmrol (0000018A6AC20318)
+[LOG] SoundI::release                          : Fluit2 (0000018B32DB8FA8)
+[LOG] SoundI::release                          :     Fluit2 (000001895E106848)
+[LOG] SoundI::release                          :     Fluit2 (0000018A6AC235B8)
+[LOG] SoundI::release                          : Filmrol (00000189627B7398)
+[LOG] SoundI::release                          :     Filmrol (0000018766EC6588)
+[LOG] SoundI::release                          :     Filmrol (0000018A6A2DA158)
+[LOG] SoundI::release                          : Fluit2 (00000189627B71E8)
+[LOG] SoundI::release                          :     Fluit2 (0000018766EC63E8)
+[LOG] SoundI::release                          :     Fluit2 (0000018A6A2D9C48)
+[LOG] SoundI::release                          : Filmrol (0000018B32DBAFB8)
+[LOG] SoundI::release                          :     Filmrol (000001895E106508)
+[LOG] SoundI::release                          :     Filmrol (0000018A6AC20168)
+[LOG] SoundI::release                          : Fluit2 (0000018B32DB9B78)
+[LOG] SoundI::release                          :     Fluit2 (000001895E106028)
+[LOG] SoundI::release                          :     Fluit2 (0000018A6AC20B88)
+[LOG] SoundI::release                          : Filmrol (00000189F6B45E28)
+[LOG] SoundI::release                          :     Filmrol (0000018766EC6248)
+[LOG] SoundI::release                          :     Filmrol (0000018A6A2D9A98)
+[LOG] SoundI::release                          : Fluit2 (00000189F6B45AC8)
+[LOG] SoundI::release                          :     Fluit2 (0000018766EC60A8)
+[LOG] SoundI::release                          :     Fluit2 (0000018A6A2D8B68)
+[LOG] SoundI::release                          : Filmrol (0000018B32DB8DF8)
+[LOG] SoundI::release                          :     Filmrol (000001895E106368)
+[LOG] SoundI::release                          :     Filmrol (0000018A6AC224D8)
+[LOG] SoundI::release                          : Fluit2 (0000018B32DBB318)
+[LOG] SoundI::release                          :     Fluit2 (000001895E105E88)
+[LOG] SoundI::release                          :     Fluit2 (0000018A6AC21E18)
+[LOG] SoundI::release                          : Filmrol (0000018A691E8EA8)
+[LOG] SoundI::release                          :     Filmrol (0000018766EC7AA8)
+[LOG] SoundI::release                          :     Filmrol (0000018A6A2D8808)
+[LOG] SoundI::release                          : Fluit2 (0000018A691E8638)
+[LOG] SoundI::release                          :     Fluit2 (0000018766EC7288)
+[LOG] SoundI::release                          :     Fluit2 (0000018A6A2DBE08)
+[LOG] SoundI::release                          : Filmrol (0000018B32DBAC58)
+[LOG] SoundI::release                          :     Filmrol (000001895E1061C8)
+[LOG] SoundI::release                          :     Filmrol (0000018A6AC22328)
+[LOG] SoundI::release                          : Fluit2 (0000018B32DBA088)
+[LOG] SoundI::release                          :     Fluit2 (000001895E1059A8)
+[LOG] SoundI::release                          :     Fluit2 (0000018A6AC23258)
+[LOG] SoundI::release                          :  (0000018B31179D48)
+[LOG] SoundI::release                          :     As_Tail_1 (00000189F6CFD128)
+[LOG] SoundI::release                          :  (0000018B31182FE8)
+[LOG] SoundI::release                          :     C_Attack_2 (00000189F6CFCC48)
+[LOG] SoundI::release                          :  (0000018B31177C38)
+[LOG] SoundI::release                          :     C_Attack_1 (00000189F6CFD7A8)
+[LOG] SoundI::release                          :  (0000018B3117BCE8)
+[LOG] SoundI::release                          :     F_Tail_2 (000001895E171AF8)
+[LOG] SoundI::release                          :  (0000018B31183158)
+[LOG] SoundI::release                          :     F_Tail_1 (00000189F6CFCAA8)
+[LOG] SoundI::release                          :  (0000018B31178A98)
+[LOG] SoundI::release                          :     As_Attack_2 (00000189F6CFD2C8)
+[LOG] SoundI::release                          :  (0000018B31177F18)
+[LOG] SoundI::release                          :     As_Attack_1 (00000189F6CFBDA8)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.

@@ -125,11 +125,7 @@ public class pcontroller : MonoBehaviour
             if (jumpSound.IsPlaying() == false)
                 jumpSound.Play();
         }
-        else if (Input.GetButtonDown("Jump") && dubblejump == true)
-        {
-            dubblejump = false;
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * (gravityValue / 5));
-        }
+        
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         Controller.Move(playerVelocity * Time.deltaTime);
