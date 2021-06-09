@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{891e2fde-eb98-4de9-ac1e-2bcfeb626c22}">
+		<property name="name">
+			<value>Rivier_Volume</value>
+		</property>
+		<relationship name="folder">
+			<destination>{229ddcac-0396-486c-a813-473d18e85132}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{c3a22db9-9f4a-47f9-a102-7c19e070a3f0}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{c3a22db9-9f4a-47f9-a102-7c19e070a3f0}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.84999996423721313</value>
+		</property>
+	</object>
+</objects>
