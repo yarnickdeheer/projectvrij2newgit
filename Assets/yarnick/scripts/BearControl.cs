@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using FMODUnity;
 
 public class BearControl : MonoBehaviour
@@ -20,7 +21,8 @@ public class BearControl : MonoBehaviour
     public bool inrange, destroy;
     public StudioEventEmitter bearSteps;
 
-
+    public RawImage ui;
+    public Texture bearUI;
 
     private CleanNotes notes;
 
@@ -180,6 +182,13 @@ public class BearControl : MonoBehaviour
             DBtarget = other.gameObject;
 
         }
+        else if (other.gameObject.tag == "uitrigger")
+        {
+            var tempColor = ui.color;
+            tempColor.a = 1f;
+            ui.color = tempColor;
+            ui.texture = bearUI;
+        }
 
 
     }
@@ -212,6 +221,13 @@ public class BearControl : MonoBehaviour
         {
             DBpotential -= 1;
             DBtarget = null;
+        }
+        else if (other.gameObject.tag == "uitrigger")
+        {
+            ui.texture = null;
+            var tempColor = ui.color;
+            tempColor.a = 0f;
+            ui.color = tempColor;
         }
     }
     
