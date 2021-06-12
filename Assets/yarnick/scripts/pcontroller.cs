@@ -40,10 +40,14 @@ public class pcontroller : MonoBehaviour
     public RawImage ui;
     public Texture bearUI;
 
+    public Transform groundCheck;
+    public LayerMask groundLayer;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        //Cursor.lockState = CursorLockMode.Locked;
         Controller = GetComponent<CharacterController>();
         overrideController = new AnimatorOverrideController(anim.runtimeAnimatorController);
     }
@@ -52,10 +56,10 @@ public class pcontroller : MonoBehaviour
     void Update()
     {
 
-        groundedPlayer = Controller.isGrounded;
+        groundedPlayer = Physics.CheckSphere(groundCheck.position, 0.1f, groundLayer);
         if (groundedPlayer && playerVelocity.y < 0)
         {
-            playerVelocity.y = 0f;
+            playerVelocity.y = -2f;
         }
 
         if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
@@ -69,7 +73,7 @@ public class pcontroller : MonoBehaviour
 
         if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
         {
-            Debug.Log("nani");
+            //Debug.Log("nani");
             if (anim.GetBool("frontmovement") == true)
             {
 
@@ -112,8 +116,7 @@ public class pcontroller : MonoBehaviour
         }
 
 
-
-        if (Input.GetButtonDown("Jump") && ground == true)
+        if (Input.GetButtonDown("Jump") && groundedPlayer == true)
         {
             Debug.Log("jump");
             anim.SetBool("viool", false);

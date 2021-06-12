@@ -360,7 +360,7 @@ public class GoatRider : MonoBehaviour
 
     public void cleanLastPlayedNotes(List<int> played)
     {
-        while (privateNoteList.Count >= 4)
+        while (privateNoteList.Count > 4)
         {
 
             //notes.PlayedNotes.Clear() ;

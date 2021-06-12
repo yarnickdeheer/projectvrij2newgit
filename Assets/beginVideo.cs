@@ -9,6 +9,7 @@ public class beginVideo : MonoBehaviour
     VideoPlayer player;
     public StudioEventEmitter pl;
     public GameObject sd,black;
+    public pcontroller playerControls;
     private void Start()
     {
         player = GetComponent<VideoPlayer>();
@@ -16,11 +17,16 @@ public class beginVideo : MonoBehaviour
     private void Update()
     { 
         player.loopPointReached += finishgame;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Endvideo();
+        }
     }
     void Endvideo()
     {
         Debug.Log("EINDIG DIE VIDEO");
-
+        playerControls.enabled = true;
         //SceneManager.LoadScene(2);
         pl.enabled = true;
         //Destroy(this.gameObject.transform.parent);

@@ -8,10 +8,16 @@ public class WaterDeath : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        //Debug.Log("EJUK<RHKLEJFVJHEGSRJFDVH");
+        
         if(other.gameObject.tag == "Player")
         {
-            other.transform.position = spawnLoc.position;
+            Debug.Log("EJUK<RHKLEJFVJHEGSRJFDVH");
+            while (other.transform.position != spawnLoc.position)
+            {
+                other.GetComponent<pcontroller>().enabled = false;
+                other.transform.position = spawnLoc.position;
+            }
+            other.GetComponent<pcontroller>().enabled = true;
         }
     }
 }
