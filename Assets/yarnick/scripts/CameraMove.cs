@@ -13,16 +13,15 @@ public class CameraMove : MonoBehaviour
     public Transform Player;
 
     public float distance = 10.0f;
-    private float currentX = 0.0f;
+    private float currentX = 180.0f;
     private float currentY = 0.0f;
     public float Xsensivity = 4.0f;
 
     public Light light;
     public float Ysensivity = 4.0f;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-
 
     }
 

@@ -10,6 +10,7 @@ public class beginVideo : MonoBehaviour
     public StudioEventEmitter pl;
     public GameObject sd,black;
     public pcontroller playerControls;
+    public CameraMove cameraMove;
     private void Start()
     {
         player = GetComponent<VideoPlayer>();
@@ -29,6 +30,7 @@ public class beginVideo : MonoBehaviour
         playerControls.enabled = true;
         //SceneManager.LoadScene(2);
         pl.enabled = true;
+        cameraMove.enabled = true;
         //Destroy(this.gameObject.transform.parent);
        // Destroy(sd);
         sd.SetActive(false);

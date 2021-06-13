@@ -36,10 +36,13 @@ public class RouteFollow : MonoBehaviour
 
     float moveSpeed;
 
+    CallPauseMenu pauseMenu;
+
     // Start is called before the first frame update
 
     void Awake()
     {
+        pauseMenu = FindObjectOfType<CallPauseMenu>();
         privateNoteList = new List<int>();
         notes = FindObjectOfType<CleanNotes>();
         routeToGo = 0;
@@ -218,6 +221,10 @@ public class RouteFollow : MonoBehaviour
                 Vector3 leftToRight = transform.right * sideToSide;
                 transform.position = objectPosition + leftToRight;
                 // coveredDistance += Time.deltaTime * speedInDistance;
+                if (pauseMenu.pauseIsOn)
+                {
+                    yield return new WaitForSeconds(0.1f);
+                }
                 yield return new WaitForEndOfFrame();
             }
             tParam = 0f;
