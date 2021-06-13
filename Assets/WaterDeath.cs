@@ -14,10 +14,10 @@ public class WaterDeath : MonoBehaviour
             Debug.Log("EJUK<RHKLEJFVJHEGSRJFDVH");
             while (other.transform.position != spawnLoc.position)
             {
-                other.GetComponent<pcontroller>().enabled = false;
+                //other.GetComponent<pcontroller>().enabled = false;
                 other.transform.position = spawnLoc.position;
             }
-            other.GetComponent<pcontroller>().enabled = true;
+            //other.GetComponent<pcontroller>().enabled = true;
         }
     }
 }

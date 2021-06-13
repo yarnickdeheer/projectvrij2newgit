@@ -154,16 +154,16 @@ public class RouteFollow : MonoBehaviour
         {
             for (int i = 0; i < privateNoteList.Count; i++)
             {
-                if(i > options[k].Length - 2)
-                {
-                    Debug.Log("RETURN GOOD HAHA");
-                    return k;
-                }
-
-                if(options[k][i] != privateNoteList[i])
+                if (options[k][i] != privateNoteList[i])
                 {
                     Debug.Log("Breaking at" + " " + k + " " + i);
                     break;
+                }
+
+                if (i > options[k].Length - 2)
+                {
+                    Debug.Log("RETURN GOOD HAHA");
+                    return k;
                 }
             }
         }

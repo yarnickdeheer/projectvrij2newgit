@@ -38,6 +38,8 @@ public class GoatRider : MonoBehaviour
 
     public int[] rightdown;
     public int[] leftdown;
+    
+    [SerializeField]
     private List<int> privateNoteList;
 
     public StudioEventEmitter backgroundMusic;
@@ -162,6 +164,7 @@ public class GoatRider : MonoBehaviour
                         // rechts boven
                         goatAnim.gameObject.GetComponent<SpriteRenderer>().flipX = true;
                         MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRU[0].transform);
+                        privateNoteList.Clear();
                         //a++;
                     }
                     else
@@ -179,6 +182,7 @@ public class GoatRider : MonoBehaviour
                         // links boven
                         goatAnim.gameObject.GetComponent<SpriteRenderer>().flipX = false;
                         MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLU[0].transform);
+                        privateNoteList.Clear();
                     }
 
                     else
@@ -194,6 +198,7 @@ public class GoatRider : MonoBehaviour
                     {
                         // rechts onder
                         MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRD[0].transform);
+                        privateNoteList.Clear();
                     }
 
                     else
@@ -210,6 +215,7 @@ public class GoatRider : MonoBehaviour
                     {
                         // links onder
                         MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLD[0].transform);
+                        privateNoteList.Clear();
                     }
 
                     else
@@ -343,14 +349,14 @@ public class GoatRider : MonoBehaviour
         {
             for (int i = 0; i < privateNoteList.Count; i++)
             {
-                if (i > options[k].Length - 2)
-                {
-                    return k;
-                }
-
                 if (options[k][i] != privateNoteList[i])
                 {
                     break;
+                }
+
+                if (i > options[k].Length - 2)
+                {
+                    return k;
                 }
             }
         }
@@ -364,7 +370,7 @@ public class GoatRider : MonoBehaviour
         {
 
             //notes.PlayedNotes.Clear() ;
-            privateNoteList.RemoveAt(0); privateNoteList.RemoveAt(0);
+            privateNoteList.RemoveAt(0);
         }
     }
     private void MoveToRUPlatform(Transform platformTransform)

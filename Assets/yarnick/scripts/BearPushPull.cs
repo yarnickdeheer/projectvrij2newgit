@@ -324,14 +324,15 @@ public class BearPushPull : MonoBehaviour
         {
             for (int i = 0; i < privateNoteList.Count; i++)
             {
-                if (i > options[k].Length - 2)
-                {
-                    return k;
-                }
 
                 if (options[k][i] != privateNoteList[i])
                 {
                     break;
+                }
+
+                if (i > options[k].Length - 2)
+                {
+                    return k;
                 }
             }
         }
@@ -341,7 +342,7 @@ public class BearPushPull : MonoBehaviour
 
     public void cleanLastPlayedNotes(List<int> played)
     {
-        while (privateNoteList.Count >= 4)
+        while (privateNoteList.Count > 4)
         {
             privateNoteList.RemoveAt(0);
             //privateNoteList.Clear();
