@@ -24,7 +24,8 @@ public class Rocks : MonoBehaviour
         {
 
             //respawn
-            transform.parent.transform.position = spawnLoc;
+            //transform.parent.transform.position = spawnLoc;
+            turtle.RespawnTurtle();
 
             //Debug.Log("hit rockks");
             //turtls.speed = 0;
