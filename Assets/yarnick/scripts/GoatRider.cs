@@ -147,6 +147,10 @@ public class GoatRider : MonoBehaviour
 
 
         int correctInput = goThroughOptions(new int[][] { rightup, leftup, rightdown, leftdown });
+        //0 is upper right
+        //1 is upper left
+        //2 is down right
+        //3 is down left
 
         if (mounted == true && coroutineAllowed)
         {
@@ -165,6 +169,7 @@ public class GoatRider : MonoBehaviour
                         goatAnim.gameObject.GetComponent<SpriteRenderer>().flipX = true;
                         MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRU[0].transform);
                         privateNoteList.Clear();
+                        rightup = notes.RandomizeSequence();
                         //a++;
                     }
                     else
@@ -183,6 +188,7 @@ public class GoatRider : MonoBehaviour
                         goatAnim.gameObject.GetComponent<SpriteRenderer>().flipX = false;
                         MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLU[0].transform);
                         privateNoteList.Clear();
+                        leftup = notes.RandomizeSequence();
                     }
 
                     else
@@ -199,6 +205,7 @@ public class GoatRider : MonoBehaviour
                         // rechts onder
                         MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsRD[0].transform);
                         privateNoteList.Clear();
+                        rightdown = notes.RandomizeSequence();
                     }
 
                     else
@@ -216,6 +223,7 @@ public class GoatRider : MonoBehaviour
                         // links onder
                         MoveToRUPlatform(pos[i].gameObject.GetComponent<GoatPlatform>().connectingPlatformsLD[0].transform);
                         privateNoteList.Clear();
+                        leftdown = notes.RandomizeSequence();
                     }
 
                     else
@@ -412,6 +420,7 @@ public class GoatRider : MonoBehaviour
 
                 player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
                 tijd = 5;
+                privateNoteList.Clear();
             }
         }
     }
@@ -432,21 +441,28 @@ public class GoatRider : MonoBehaviour
         return routeParent.transform;
     }
 
+    private void UpdateSequenceUI()
+    {
+
+    }
+
     private IEnumerator GoatByTheRoute(Transform route, float zPos)
     {
         jumpdone = false;
         coroutineAllowed = false;
 
-        Vector2 p0 = route.GetChild(0).position;
-        Vector2 p1 = route.GetChild(1).position;
-        Vector2 p2 = route.GetChild(2).position;
-        Vector2 p3 = route.GetChild(3).position;
+        Vector3 p0 = route.GetChild(0).position;
+        Vector3 p1 = route.GetChild(1).position;
+        Vector3 p2 = route.GetChild(2).position;
+        Vector3 p3 = route.GetChild(3).position;
 
         while (tParam < 1)
         {
             tParam += Time.deltaTime * speedModifier;
+            Debug.Log(objectPosition.z);
             objectPosition = Mathf.Pow(1 - tParam, 3) * p0 + 3 * Mathf.Pow(1 - tParam, 2) * tParam * p1 + 3 * (1 - tParam) * Mathf.Pow(tParam, 2) * p2 + Mathf.Pow(tParam, 3) * p3;
-            transform.position = new Vector3(objectPosition.x, objectPosition.y, zPos);
+            Debug.Log(objectPosition.z);
+            transform.position = objectPosition;
             yield return new WaitForEndOfFrame();
         }
         landing.Play();

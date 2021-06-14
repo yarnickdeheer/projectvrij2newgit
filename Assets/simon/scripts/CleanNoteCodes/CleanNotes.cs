@@ -151,4 +151,10 @@ public class CleanNotes : MonoBehaviour
             played.RemoveAt(0);
         }
     }
+
+    public int[] RandomizeSequence()
+    {
+        int[] temp = { Random.Range(0, 4), Random.Range(0, 4), Random.Range(0, 4), Random.Range(0, 4) };
+        return temp;
+    }
 }

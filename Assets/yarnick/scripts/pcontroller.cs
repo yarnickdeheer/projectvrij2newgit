@@ -43,6 +43,9 @@ public class pcontroller : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
 
+    private float footstepTimer;
+    private float footstepVolume;
+
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +58,17 @@ public class pcontroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(footstepTimer >= 1f)
+        {
+            footstepVolume = Mathf.Lerp(footstepVolume, 0.3f, 0.05f);
+        }
+
+        if(footstepTimer < 1f)
+        {
+            footstepVolume = 1;
+        }
+
+        footsteps.SetParameter("Voetstap_Volume", footstepVolume, false);
 
         groundedPlayer = Physics.CheckSphere(groundCheck.position, 0.1f, groundLayer);
         if (groundedPlayer && playerVelocity.y < 0)
@@ -66,6 +80,8 @@ public class pcontroller : MonoBehaviour
         {
             if (footsteps.IsPlaying() == false && groundedPlayer)
                 footsteps.Play();
+
+            footstepTimer += Time.deltaTime;
 
             Move();
         }
@@ -113,6 +129,7 @@ public class pcontroller : MonoBehaviour
                 this.GetComponent<SpriteRenderer>().sprite = sprites[2];
             }
 
+            footstepTimer = 0;
         }
 
 
